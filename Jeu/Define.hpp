@@ -1,0 +1,52 @@
+#ifndef DEFINE_HPP
+#define DEFINE_HPP
+
+#define TAILLE 1000
+//Dimension de la map couloir
+#define MIN_MAP_COULOIR_X 0
+#define MAX_MAP_COULOIR_X 5000
+#define MIN_MAP_COULOIR_Y 300
+#define MAX_MAP_COULOIR_Y 800
+#define TAILLE_MAP_COULOIR_X 5000
+#define TAILLE_MAP_COULOIR_Y 1000
+//Dimension de la map arene
+#define MIN_MAP_ARENE_X 0
+#define MAX_MAP_ARENE_X 5000
+#define MIN_MAP_ARENE_Y 300
+#define MAX_MAP_ARENE_Y 800
+#define TAILLE_MAP_ARENE_X 5000
+#define TAILLE_MAP_ARENE_Y 1000
+
+#define NB_ROB_INIT 10
+
+#define NB_MUN_MAX_LASER 15
+#define NB_MUN_MAX_BAZOOKA 10
+#define NB_MUN_MAX_GRENADE 5
+
+#define PORTEE_LASER 10
+#define PORTEE_BAZOOKA 10
+#define PORTEE_GRENADE 5
+
+#define ZONE_DE_DMG_LASER 1
+#define ZONE_DE_DMG_BAZOOKA 2
+#define ZONE_DE_DMG_GRENADE 4
+
+#define DMG_LASER 15
+#define DMG_BAZOOKA 15
+#define DMG_GRENADE 10
+#define DMG_ROBOT 10
+ 
+#define PV_MAX_JOUEUR 100
+#define PV_MAX_ROBOT 30
+
+
+// AFFICHAGE
+
+#define AGRANDISSEMENT 1
+
+#define HAUTEUR_PERSO 58
+#define LARGEUR_PERSO 45
+#define TAILLE_ROBOT 45
+#define TAILLE_ACCESSOIRE 20
+
+#endif
