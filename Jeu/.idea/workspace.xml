@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="708ecdce-b7c1-4cf3-ad0b-4ba49b2578d9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cPYCuHeXYHQR0lz8xKgR7jf4QU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="506" y="153" width="587" height="855" key="find.popup" timestamp="1590431610811">
+      <screen x="0" y="25" width="1600" height="1110" />
+    </state>
+    <state x="506" y="153" width="587" height="855" key="find.popup/0.25.1600.1110@0.25.1600.1110" timestamp="1590431610811" />
+    <state x="463" y="271" key="search.everywhere.popup" timestamp="1590431596691">
+      <screen x="0" y="25" width="1600" height="1110" />
+    </state>
+    <state x="463" y="271" key="search.everywhere.popup/0.25.1600.1110@0.25.1600.1110" timestamp="1590431596691" />
+  </component>
+</project>
