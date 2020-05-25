@@ -15,7 +15,8 @@ class Game{
 		Map m;
 		int taille_x;//Taille de la map
 		int taille_y;
-		
+		int x_fen;
+		int y_fen;
 		
 	public :
 	

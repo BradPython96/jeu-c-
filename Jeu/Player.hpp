@@ -37,14 +37,14 @@ class Player{
 		sf::Sprite affiche(int xa, int ya, int tailleX, int tailleY);	// Affichage SFML du joueur
 		
 		//Déplacement
-		void moveLeft();	
-		void moveUp();
-		void moveRight();
-		void moveDown();
-		void moveUpRight();
-		void moveDownRight();
-		void moveDownLeft();
-		void moveUpLeft();
+		void moveLeft(int x_fen);	
+		void moveUp(int y_fen);
+		void moveRight(int x_fen);
+		void moveDown(int y_fen);
+		void moveUpRight(int x_fen,int y_fen);
+		void moveDownRight(int x_fen,int y_fen);
+		void moveDownLeft(int x_fen,int y_fen);
+		void moveUpLeft(int x_fen,int y_fen);
 		
 		void addArme(Arme* a);
 		

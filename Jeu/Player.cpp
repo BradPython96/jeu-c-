@@ -91,66 +91,66 @@ sf::Sprite Player::affiche(int xa, int ya, int tailleX, int tailleY){
 
 
 // DEPLACEMENT
-void Player::moveLeft(){
+void Player::moveLeft(int x_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Left;
-	if(pos.getX()>min_taille_x){
+	if(pos.getX()>min_taille_x && pos.getX() > x_fen){
 		pos.setX(pos.getX()-1);
 	}
 	pos.setAngle(180);
 }
 
-void Player::moveDown(){
+void Player::moveDown(int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Down;
-	if(pos.getY()<max_taille_y){
+	if(pos.getY()<max_taille_y && pos.getY() < y_fen + TAILLE){
 		pos.setY(pos.getY()+1);
 	}
 	pos.setAngle(270);
 }
 
-void Player::moveRight(){
+void Player::moveRight(int x_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Right;
-	if(pos.getX()<max_taille_x){
+	if(pos.getX()<max_taille_x && pos.getX()< x_fen + TAILLE){
 		pos.setX(pos.getX()+1);
 	}
 	pos.setAngle(0);
 }
 
-void Player::moveUp(){
+void Player::moveUp(int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Up;
-	if(pos.getY()>min_taille_y){
+	if(pos.getY()>min_taille_y && pos.getY()>y_fen){
 		pos.setY(pos.getY()-1);
 	}
 	pos.setAngle(90);
 }
-void Player::moveUpRight(){
+void Player::moveUpRight(int x_fen,int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
-	this->moveUp();
-	this->moveRight();
+	this->moveUp(y_fen);
+	this->moveRight(x_fen);
 	anim.y=UpRight;
 	pos.setAngle(45);
 }
-void Player::moveDownRight(){
+void Player::moveDownRight(int x_fen,int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
-	this->moveDown();
-	this->moveRight();
+	this->moveDown(y_fen);
+	this->moveRight(x_fen);
 	anim.y=DownRight;
 	pos.setAngle(315);
 }
-void Player::moveDownLeft(){
+void Player::moveDownLeft(int x_fen,int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
-	this->moveDown();
-	this->moveLeft();
+	this->moveDown(y_fen);
+	this->moveLeft(x_fen);
 	anim.y=DownLeft;
 	pos.setAngle(225);
 }
-void Player::moveUpLeft(){
+void Player::moveUpLeft(int x_fen,int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
-	this->moveUp();
-	this->moveLeft();
+	this->moveUp(y_fen);
+	this->moveLeft(x_fen);
 	anim.y=UpLeft;
 	pos.setAngle(135);
 }
