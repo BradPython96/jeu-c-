@@ -44,7 +44,7 @@
 
 //Vitesse
 #define VIT_JOUEUR 5
-#define VIT_ROBOT 5
+#define VIT_ROBOT 3
 
 // AFFICHAGE
 
