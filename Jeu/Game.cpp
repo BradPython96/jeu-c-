@@ -175,7 +175,7 @@ void Game::actualise(){
 	sprite_fond.setTextureRect(sf::IntRect(x,y,TAILLE,TAILLE));
 	window.draw(sprite_fond);
 	
-	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y);
+	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x, y);
     int i;
 
     //Affichage des éléments

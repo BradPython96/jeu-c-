@@ -38,10 +38,11 @@ string Robot::toString(){
 	return "Un robot se trouve à l'emplacement x = "+to_string(pos.getX())+", y = "+to_string(pos.getY())+", angle = "+ to_string(pos.getAngle())+",  avec "+to_string(pv)+"PV.\n";
 }	
 
-sf::Sprite Robot::affiche(){
+sf::Sprite Robot::affiche(int x, int y){
 	
 	sprite_robot.setTextureRect(sf::IntRect(anim.x*TAILLE_ROBOT,anim.y*TAILLE_ROBOT,TAILLE_ROBOT,TAILLE_ROBOT));
-	sprite_robot.setPosition(pos.getX()-TAILLE_ROBOT/2, pos.getY()-TAILLE_ROBOT/2);
+	
+	sprite_robot.setPosition(pos.getX()-x-TAILLE_ROBOT/2, pos.getY()-y-TAILLE_ROBOT/2);
 	
 	return sprite_robot;
 }

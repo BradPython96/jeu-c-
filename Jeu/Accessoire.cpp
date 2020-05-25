@@ -30,7 +30,10 @@ string Accessoire::toString(){
 	return "Un accessoire se trouve à l'emplacement x = "+to_string(pos.getX())+", y = "+to_string(pos.getY())+".\n";
 }
 
-sf::Sprite Accessoire::affiche(){
+sf::Sprite Accessoire::affiche(int x, int y){
+		
+	sprite_acc.setPosition(pos.getX()-x+3*TAILLE_ACCESSOIRE/2, pos.getY()-y+TAILLE_ACCESSOIRE/2);
+	
 	return sprite_acc;
 }
 
