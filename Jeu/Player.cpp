@@ -2,6 +2,8 @@
 
 // CONSTRUCTEUR
 Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min_taille_y_, int max_taille_y_){
+
+	vit = VIT_JOUEUR;
 	pos = Position(i, j, 0);
 	arms.push_back(new Laser());
 	armCur=0;
@@ -95,7 +97,7 @@ void Player::moveLeft(){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Left;
 	if(pos.getX()>min_taille_x){
-		pos.setX(pos.getX()-1);
+		pos.setX(pos.getX()-vit);
 	}
 	pos.setAngle(180);
 }
@@ -104,7 +106,7 @@ void Player::moveDown(){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Down;
 	if(pos.getY()<max_taille_y){
-		pos.setY(pos.getY()+1);
+		pos.setY(pos.getY()+vit);
 	}
 	pos.setAngle(270);
 }
@@ -113,7 +115,7 @@ void Player::moveRight(){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Right;
 	if(pos.getX()<max_taille_x){
-		pos.setX(pos.getX()+1);
+		pos.setX(pos.getX()+vit);
 	}
 	pos.setAngle(0);
 }
@@ -122,7 +124,7 @@ void Player::moveUp(){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Up;
 	if(pos.getY()>min_taille_y){
-		pos.setY(pos.getY()-1);
+		pos.setY(pos.getY()-vit);
 	}
 	pos.setAngle(90);
 }

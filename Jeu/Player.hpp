@@ -19,11 +19,14 @@ class Player{
 		vector<Arme*> arms;	//liste des armes du joueur
 		int armCur;	//position dans la liste de l'arme courrante
 		int pv;	//points de vie du joueur
-		int min_taille_x;
+		int vit; //la vitesse de déplacement du joueur
+
+		int min_taille_x;	//Zone de déplacement du joueur
 		int max_taille_x;
 		int min_taille_y; 
 		int max_taille_y;
-		sf::Texture perso;
+
+		sf::Texture perso;	//Affichage du perso
 		sf::Sprite sprite_perso;
 		sf::Vector2i anim;
 	

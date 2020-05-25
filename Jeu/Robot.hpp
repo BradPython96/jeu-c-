@@ -16,6 +16,8 @@ class Robot{
 	private :
 		Position pos;
 		int pv;	//points de vie du joueur
+		int vit;	//vitesse du robot
+
 		sf::Texture robot;
 		sf::Sprite sprite_robot;
 		sf::Vector2i anim;

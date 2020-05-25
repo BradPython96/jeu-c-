@@ -5,7 +5,7 @@
 Robot :: Robot(int i, int j){
 	pos = Position(i, j, 0);
 	pv=PV_MAX_ROBOT;
-	
+	vit = VIT_ROBOT;
 	enum Dir{Down, Left, Right, Up};
 	sf::Vector2i anim(1, Down);
 	
@@ -20,6 +20,7 @@ Robot :: Robot(Position* p){
 	pv=PV_MAX_ROBOT;
 	
 	pos = *p;
+	vit = VIT_ROBOT;
 
 	enum Dir{Down, Left, Right, Up};
 	sf::Vector2i anim(1, Down);
@@ -57,25 +58,25 @@ void Robot::setMarche(){
 void Robot::moveLeft(){
 	enum Dir{Down, Left, Right, Up};
 	anim.y = Left;
-	pos.setX(pos.getX()-1);
+	pos.setX(pos.getX()-vit);
 }
 
 void Robot::moveDown(){
 	enum Dir{Down, Left, Right, Up};
 	anim.y=Down;
-	pos.setY(pos.getY()+1);
+	pos.setY(pos.getY()+vit);
 }
 
 void Robot::moveRight(){
 	enum Dir{Down, Left, Right, Up};
 	anim.y=Right;
-	pos.setX(pos.getX()+1);
+	pos.setX(pos.getX()+vit);
 }
 
 void Robot::moveUp(){
 	enum Dir{Down, Left, Right, Up};
 	anim.y=Up;
-	pos.setY(pos.getY()-1);
+	pos.setY(pos.getY()-vit);
 }
 
 // PV ACC/MUT

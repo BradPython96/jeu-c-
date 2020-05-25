@@ -211,12 +211,12 @@ void Map::tourRobot(){
 }
 
 bool Map::gameOver(){
-	if (!plys[0]->vivant()){
-		return true;
-	} else if (!plys[0]->vivant()){
-		return true;
-	} else {
+	if (plys[0]->vivant()){
 		return false;
+	} else if (plys[1]->vivant()){
+		return false;
+	} else {
+		return true;
 	}
 }
 

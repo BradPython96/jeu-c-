@@ -163,25 +163,29 @@ void Game::tour(){
 //Actualisation de la map
 void Game::actualise(){
 
-	//On centre la map sur les joueurs
-	int x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
-	if (x<0){x = 0;}
-	if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+	if (m.gameOver()){
+		window.draw(sprite_gameOver);
+	} else {
+		//On centre la map sur les joueurs
+		int x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
+		if (x<0){x = 0;}
+		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
 
-	int y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
-	if (y<0){y = 0;}
-	if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
+		int y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
+		if (y<0){y = 0;}
+		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
 
-	sprite_fond.setTextureRect(sf::IntRect(x,y,TAILLE,TAILLE));
-	window.draw(sprite_fond);
+		sprite_fond.setTextureRect(sf::IntRect(x,y,TAILLE,TAILLE));
+		window.draw(sprite_fond);
 	
-	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y);
-    int i;
+		vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y);
+   		int i;
 
-    //Affichage des éléments
-    int const tailleS(sp.size());
-    for (i=0; i<tailleS; i++){
-		window.draw(sp[i]);
+    	//Affichage des éléments
+    	int const tailleS(sp.size());
+    	for (i=0; i<tailleS; i++){
+			window.draw(sp[i]);
+		}
 	}
 	
 	window.display();
@@ -196,59 +200,61 @@ void Game::deplacement(){
 	Player* P2=m.getP2();
 	
 	//Déplacement P1
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
-		P1->moveUpRight();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-		P1->moveDownRight();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
-		P1->moveDownLeft();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
-		P1->moveUpLeft();
-		m.getP1()->setMarche();
-	} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-		P1->moveRight();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
-		P1->moveDown();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
-		P1->moveLeft();
-		m.getP1()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
-		P1->moveUp();
-		m.getP1()->setMarche();
-	}
-	
-	//Déplacement P2
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-		P2->moveUpRight();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-		P2->moveDownRight();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-		P2->moveDownLeft();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-		P2->moveUpLeft();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-		P2->moveRight();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-		P2->moveDown();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-		P2->moveLeft();
-		m.getP2()->setMarche();
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-		P2->moveUp();
-		m.getP2()->setMarche();
+	if(P1->vivant()){
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+			P1->moveUpRight();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
+			P1->moveDownRight();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
+			P1->moveDownLeft();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+			P1->moveUpLeft();
+			m.getP1()->setMarche();
+		} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
+			P1->moveRight();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
+			P1->moveDown();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
+			P1->moveLeft();
+			m.getP1()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+			P1->moveUp();
+			m.getP1()->setMarche();
+		}
 	}
 
-		
+	//Déplacement P2
+	if(P2->vivant()){
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+			P2->moveUpRight();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+			P2->moveDownRight();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+			P2->moveDownLeft();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+			P2->moveUpLeft();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+			P2->moveRight();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+			P2->moveDown();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+			P2->moveLeft();
+			m.getP2()->setMarche();
+		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+			P2->moveUp();
+			m.getP2()->setMarche();
+		}
+	}
 }
 

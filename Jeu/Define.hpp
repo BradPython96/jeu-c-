@@ -17,6 +17,7 @@
 #define TAILLE_MAP_ARENE_X 5000
 #define TAILLE_MAP_ARENE_Y 1000
 
+
 #define NB_ROB_INIT 10
 
 #define NB_MUN_MAX_LASER 15
@@ -35,10 +36,14 @@
 #define DMG_BAZOOKA 15
 #define DMG_GRENADE 10
 #define DMG_ROBOT 10
- 
+
+//PV
 #define PV_MAX_JOUEUR 100
 #define PV_MAX_ROBOT 30
 
+//Vitesse
+#define VIT_JOUEUR 5
+#define VIT_ROBOT 5
 
 // AFFICHAGE
 
