@@ -53,7 +53,7 @@ Map::Map(bool sexP1, bool sexP2, int map){
     }
     
     //Initialisation des accessoires
-	for(int i=0; i<5; i++){
+	for(int i=0; i<NB_ACCESSOIRES_INIT; i++){
 		accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
 	}
 	
@@ -92,7 +92,7 @@ string Map::toString(){
 	return s;
 }
 
-vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY){
+vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 	int i;
 	vector<sf::Sprite> sp;
 
@@ -104,7 +104,7 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY){
 	if(accs.size()!=0){
 		int const tailleA(accs.size());
 		for (i=0; i<tailleA; i++){
-			sp.push_back(accs[i]->affiche());
+			sp.push_back(accs[i]->affiche(x, y));
 		}
 	}	
 	
@@ -113,7 +113,7 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY){
 	if(robs.size()!=0){
 		int const tailleR(robs.size());
 		for(i=0; i<tailleR; i++){
-				sp.push_back(robs[i]->affiche());
+				sp.push_back(robs[i]->affiche(x,y));
 		}
 	}
 	
@@ -140,10 +140,10 @@ void Map::recuperationAcc(){
 	int i;
 	int const tailleA(accs.size());
 	for (i=0; i<tailleA; i++){
-		if(plys[0]->getPos()==accs[i]->getPos()){
+		if(sqrt(plys[0]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[0]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
 			accs[i]->win(plys[0]);
 			accs.erase(accs.begin()+i);
-		} else if (plys[1]->getPos()==accs[i]->getPos()){
+		} else if (sqrt(plys[1]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[1]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
 			accs[i]->win(plys[1]);
 			accs.erase(accs.begin()+i);
 		}

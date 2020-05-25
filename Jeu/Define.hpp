@@ -19,6 +19,7 @@
 
 
 #define NB_ROB_INIT 10
+#define NB_ACCESSOIRES_INIT 20
 
 #define NB_MUN_MAX_LASER 15
 #define NB_MUN_MAX_BAZOOKA 10

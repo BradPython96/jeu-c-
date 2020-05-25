@@ -32,7 +32,7 @@ class Map {
 		
 		string toString();	// Affiche la composition de la map
 		
-		vector<sf::Sprite> listeSprite(int tailleX, int tailleY); //Donne l'affichage de tous les éléments de la map
+		vector<sf::Sprite> listeSprite(int tailleX, int tailleY, int x, int y); //Donne l'affichage de tous les éléments de la map
 		void actualise(sf::RenderWindow* window); // Dessine la map en sfml
 		
 		void addRobot(); // Ajoute un robot à la map

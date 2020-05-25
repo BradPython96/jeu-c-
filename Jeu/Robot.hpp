@@ -27,7 +27,7 @@ class Robot{
 		Robot(Position* p); //CONSTRUCTEUR Aléatoire
 		
 		string toString();	//Affichage de la composition du robot
-		sf::Sprite affiche(); // Affichage SFML du robot
+		sf::Sprite affiche(int x, int y); // Affichage SFML du robot
 		void setMarche();
 		
 		void moveLeft();	//Déplacement
