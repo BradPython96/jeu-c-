@@ -208,6 +208,7 @@ void Map::tourRobot(){
 		//	robs.erase(robs.begin()+i);
 		//}
 	}
+	sleep(0.01);
 }
 
 bool Map::gameOver(){

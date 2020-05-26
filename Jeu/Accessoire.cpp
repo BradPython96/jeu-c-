@@ -45,15 +45,15 @@ void Accessoire::win(Player* p){
 			cout<<"Votre vie est totalement restaurée"<<endl;
 			break;
 		case 1:
-			p->addArme(new Laser());
+			p->addArme(new Laser(p->getSex()));
 			cout<<"Vous avez trouvé un pistolet laser"<<endl;
 			break;
 		case 2:
-			p->addArme(new Bazooka());
+			p->addArme(new Bazooka(p->getSex()));
 			cout<<"Vous avez trouvé un bazooka"<<endl;
 			break;
 		case 3:
-			p->addArme(new Grenade());
+			p->addArme(new Grenade(p->getSex()));
 			cout<<"Vous avez trouvé une grenade"<<endl;
 			break;
 	}

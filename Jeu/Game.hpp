@@ -39,7 +39,9 @@ class Game{
 		void gestion();
 		void tour();
 		void actualise();
-		void deplacement();
+
+		void deplacement();	//Déplace le joueur en fonction des événements
+		void action();	//Réalise les actions du joueur en fonction des événements
 
 		
 

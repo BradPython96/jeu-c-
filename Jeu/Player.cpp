@@ -5,8 +5,8 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 
 	vit = VIT_JOUEUR;
 	pos = Position(i, j, 0);
-	arms.push_back(new Laser());
-	armCur=0;
+	
+	
 	pv=PV_MAX_JOUEUR;
 	min_taille_x = min_taille_x_;
 	max_taille_x = max_taille_x_;
@@ -17,17 +17,19 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	sf::Vector2i anim(1, Down);
 	
 	sex=s;//initialisation du sex du joueur
+	arms.push_back(new Laser(sex));
+	armCur=0;
 
 	if (sex==true){
-		if(!perso.loadFromFile("rob_girl.png")){
-			cout<<"Erreur du chargement du rob feminin"<<endl;
+		if(!dead.loadFromFile("rob_girl_dead.png")){
+			cout<<"Erreur du chargement de la rob morte"<<endl;
 		}
 	} else {
-		if(!perso.loadFromFile("rob_boy.png")){
-			cout<<"Erreur du chargement du rob mal"<<endl;
+		if(!dead.loadFromFile("rob_boy_dead.png")){
+			cout<<"Erreur du chargement du rob mort"<<endl;
 		}
 	}
-		
+	perso = arms[0]->texture();
 	perso.setSmooth(true);
 	sprite_perso.setTexture(perso);
 	sprite_perso.setPosition(pos.getX()-LARGEUR_PERSO/2, pos.getY()-HAUTEUR_PERSO/2);
@@ -66,28 +68,31 @@ void Player::setMarche(){
 }
 
 sf::Sprite Player::affiche(int xa, int ya, int tailleX, int tailleY){
-	int x;
-	int y;
-	sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
+	if(pv>0){
+		int x;
+		int y;
+		sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
 
-	if(xa<TAILLE/2){
-		x=pos.getX()-LARGEUR_PERSO/2;
-	} else if (xa>(tailleX-TAILLE/2)){
-		x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
+		if(xa<TAILLE/2){
+			x=pos.getX()-LARGEUR_PERSO/2;
+		} else if (xa>(tailleX-TAILLE/2)){
+			x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
+		} else {
+			x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
+		}
+		
+		if(ya<TAILLE/2){
+			y=pos.getY()-HAUTEUR_PERSO/2;
+		} else if (ya>(tailleY-TAILLE/2)){
+			y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
+		} else {
+			y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
+		}
+		
+		sprite_perso.setPosition(x,y);
 	} else {
-		x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
+		sprite_perso.setTexture(dead);
 	}
-	
-	if(ya<TAILLE/2){
-		y=pos.getY()-HAUTEUR_PERSO/2;
-	} else if (ya>(tailleY-TAILLE/2)){
-		y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
-	} else {
-		y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
-	}
-	
-	sprite_perso.setPosition(x,y);
-	
 	return sprite_perso;
 }
 
@@ -161,7 +166,15 @@ void Player::moveUpLeft(int x_fen,int y_fen){
 void Player::addArme(Arme* a){
 	arms.push_back(a);
 }
-
+void Player::swapArme(){
+	int const taille(arms.size());
+	armCur++;
+	if(taille==armCur){
+		armCur=0;
+	}
+	perso = arms[armCur]->texture();
+	sprite_perso.setTexture(perso);
+}
 
 // PV ACC/MUT
 const int& Player::getPV() const{
@@ -170,6 +183,10 @@ const int& Player::getPV() const{
 void Player::setPV(const int p){
 	pv = p;
 }
+const bool& Player::getSex() const{
+	return sex;
+}		
+
 
 const Position& Player::getPos() const{	//Accesseur Position
 	return pos;

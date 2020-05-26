@@ -145,7 +145,8 @@ void Game:: gestion(){
              		
 		}
 		window.clear();
-		
+
+		m.tourRobot();
 		this->actualise();	//Chargement des éléments sur la map
 		
     }
@@ -153,10 +154,9 @@ void Game:: gestion(){
 }
 
 void Game::tour(){
+
 	this->deplacement();
-	m.recuperationAcc();
-	m.tourRobot();
-	
+	this->action();
 }
 
 
@@ -260,3 +260,26 @@ void Game::deplacement(){
 	}
 }
 
+void Game::action(){
+
+	Player* P1=m.getP1();
+	Player* P2=m.getP2();
+
+	//CHANGEMENT ARME P1
+	if(P1->vivant()){
+
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
+			P1->swapArme();
+		}
+	}
+	//CHANGEMENT ARME P2
+	if(P2->vivant()){
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
+			P2->swapArme();
+		}
+	}
+
+	//RECUPERATION DES ACCESSOIRES
+	m.recuperationAcc();
+}

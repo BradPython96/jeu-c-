@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <SFML/Graphics.hpp>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ class Arme{
 		int portee;
         int zoneDeDmg;
         int dmg;
+        sf::Texture text;
         
 	public :
 		Arme(){}
@@ -37,6 +39,10 @@ class Arme{
             nbMunitions --;
         }
         
+        const sf::Texture texture() const{
+            return text;
+        }
+
         virtual string toString()=0;
 	
 };

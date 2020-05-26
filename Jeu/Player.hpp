@@ -26,7 +26,9 @@ class Player{
 		int min_taille_y; 
 		int max_taille_y;
 
-		sf::Texture perso;	//Affichage du perso
+		sf::Texture dead;	//Affichage du perso
+		sf::Texture perso;
+
 		sf::Sprite sprite_perso;
 		sf::Vector2i anim;
 	
@@ -49,11 +51,14 @@ class Player{
 		void moveDownLeft(int x_fen,int y_fen);
 		void moveUpLeft(int x_fen,int y_fen);
 		
-		void addArme(Arme* a);
+		void addArme(Arme* a);	//Ajoute une arme à la liste
+		void swapArme();	//Change d'arme
 		
 		const int& getPV() const;	//Accesseur PV
 		void setPV(const int p);	//Mutateur PV
-		void setMarche();
+		const bool& getSex() const;	//Accesseur Sex
+
+		void setMarche();	//Gère l'animation de déplacement du joueur
 		
 		
 		const Position& getPos() const;	//Accesseur Position

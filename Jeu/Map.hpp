@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 #include <cstddef>
+#include <ctime>
+#include <unistd.h>
 #include <SFML/Graphics.hpp>
 #include "Define.hpp"
 #include "Player.hpp"

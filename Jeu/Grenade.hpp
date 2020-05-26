@@ -12,6 +12,7 @@ class Grenade : public Arme{
 	public :
 	
 		Grenade(); // CONSTRUCTEUR par défaut
+		Grenade(bool sex);
 		string toString(); // Affichage de la composition d'une grenade
 		
 };

@@ -12,6 +12,7 @@ class Laser : public Arme{
 	public :
 	
 		Laser(); // CONSTRUCTEUR par défaut
+		Laser(bool sex);
 		string toString(); // Affichage de la composition d'un pistolet laser
 		
 };
