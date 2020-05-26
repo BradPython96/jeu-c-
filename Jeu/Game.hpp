@@ -37,11 +37,11 @@ class Game{
 		
 		void lancement();
 		void gestion();
-		void tour();
+		void tour(sf::Event event);
 		void actualise();
 
 		void deplacement();	//Déplace le joueur en fonction des événements
-		void action();	//Réalise les actions du joueur en fonction des événements
+		void action(sf::Event event);	//Réalise les actions du joueur en fonction des événements
 
 		
 

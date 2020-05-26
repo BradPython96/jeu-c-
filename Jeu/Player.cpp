@@ -21,11 +21,11 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	armCur=0;
 
 	if (sex==true){
-		if(!dead.loadFromFile("rob_girl_dead.png")){
+		if(!dead.loadFromFile("rob_girl_dead.png", sf::IntRect(0,0,LARGEUR_PERSO,HAUTEUR_PERSO))){
 			cout<<"Erreur du chargement de la rob morte"<<endl;
 		}
 	} else {
-		if(!dead.loadFromFile("rob_boy_dead.png")){
+		if(!dead.loadFromFile("rob_boy_dead.png", sf::IntRect(0,0,LARGEUR_PERSO,HAUTEUR_PERSO))){
 			cout<<"Erreur du chargement du rob mort"<<endl;
 		}
 	}
@@ -68,31 +68,31 @@ void Player::setMarche(){
 }
 
 sf::Sprite Player::affiche(int xa, int ya, int tailleX, int tailleY){
-	if(pv>0){
-		int x;
-		int y;
-		sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
 
-		if(xa<TAILLE/2){
-			x=pos.getX()-LARGEUR_PERSO/2;
-		} else if (xa>(tailleX-TAILLE/2)){
-			x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
-		} else {
-			x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
-		}
-		
-		if(ya<TAILLE/2){
-			y=pos.getY()-HAUTEUR_PERSO/2;
-		} else if (ya>(tailleY-TAILLE/2)){
-			y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
-		} else {
-			y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
-		}
-		
-		sprite_perso.setPosition(x,y);
-	} else {
+	if(!this->vivant()){
 		sprite_perso.setTexture(dead);
 	}
+
+	int x;
+	int y;
+	sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
+	if(xa<TAILLE/2){
+		x=pos.getX()-LARGEUR_PERSO/2;
+	} else if (xa>(tailleX-TAILLE/2)){
+		x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
+	} else {
+		x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
+	}
+	
+	if(ya<TAILLE/2){
+		y=pos.getY()-HAUTEUR_PERSO/2;
+	} else if (ya>(tailleY-TAILLE/2)){
+		y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
+	} else {
+		y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
+	}
+	
+	sprite_perso.setPosition(x,y);
 	return sprite_perso;
 }
 
