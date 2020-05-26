@@ -32,73 +32,74 @@ void Game::lancement(){
 				menu.close();
 			}
 			
-			//Choix des personnages
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+			if(event.type==sf::Event::KeyPressed){
 
-				if (!accueil.loadFromFile("Menu_perso1.png", sf::IntRect(0,0,TAILLE,TAILLE))){
-					cout<<"Erreur de chargement du menu perso 1"<<endl;
-				}
-				
-				m1 = true;
-			}
+				//Menu principale
+				if(event.key.code==sf::Keyboard::Return){
 
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) && m1 && !m2){
-				p1=true;
-				if (!accueil.loadFromFile("Menu_perso2.png", sf::IntRect(0,0,TAILLE,TAILLE))){
-					cout<<"Erreur de chargement du menu perso 2"<<endl;
+					if (!accueil.loadFromFile("Menu_perso1.png", sf::IntRect(0,0,TAILLE,TAILLE))){
+						cout<<"Erreur de chargement du menu perso 1"<<endl;
+					}
 				}
-				m1 = false;
-				m2 = true;
-
-				
-			}else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && m1 && !m2){
-				p1=false;
-				if (!accueil.loadFromFile("Menu_perso2.png", sf::IntRect(0,0,TAILLE,TAILLE))){
-					cout<<"Erreur de chargement du menu perso 2"<<endl;
-				}
-				m1 = false;
-				m2 = true;				
-				
-			}
-
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) && !m1 && m2){
-				p2=true;
-				if (!accueil.loadFromFile("Menu_map.png", sf::IntRect(0,0,TAILLE,TAILLE))){
-					cout<<"Erreur de chargement du menu map"<<endl;
-				}
-
-				m2 = false;
-				
-			}else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) &&m2){
-				p2=false;
-				if (!accueil.loadFromFile("Menu_map.png", sf::IntRect(0,0,TAILLE,TAILLE))){
-					cout<<"Erreur de chargement du menu map"<<endl;
-				}
-				m2 = false;
-			}
 
 				//Initialistion de la texture de fond
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) && !m1 && !m2){
-				if (!fond.loadFromFile("Map_couloir.png")){
-					cout<<"Erreur de chargement de la map couloir"<<endl;
+				if(event.key.code==sf::Keyboard::Num1 && m1 && m2){
+					if (!fond.loadFromFile("Map_couloir.png")){
+						cout<<"Erreur de chargement de la map couloir"<<endl;
+					}
+					fond.setSmooth(true);
+					sprite_fond.setTexture(fond);
+					menu.close();
+					taille_x = TAILLE_MAP_COULOIR_X;
+					taille_y = TAILLE_MAP_COULOIR_Y;
+					m = Map(p1,p2,0);
+					
+				} else if (event.key.code==sf::Keyboard::Num2 && m1 && m2){
+					if (!fond.loadFromFile("fond_caillou.jpg")){
+						cout<<"Erreur de chargement de la map arene"<<endl;
+					}
+					fond.setSmooth(true);
+					sprite_fond.setTexture(fond);
+					menu.close();
+					taille_x = TAILLE_MAP_ARENE_X;
+					taille_y = TAILLE_MAP_ARENE_Y;
+					m = Map(p1,p2,1);
 				}
-				fond.setSmooth(true);
-				sprite_fond.setTexture(fond);
-				menu.close();
-				taille_x = TAILLE_MAP_COULOIR_X;
-				taille_y = TAILLE_MAP_COULOIR_Y;
-				m = Map(p1,p2,0);
+
+				//Choix des personnages
+				if(event.key.code==sf::Keyboard::Num1 && m1 && !m2){
+					p2=true;
+					if (!accueil.loadFromFile("Menu_map.png", sf::IntRect(0,0,TAILLE,TAILLE))){
+						cout<<"Erreur de chargement du menu map"<<endl;
+					}
+					m2 = true;
+					
+				}else if(event.key.code==sf::Keyboard::Num2 && m1 && !m2){
+					p2=false;
+					if (!accueil.loadFromFile("Menu_map.png", sf::IntRect(0,0,TAILLE,TAILLE))){
+						cout<<"Erreur de chargement du menu map"<<endl;
+					}
+					m2 = true;
+				}
+
+
+				if(event.key.code==sf::Keyboard::Num1 && !m1 && !m2){
+					p1=true;
+					if (!accueil.loadFromFile("Menu_perso2.png", sf::IntRect(0,0,TAILLE,TAILLE))){
+						cout<<"Erreur de chargement du menu perso 2"<<endl;
+					}
+					m1 = true;
+
+					
+				}else if(event.key.code==sf::Keyboard::Num2 && !m1 && !m2){
+					p1=false;
+					if (!accueil.loadFromFile("Menu_perso2.png", sf::IntRect(0,0,TAILLE,TAILLE))){
+						cout<<"Erreur de chargement du menu perso 2"<<endl;
+					}
+					m1 = true;			
+					
+				}
 				
-			} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6) && !m1 && !m2){
-				if (!fond.loadFromFile("fond_caillou.jpg")){
-					cout<<"Erreur de chargement de la map arene"<<endl;
-				}
-				fond.setSmooth(true);
-				sprite_fond.setTexture(fond);
-				menu.close();
-				taille_x = TAILLE_MAP_ARENE_X;
-				taille_y = TAILLE_MAP_ARENE_Y;
-				m = Map(p1,p2,1);
 			}
 			
 		}
@@ -129,8 +130,9 @@ void Game:: gestion(){
 			if(event.type==sf::Event::Closed){
 				window.close();
 			}
-			
-			this->tour();
+			if(event.type==sf::Event::KeyPressed){
+				this->tour(event);
+			}
 			
 			/*
             //Si la fenêtre n'est plus active
@@ -153,10 +155,10 @@ void Game:: gestion(){
     
 }
 
-void Game::tour(){
+void Game::tour(sf::Event event){
 
 	this->deplacement();
-	this->action();
+	this->action(event);
 }
 
 
@@ -260,7 +262,7 @@ void Game::deplacement(){
 	}
 }
 
-void Game::action(){
+void Game::action(sf::Event event){
 
 	Player* P1=m.getP1();
 	Player* P2=m.getP2();
@@ -268,14 +270,14 @@ void Game::action(){
 	//CHANGEMENT ARME P1
 	if(P1->vivant()){
 
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
+		if(event.key.code == sf::Keyboard::E){
 			P1->swapArme();
 		}
 	}
 	//CHANGEMENT ARME P2
 	if(P2->vivant()){
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
+		if(event.key.code == sf::Keyboard::M){
 			P2->swapArme();
 		}
 	}
