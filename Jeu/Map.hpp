@@ -42,6 +42,7 @@ class Map {
 		
 		void recuperationAcc();		//récupération des accessoire dans un tour
 		void tourRobot();	//les actions du robot dans un tour
+		void gestionMissile();
 		bool gameOver();
 
 		Player* getP1();

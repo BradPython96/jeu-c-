@@ -4,11 +4,14 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstdio>
+#include <ctime>
 #include <SFML/Graphics.hpp>
 #include "Define.hpp"
 #include "Arme.hpp"
 #include "Laser.hpp"
 #include "Position.hpp"
+#include "Robot.hpp"
 
 using namespace std;
 
@@ -17,6 +20,7 @@ class Player{
 		Position pos;
 		bool sex; //boy == false, girl==true
 		vector<Arme*> arms;	//liste des armes du joueur
+		vector<Missile*> miss;
 		int armCur;	//position dans la liste de l'arme courrante
 		int pv;	//points de vie du joueur
 		int vit; //la vitesse de déplacement du joueur
@@ -31,6 +35,8 @@ class Player{
 
 		sf::Sprite sprite_perso;
 		sf::Vector2i anim;
+
+		clock_t recharge;	//constante de temps pour la recharge de l'arme
 	
 	public :
 	
@@ -39,7 +45,7 @@ class Player{
 		bool vivant() const; //Renvoie true si le joueur est en vie et false sinon
 		
 		string toString();	// Affichage de la composition du joueur
-		sf::Sprite affiche(int xa, int ya, int tailleX, int tailleY);	// Affichage SFML du joueur
+		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY);	// Affichage SFML du joueur
 		
 		//Déplacement
 		void moveLeft(int x_fen);	
@@ -53,7 +59,9 @@ class Player{
 		
 		void addArme(Arme* a);	//Ajoute une arme à la liste
 		void swapArme();	//Change d'arme
-		
+		void tir();
+		void tourMissile(vector<Robot*>);
+
 		const int& getPV() const;	//Accesseur PV
 		void setPV(const int p);	//Mutateur PV
 		const bool& getSex() const;	//Accesseur Sex

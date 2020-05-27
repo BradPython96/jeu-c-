@@ -118,11 +118,15 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 	}
 	
 	//Liste perso
-	sp.push_back(plys[0]->affiche(xa, ya, tailleX, tailleY));
-	sp.push_back(plys[1]->affiche(xa, ya, tailleX, tailleY));
 	
+	vector<sf::Sprite> mis0 = plys[0]->affiche(xa, ya, tailleX, tailleY);
+	vector<sf::Sprite> mis1 = plys[1]->affiche(xa, ya, tailleX, tailleY);
+	mis0.insert(mis0.end(), mis1.begin(), mis1.end());
+	sp.insert(sp.end(), mis0.begin(), mis0.end());
+
 	return sp;
 }
+
 //Ajout  d'Element sur la map
 void Map::addRobot(){
 	int const sizeSpa(spawn.size());
@@ -203,12 +207,21 @@ void Map::tourRobot(){
 			
 		}
 		
-		//si le robot n'a plus de vie il disparait
-		//if(robs[i]->getPV()==0){	
-		//	robs.erase(robs.begin()+i);
-		//}
 	}
 	sleep(0.01);
+}
+
+
+void Map::gestionMissile(){
+	plys[0]->tourMissile(robs);
+	plys[1]->tourMissile(robs);
+	int i;
+	int const taille(robs.size());
+	for(i=0;i<taille; i++){
+		if(robs[i]->getPV()<=0){
+			robs.erase(robs.begin()+i);
+		}
+	}
 }
 
 bool Map::gameOver(){

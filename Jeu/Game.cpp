@@ -273,12 +273,18 @@ void Game::action(sf::Event event){
 		if(event.key.code == sf::Keyboard::E){
 			P1->swapArme();
 		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+			P1->tir();
+		}
 	}
 	//CHANGEMENT ARME P2
 	if(P2->vivant()){
 
 		if(event.key.code == sf::Keyboard::M){
 			P2->swapArme();
+		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::L)){
+			P2->tir();
 		}
 	}
 

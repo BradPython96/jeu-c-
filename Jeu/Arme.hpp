@@ -4,13 +4,13 @@
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "Missile.hpp"
 
 using namespace std;
 
 class Arme{
 	protected :
 		int nbMunitions;
-		int portee;
         int zoneDeDmg;
         int dmg;
         sf::Texture text;
@@ -23,10 +23,6 @@ class Arme{
         
         int& getMunitions(){
             return nbMunitions;
-        }
-        
-        const int& getPortee() const {
-            return portee;
         }
         
         const int& getZoneDeDmg() const {
@@ -43,6 +39,7 @@ class Arme{
             return text;
         }
 
+        virtual Missile* tirer(Position p)=0;
         virtual string toString()=0;
 	
 };

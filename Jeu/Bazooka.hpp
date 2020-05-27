@@ -4,7 +4,8 @@
 #include <iostream>
 #include "Define.hpp"
 #include "Arme.hpp"
-
+#include "Missile.hpp"
+#include "MissileBazooka.hpp"
 using namespace std;
 
 class Bazooka : public Arme{
@@ -14,6 +15,7 @@ class Bazooka : public Arme{
 		Bazooka(); // CONSTRUCTEUR par défaut
 		Bazooka(bool sex);
 		string toString(); // Affichage de la composition d'un bazooka
-		
+
+		Missile* tirer(Position p);		
 };
 #endif

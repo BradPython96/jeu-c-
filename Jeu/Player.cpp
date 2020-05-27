@@ -5,7 +5,7 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 
 	vit = VIT_JOUEUR;
 	pos = Position(i, j, 0);
-	
+	recharge=clock();
 	
 	pv=PV_MAX_JOUEUR;
 	min_taille_x = min_taille_x_;
@@ -67,7 +67,9 @@ void Player::setMarche(){
 	}
 }
 
-sf::Sprite Player::affiche(int xa, int ya, int tailleX, int tailleY){
+vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY){
+
+	vector<sf::Sprite> liste;
 
 	if(!this->vivant()){
 		sprite_perso.setTexture(dead);
@@ -93,7 +95,16 @@ sf::Sprite Player::affiche(int xa, int ya, int tailleX, int tailleY){
 	}
 	
 	sprite_perso.setPosition(x,y);
-	return sprite_perso;
+
+	//Liste des sprite des missiles
+	int const tailleM(miss.size());
+	for(int i=0;i<tailleM; i++){
+		liste.push_back(miss[i]->affiche(xa, ya));
+	}
+
+	liste.push_back(sprite_perso);
+
+	return liste;
 }
 
 
@@ -175,6 +186,31 @@ void Player::swapArme(){
 	perso = arms[armCur]->texture();
 	sprite_perso.setTexture(perso);
 }
+
+void Player::tir(){
+
+	if((clock()-recharge)/(double)CLOCKS_PER_SEC>1){	//si on a tirer depuis plus de 1 sec
+		recharge = clock();
+		miss.push_back(arms[armCur]->tirer(pos));	//on tire un missile
+		arms[armCur]->decrementMun();	//on décrémente la munition 
+		if(arms[armCur]->getMunitions()<=0){	//on supprime l'arme si elle n'a plus de munition
+			arms.erase(arms.begin()+armCur);
+		}
+	}
+}
+
+void Player::tourMissile(vector<Robot*> rob){
+	int i;
+	int const taille(miss.size());
+	for(i=0; i<taille; i++){
+		miss[i]->move(min_taille_x, min_taille_y, max_taille_x, max_taille_y);
+		miss[i]->robotTouche(rob);
+		if(miss[i]->getBoom()){
+			miss[i]->explose(rob);
+		}
+	}
+}
+
 
 // PV ACC/MUT
 const int& Player::getPV() const{

@@ -4,7 +4,6 @@
 Laser :: Laser(){
 			
 	nbMunitions=NB_MUN_MAX_LASER;
-	portee=PORTEE_LASER;
 	zoneDeDmg=ZONE_DE_DMG_LASER;
 	dmg=DMG_LASER;
 
@@ -16,7 +15,6 @@ Laser :: Laser(){
 Laser :: Laser(bool sex){
 			
 	nbMunitions=NB_MUN_MAX_LASER;
-	portee=PORTEE_LASER;
 	zoneDeDmg=ZONE_DE_DMG_LASER;
 	dmg=DMG_LASER;
 
@@ -35,4 +33,9 @@ Laser :: Laser(bool sex){
 // Affichage
 string Laser::toString(){
 	return "- Un pistolet laser avec "+to_string(nbMunitions)+" munitions\n";
+}
+
+
+Missile* Laser::tirer(Position p){
+	return new MissileLaser(p);
 }
