@@ -121,30 +121,26 @@ void Game:: gestion(){
     
 	//Ouverture de la Map
 	while (window.isOpen()){
-		
+
 		sf::Event event;
-		if (m.gameOver()){
-			window.draw(sprite_gameOver);
-			while (window.pollEvent(event)){
-				//Fermeture de la fenêtre
-				if(event.type==sf::Event::Closed){
-					window.close();
-				}						
+		//Recherche d'évenement
+		while (window.pollEvent(event)){
+			//Fermeture de la fenêtre
+			if(event.type==sf::Event::Closed){
+				window.close();
 			}
-		} else {
-			//Recherche d'évenement
-			while (window.pollEvent(event)){
-				//Fermeture de la fenêtre
-				if(event.type==sf::Event::Closed){
-					window.close();
-				}
+			if (!m.gameOver()){
 				if(event.type==sf::Event::KeyPressed){
 					this->tour(event);
 				}
-						
 			}
-			window.clear();
+					
+		}
+		window.clear();
 
+		if (m.gameOver()){
+			window.draw(sprite_gameOver);
+		} else {
 			m.tourRobot();
 			m.gestionMissile();
 			
