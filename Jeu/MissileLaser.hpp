@@ -14,12 +14,9 @@ class MissileLaser : public Missile {
         MissileLaser(Position p);   //CONSTRUCTEUR
 
         void move(int, int, int, int);
-        sf::Sprite affiche(int, int);
-        void explose(vector<Robot*>);
-
-        void robotTouche(vector<Robot*>);
-        
-
+        sf::Sprite affiche(int, int);   //Affiche le missile avant ET pendant l'explosion
+        void explose(vector<Robot*>);   //Applique les DMG dans la zone d'explosion
+        void robotTouche(vector<Robot*> robots);
 
 
 };

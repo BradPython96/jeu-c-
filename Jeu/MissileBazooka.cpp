@@ -4,6 +4,7 @@ MissileBazooka::MissileBazooka(Position p){
     cpt=0;
     boom = false;
     pos = p;
+
     int ang= pos.getAngle();
     int a;
     int b;
@@ -67,7 +68,6 @@ MissileBazooka::MissileBazooka(Position p){
 
 
 void MissileBazooka::move(int min_taille_x, int min_taille_y, int max_taille_x, int max_taille_y){
-    
     int ang= pos.getAngle();
     int newX = pos.getX();
     int newY = pos.getY();
@@ -154,7 +154,6 @@ void MissileBazooka::move(int min_taille_x, int min_taille_y, int max_taille_x, 
     }
     pos.setX(newX);
     pos.setY(newY);
-
 }
 
 sf::Sprite MissileBazooka::affiche(int xa, int ya){

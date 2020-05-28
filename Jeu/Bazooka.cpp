@@ -35,5 +35,6 @@ string Bazooka::toString(){
 }
 
 Missile* Bazooka::tirer(Position p){
+	this->decrementMun();	//on décrémente la munition 
 	return new MissileBazooka(p);
 }

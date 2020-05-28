@@ -17,15 +17,15 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	sf::Vector2i anim(1, Down);
 	
 	sex=s;//initialisation du sex du joueur
-	arms.push_back(new Bazooka(sex));
+	arms.push_back(new Laser(sex));
 	armCur=0;
 
 	if (sex==true){
-		if(!dead.loadFromFile("rob_girl_dead.png", sf::IntRect(0,0,LARGEUR_PERSO,HAUTEUR_PERSO))){
+		if(!dead.loadFromFile("rob_girl_dead.png")){
 			cout<<"Erreur du chargement de la rob morte"<<endl;
 		}
 	} else {
-		if(!dead.loadFromFile("rob_boy_dead.png", sf::IntRect(0,0,LARGEUR_PERSO,HAUTEUR_PERSO))){
+		if(!dead.loadFromFile("rob_boy_dead.png")){
 			cout<<"Erreur du chargement du rob mort"<<endl;
 		}
 	}
@@ -73,28 +73,34 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int
 
 	if(!this->vivant()){
 		sprite_perso.setTexture(dead);
-	}
+		sprite_perso.setTextureRect(sf::IntRect(0,0, LARGEUR_PERSO, HAUTEUR_PERSO));
+		sprite_perso.setPosition(pos.getX()-xi-LARGEUR_PERSO/2, pos.getY()-yi-HAUTEUR_PERSO/2);
 
-	int x;
-	int y;
-	sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
-	if(xa<TAILLE/2){
-		x=pos.getX()-LARGEUR_PERSO/2;
-	} else if (xa>(tailleX-TAILLE/2)){
-		x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
 	} else {
-		x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
-	}
 	
-	if(ya<TAILLE/2){
-		y=pos.getY()-HAUTEUR_PERSO/2;
-	} else if (ya>(tailleY-TAILLE/2)){
-		y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
-	} else {
-		y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
+		perso = arms[armCur]->texture();
+		sprite_perso.setTexture(perso);
+		int x;
+		int y;
+		sprite_perso.setTextureRect(sf::IntRect(anim.x*LARGEUR_PERSO,anim.y*HAUTEUR_PERSO,LARGEUR_PERSO,HAUTEUR_PERSO));
+		if(xa<TAILLE/2){
+			x=pos.getX()-LARGEUR_PERSO/2;
+		} else if (xa>(tailleX-TAILLE/2)){
+			x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
+		} else {
+			x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
+		}
+		
+		if(ya<TAILLE/2){
+			y=pos.getY()-HAUTEUR_PERSO/2;
+		} else if (ya>(tailleY-TAILLE/2)){
+			y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
+		} else {
+			y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
+		}
+		
+		sprite_perso.setPosition(x,y);
 	}
-	
-	sprite_perso.setPosition(x,y);
 
 	//Liste des sprite des missiles
 	int const tailleM(miss.size());
@@ -183,15 +189,12 @@ void Player::swapArme(){
 	if(taille==armCur){
 		armCur=0;
 	}
-	perso = arms[armCur]->texture();
-	sprite_perso.setTexture(perso);
 }
 
 void Player::tir(){
 	if((clock()-recharge)/(double)CLOCKS_PER_SEC>1){	//si on a tirer depuis plus de 1 sec
 		recharge = clock();
 		miss.push_back(arms[armCur]->tirer(pos));	//on tire un missile
-		arms[armCur]->decrementMun();	//on décrémente la munition 
 		if(arms[armCur]->getMunitions()<=0){	//on supprime l'arme si elle n'a plus de munition
 			arms.erase(arms.begin()+armCur);
 			armCur=0;

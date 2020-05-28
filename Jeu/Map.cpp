@@ -43,7 +43,7 @@ Map::Map(bool sexP1, bool sexP2, int map){
 
 	//Initialistaion des joueurs
 	plys.push_back(new Player(moy_x, moy_y, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
-	plys.push_back(new Player(moy_x+1, moy_y, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
+	plys.push_back(new Player(moy_x+LARGEUR_PERSO, moy_y, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 			
 	//Initialisation des robots
 	int r;
@@ -161,14 +161,71 @@ void Map::tourRobot(){
 	
 	
 	for (i=0; i<tailleR; i++){
-		Position p;	//on cherche le joueur le plus proche
-		double d0 = plys[0]->getPos().distance(robs[i]->getPos());
-		double d1 = plys[1]->getPos().distance(robs[i]->getPos());
-		
-		if(d0<d1 && plys[0]->vivant()){
+		Position p;
+		if(plys[0]->vivant() && plys[1]->vivant()){
+			//on cherche le joueur le plus proche
+			double d0 = plys[0]->getPos().distance(robs[i]->getPos());
+			double d1 = plys[1]->getPos().distance(robs[i]->getPos());
 			
-			//on vérifie si il est a côté du joueur
-			if (d0<=1){
+			if(d0<d1){
+				//on vérifie si il est a côté du joueur
+				if (d0<=LARGEUR_PERSO/2){
+					plys[0]->setPV(plys[0]->getPV()-DMG_ROBOT);
+				} else {
+					p = plys[0]->getPos();	//on stock l'emplacement du joueur;
+					//on se rapproche du joueur
+					if(p.getX()<robs[i]->getPos().getX()){
+						robs[i]->moveLeft();
+					} else if (p.getX()>robs[i]->getPos().getX()){
+						robs[i]->moveRight();
+					}
+					if(p.getY()<robs[i]->getPos().getY()){
+						robs[i]->moveUp();
+					} else if (p.getY()>robs[i]->getPos().getY()){
+						robs[i]->moveDown();
+					}
+					robs[i]->setMarche();
+				}
+
+			} else {
+				if (d1<=LARGEUR_PERSO/2){
+					plys[1]->setPV(plys[1]->getPV()-DMG_ROBOT);
+				} else {
+					p= plys[1]->getPos();
+					if(p.getX()<robs[i]->getPos().getX()){
+						robs[i]->moveLeft();
+					} else if (p.getX()>robs[i]->getPos().getX()){
+						robs[i]->moveRight();
+					}
+					if(p.getY()<robs[i]->getPos().getY()){
+						robs[i]->moveUp();
+					} else if (p.getY()>robs[i]->getPos().getY()){
+						robs[i]->moveDown();
+					}
+					robs[i]->setMarche();
+				}
+			}
+		} else if (!plys[0]->vivant()){
+			double d1 = plys[1]->getPos().distance(robs[i]->getPos());
+			if (d1<=LARGEUR_PERSO/2){
+					plys[1]->setPV(plys[1]->getPV()-DMG_ROBOT);
+				} else {
+					p= plys[1]->getPos();
+					if(p.getX()<robs[i]->getPos().getX()){
+						robs[i]->moveLeft();
+					} else if (p.getX()>robs[i]->getPos().getX()){
+						robs[i]->moveRight();
+					}
+					if(p.getY()<robs[i]->getPos().getY()){
+						robs[i]->moveUp();
+					} else if (p.getY()>robs[i]->getPos().getY()){
+						robs[i]->moveDown();
+					}
+					robs[i]->setMarche();
+				}
+		} else {
+			double d0 = plys[0]->getPos().distance(robs[i]->getPos());
+			if (d0<=LARGEUR_PERSO/2){
 				plys[0]->setPV(plys[0]->getPV()-DMG_ROBOT);
 			} else {
 				p = plys[0]->getPos();	//on stock l'emplacement du joueur;
@@ -185,27 +242,8 @@ void Map::tourRobot(){
 				}
 				robs[i]->setMarche();
 			}
-
-		} else if (plys[1]->vivant()) {
-			
-			if (d1<=1){
-				plys[1]->setPV(plys[1]->getPV()-DMG_ROBOT);
-			} else {
-				p= plys[1]->getPos();
-				if(p.getX()<robs[i]->getPos().getX()){
-					robs[i]->moveLeft();
-				} else if (p.getX()>robs[i]->getPos().getX()){
-					robs[i]->moveRight();
-				}
-				if(p.getY()<robs[i]->getPos().getY()){
-					robs[i]->moveUp();
-				} else if (p.getY()>robs[i]->getPos().getY()){
-					robs[i]->moveDown();
-				}
-				robs[i]->setMarche();
-			}
-			
 		}
+		
 		
 	}
 	sleep(0.01);

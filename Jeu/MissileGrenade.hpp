@@ -9,16 +9,16 @@
 using namespace std;
 
 class MissileGrenade : public Missile {
-
+    private :
+        Position init;  //position initiale de la grenade
+        int cptG;
     public :
         MissileGrenade(Position p);   //CONSTRUCTEUR
 
-        void move(int, int, int, int);
+        void move(int, int, int, int);  //Déplacement du missile
         sf::Sprite affiche(int, int);
         void explose(vector<Robot*>);
-
-        void robotTouche(vector<Robot*>);
-        
+        void robotTouche(vector<Robot*> robots);
 
 
 

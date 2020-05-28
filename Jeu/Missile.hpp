@@ -12,7 +12,7 @@ using namespace std;
 class Missile{
     protected :
         Position pos;
-        bool boom;
+        bool boom;  //false si le missile n'a pas encore explosé true 
         int cpt;    //compteur de l'explosion
         sf::Texture miss;
         sf::Sprite sprite_miss;
@@ -31,9 +31,11 @@ class Missile{
         }
 
         virtual void explose(vector<Robot*>)=0;
-        virtual void move(int, int, int, int)=0;
         virtual sf::Sprite affiche(int, int)=0;
-        virtual void robotTouche(vector<Robot*>)=0;
+        virtual void move(int, int, int, int)=0;
+        virtual void robotTouche(vector<Robot*> robots)=0;
+
+
 
 };
 #endif

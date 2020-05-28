@@ -122,36 +122,34 @@ void Game:: gestion(){
 	//Ouverture de la Map
 	while (window.isOpen()){
 		
-	
-		//Recherche d'évenement
-        sf::Event event;
-        while (window.pollEvent(event)){
-			//Fermeture de la fenêtre
-			if(event.type==sf::Event::Closed){
-				window.close();
+		sf::Event event;
+		if (m.gameOver()){
+			window.draw(sprite_gameOver);
+			while (window.pollEvent(event)){
+				//Fermeture de la fenêtre
+				if(event.type==sf::Event::Closed){
+					window.close();
+				}						
 			}
-			if(event.type==sf::Event::KeyPressed){
-				this->tour(event);
+		} else {
+			//Recherche d'évenement
+			while (window.pollEvent(event)){
+				//Fermeture de la fenêtre
+				if(event.type==sf::Event::Closed){
+					window.close();
+				}
+				if(event.type==sf::Event::KeyPressed){
+					this->tour(event);
+				}
+						
 			}
-			
-			/*
-            //Si la fenêtre n'est plus active
-            if (event.type == sf::Event::LostFocus){
-				myGame.pause();
-			}
-			
-			//Si la fenêtre est de nouveau active
-			if (event.type == sf::Event::GainedFocus){
-				myGame.resume();
-             }*/
-             		
-		}
-		window.clear();
+			window.clear();
 
-		m.tourRobot();
-		m.gestionMissile();
-		this->actualise();	//Chargement des éléments sur la map
-		
+			m.tourRobot();
+			m.gestionMissile();
+			
+			this->actualise();	//Chargement des éléments sur la map
+		}
     }
     
 }
@@ -167,33 +165,25 @@ void Game::tour(sf::Event event){
 //Actualisation de la map
 void Game::actualise(){
 
-	if (m.gameOver()){
-		window.draw(sprite_gameOver);
-	} else {
-		//On centre la map sur les joueurs
-		int x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
-		if (x<0){x = 0;}
-		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
-		x_fen = x;
-
-		int y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
-		if (y<0){y = 0;}
-		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
-		y_fen = y;
-
-		sprite_fond.setTextureRect(sf::IntRect(x_fen,y_fen,TAILLE,TAILLE));
-		window.draw(sprite_fond);
-	
-		vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x, y);
-	
-
-    	int i;
-    	//Affichage des éléments
-    		int const tailleS(sp.size());
-    		for (i=0; i<tailleS; i++){
-				window.draw(sp[i]);
-			}
+	//On centre la map sur les joueurs
+	int x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
+	if (x<0){x = 0;}
+	if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+	x_fen = x;
+	int y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
+	if (y<0){y = 0;}
+	if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
+	y_fen = y;
+	sprite_fond.setTextureRect(sf::IntRect(x_fen,y_fen,TAILLE,TAILLE));
+	window.draw(sprite_fond);
+	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x, y);
+	int i;
+    //Affichage des éléments
+    int const tailleS(sp.size());
+    for (i=0; i<tailleS; i++){
+		window.draw(sp[i]);
 	}
+	
 	window.display();
 }
 

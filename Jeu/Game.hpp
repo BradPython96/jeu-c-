@@ -24,7 +24,6 @@ class Game{
 	public :
 	
 		Game(){			//CONSTRUCTEUR
-			cout<<"2"<<endl;
 			window.create(sf::VideoMode(TAILLE,TAILLE), "ROBS VS ROBOTS");
 			window.setPosition(sf::Vector2i(10, 50));
 			if (!gameOver.loadFromFile("Game_Over.png", sf::IntRect(0,0,TAILLE,TAILLE))){

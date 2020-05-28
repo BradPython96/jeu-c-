@@ -37,5 +37,6 @@ string Grenade::toString(){
 
 
 Missile* Grenade::tirer(Position p){
+	this->decrementMun();	//on décrémente la munition 
 	return new MissileGrenade(p);
 }
