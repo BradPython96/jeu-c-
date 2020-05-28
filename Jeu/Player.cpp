@@ -17,7 +17,7 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	sf::Vector2i anim(1, Down);
 	
 	sex=s;//initialisation du sex du joueur
-	arms.push_back(new Laser(sex));
+	arms.push_back(new Bazooka(sex));
 	armCur=0;
 
 	if (sex==true){
@@ -67,7 +67,7 @@ void Player::setMarche(){
 	}
 }
 
-vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY){
+vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int xi, int yi){
 
 	vector<sf::Sprite> liste;
 
@@ -99,7 +99,7 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY){
 	//Liste des sprite des missiles
 	int const tailleM(miss.size());
 	for(int i=0;i<tailleM; i++){
-		liste.push_back(miss[i]->affiche(xa, ya));
+		liste.push_back(miss[i]->affiche(xi, yi));
 	}
 
 	liste.push_back(sprite_perso);
@@ -188,13 +188,13 @@ void Player::swapArme(){
 }
 
 void Player::tir(){
-
 	if((clock()-recharge)/(double)CLOCKS_PER_SEC>1){	//si on a tirer depuis plus de 1 sec
 		recharge = clock();
 		miss.push_back(arms[armCur]->tirer(pos));	//on tire un missile
 		arms[armCur]->decrementMun();	//on décrémente la munition 
 		if(arms[armCur]->getMunitions()<=0){	//on supprime l'arme si elle n'a plus de munition
 			arms.erase(arms.begin()+armCur);
+			armCur=0;
 		}
 	}
 }
@@ -203,10 +203,14 @@ void Player::tourMissile(vector<Robot*> rob){
 	int i;
 	int const taille(miss.size());
 	for(i=0; i<taille; i++){
-		miss[i]->move(min_taille_x, min_taille_y, max_taille_x, max_taille_y);
-		miss[i]->robotTouche(rob);
-		if(miss[i]->getBoom()){
-			miss[i]->explose(rob);
+		if(miss[i]->getCpt()==0){
+			miss[i]->move(min_taille_x, min_taille_y, max_taille_x, max_taille_y);
+			miss[i]->robotTouche(rob);
+			if(miss[i]->getBoom()){
+				miss[i]->explose(rob);
+			}
+		} else if(miss[i]->getCpt()==31){
+			miss.erase(miss.begin()+i);
 		}
 	}
 }

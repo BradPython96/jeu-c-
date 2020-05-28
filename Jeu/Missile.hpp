@@ -13,6 +13,7 @@ class Missile{
     protected :
         Position pos;
         bool boom;
+        int cpt;    //compteur de l'explosion
         sf::Texture miss;
         sf::Sprite sprite_miss;
 
@@ -24,6 +25,9 @@ class Missile{
         }
         const bool& getBoom() const{    //Accesseur boom
             return boom;
+        }
+        const int& getCpt() const{    //Accesseur boom
+            return cpt;
         }
 
         virtual void explose(vector<Robot*>)=0;

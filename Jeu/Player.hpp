@@ -10,6 +10,7 @@
 #include "Define.hpp"
 #include "Arme.hpp"
 #include "Laser.hpp"
+#include "Bazooka.hpp"
 #include "Position.hpp"
 #include "Robot.hpp"
 
@@ -45,7 +46,7 @@ class Player{
 		bool vivant() const; //Renvoie true si le joueur est en vie et false sinon
 		
 		string toString();	// Affichage de la composition du joueur
-		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY);	// Affichage SFML du joueur
+		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY, int xi, int yi);	// Affichage SFML du joueur
 		
 		//Déplacement
 		void moveLeft(int x_fen);	

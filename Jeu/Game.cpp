@@ -149,6 +149,7 @@ void Game:: gestion(){
 		window.clear();
 
 		m.tourRobot();
+		m.gestionMissile();
 		this->actualise();	//Chargement des éléments sur la map
 		
     }
@@ -159,6 +160,7 @@ void Game::tour(sf::Event event){
 
 	this->deplacement();
 	this->action(event);
+
 }
 
 

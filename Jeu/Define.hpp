@@ -5,8 +5,8 @@
 //Dimension de la map couloir
 #define MIN_MAP_COULOIR_X 0
 #define MAX_MAP_COULOIR_X 5000
-#define MIN_MAP_COULOIR_Y 300
-#define MAX_MAP_COULOIR_Y 800
+#define MIN_MAP_COULOIR_Y 235
+#define MAX_MAP_COULOIR_Y 823
 #define TAILLE_MAP_COULOIR_X 5000
 #define TAILLE_MAP_COULOIR_Y 1000
 //Dimension de la map arene
@@ -27,12 +27,12 @@
 
 #define PORTEE_GRENADE 5
 
-#define ZONE_DE_DMG_LASER 1
-#define ZONE_DE_DMG_BAZOOKA 2
-#define ZONE_DE_DMG_GRENADE 4
+#define ZONE_DE_DMG_LASER 2
+#define ZONE_DE_DMG_BAZOOKA LARGEUR_EXPLOSION/2+5
+#define ZONE_DE_DMG_GRENADE LARGEUR_EXPLOSION/2+5
 
 #define DMG_LASER 15
-#define DMG_BAZOOKA 15
+#define DMG_BAZOOKA 100
 #define DMG_GRENADE 10
 #define DMG_ROBOT 10
 
@@ -41,13 +41,12 @@
 #define PV_MAX_ROBOT 30
 
 //Vitesse
-#define VIT_JOUEUR 5
-#define VIT_ROBOT 3
+#define VIT_JOUEUR 8
+#define VIT_ROBOT 1
 #define VIT_BAZOOKA 8
 #define VIT_GRENADE 6
 
 // AFFICHAGE
-
 #define HAUTEUR_PERSO 115.75
 #define LARGEUR_PERSO 90
 #define TAILLE_ROBOT 120

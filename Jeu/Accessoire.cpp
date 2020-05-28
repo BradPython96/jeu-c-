@@ -38,21 +38,17 @@ sf::Sprite Accessoire::affiche(int x, int y){
 }
 
 void Accessoire::win(Player* p){
-	int i = rand()%4;
+	int i = rand()%3;
 	switch(i){
 		case 0:
 			p->setPV(PV_MAX_JOUEUR);
 			cout<<"Votre vie est totalement restaurée"<<endl;
 			break;
 		case 1:
-			p->addArme(new Laser(p->getSex()));
-			cout<<"Vous avez trouvé un pistolet laser"<<endl;
-			break;
-		case 2:
 			p->addArme(new Bazooka(p->getSex()));
 			cout<<"Vous avez trouvé un bazooka"<<endl;
 			break;
-		case 3:
+		case 2:
 			p->addArme(new Grenade(p->getSex()));
 			cout<<"Vous avez trouvé une grenade"<<endl;
 			break;

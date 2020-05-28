@@ -119,8 +119,8 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 	
 	//Liste perso
 	
-	vector<sf::Sprite> mis0 = plys[0]->affiche(xa, ya, tailleX, tailleY);
-	vector<sf::Sprite> mis1 = plys[1]->affiche(xa, ya, tailleX, tailleY);
+	vector<sf::Sprite> mis0 = plys[0]->affiche(xa, ya, tailleX, tailleY, x, y);
+	vector<sf::Sprite> mis1 = plys[1]->affiche(xa, ya, tailleX, tailleY, x, y);
 	mis0.insert(mis0.end(), mis1.begin(), mis1.end());
 	sp.insert(sp.end(), mis0.begin(), mis0.end());
 
@@ -216,8 +216,7 @@ void Map::gestionMissile(){
 	plys[0]->tourMissile(robs);
 	plys[1]->tourMissile(robs);
 	int i;
-	int const taille(robs.size());
-	for(i=0;i<taille; i++){
+	for(i=0;i<robs.size(); i++){
 		if(robs[i]->getPV()<=0){
 			robs.erase(robs.begin()+i);
 		}
