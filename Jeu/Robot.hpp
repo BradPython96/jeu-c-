@@ -30,6 +30,7 @@ class Robot{
 		sf::Sprite affiche(int x, int y); // Affichage SFML du robot
 		void setMarche();
 		
+		bool emplacementLibre(Position pos, vector<Robot*> robs);
 		void moveLeft();	//Déplacement
 		void moveUp();
 		void moveRight();

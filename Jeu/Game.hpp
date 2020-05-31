@@ -9,13 +9,15 @@
 class Game{
 	
 	private :
-		sf::RenderWindow window;
-		sf::Texture fond;
+		sf::RenderWindow window;// Fenetre du jeu
+		sf::Texture fond;	//Affichage du fond
 		sf::Sprite sprite_fond;
 
-		sf::Texture gameOver;
+		sf::Texture gameOver;	//Affichage du Game Over
 		sf::Sprite sprite_gameOver;
-		Map m;
+
+		Map m;	//Map de déplacemeent
+
 		int taille_x;//Taille de la map
 		int taille_y;
 		int x_fen;
@@ -29,6 +31,7 @@ class Game{
 			if (!gameOver.loadFromFile("Game_Over.png", sf::IntRect(0,0,TAILLE,TAILLE))){
 				cout<<"Erreur de chargement du game over"<<endl;
 			}
+
 			sprite_gameOver.setTexture(gameOver);
 		}	
 

@@ -17,30 +17,29 @@ class Arme{
         
 	public :
 		Arme(){}
-		const int& getMunitions() const {
+        ~Arme(){}
+
+		const int& getMunitions() const {   //Accesseur nbr de munitions
             return nbMunitions;
         }
         
-        int& getMunitions(){
-            return nbMunitions;
-        }
-        
-        const int& getZoneDeDmg() const {
+        const int& getZoneDeDmg() const {   //Accesseur zone de dmg
             return zoneDeDmg;
         }
-        const int& getDmg() const {
+        const int& getDmg() const { //Accesseur dommage
             return dmg;
         }
-        void decrementMun(){
+        void decrementMun(){    //Décrémente le nombre de munitions
             nbMunitions --;
         }
         
-        const sf::Texture texture() const{
+        const sf::Texture texture() const{  //Texture du peronnage lié à l'arme qu'il porte
             return text;
         }
 
-        virtual Missile* tirer(Position p)=0;
-        virtual string toString()=0;
-	
+        virtual Missile* tirer(Position p)=0;   //Apelle décrémente mun et retourne le missile associé à l'arme
+        virtual string toString()=0;    //Décrit l'arme et le nombre de munitions
+
+        
 };
 #endif

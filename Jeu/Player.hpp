@@ -71,6 +71,18 @@ class Player{
 		
 		
 		const Position& getPos() const;	//Accesseur Position
+		/*
+		~Player(){
+
+			int const tailleA(arms.size());
+			for(int i =0; i<tailleA; i++){
+				delete arms[i];
+			}
+			int const tailleM(miss.size());
+			for(int i =0; i<tailleM; i++){
+				delete miss[i];
+			}
+		}*/
 		
 }; 
 #endif

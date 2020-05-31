@@ -139,7 +139,9 @@ void Game:: gestion(){
 		window.clear();
 
 		if (m.gameOver()){
+			
 			window.draw(sprite_gameOver);
+			window.display();
 		} else {
 			m.tourRobot();
 			m.gestionMissile();

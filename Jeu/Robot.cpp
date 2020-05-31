@@ -3,6 +3,7 @@
 // CONSTRUCTEURS
 
 Robot :: Robot(int i, int j){
+	//cout<<"New Robot :i = "<<i<<",j = "<<j<<endl;
 	pos = Position(i, j, 0);
 	pv=PV_MAX_ROBOT;
 	vit = VIT_ROBOT;

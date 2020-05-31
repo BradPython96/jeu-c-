@@ -27,6 +27,12 @@ class Map {
 		int max_taille_x;	 
 		int min_taille_y;	 
 		int max_taille_y;
+
+		int cptRob;	//cpt de robot par vague
+		int robVague;	//nombre de robot qui doivent apparaitre par vague
+		clock_t wait;	//temps d'attente entre chaque vague
+		bool isVague;	//true si on est dans une vague false sinon
+		clock_t apparAcc;	//apparition des accessoires
 		
 	public :
 		Map(bool sexP1, bool sexP2, int map); //CONSTRUCTEUR
@@ -41,6 +47,12 @@ class Map {
 		void addAccs(); // Ajoute un accessoire à la map
 		
 		void recuperationAcc();		//récupération des accessoire dans un tour
+
+
+		void addRobot(int, int, int, int);
+		void spawnRobot();
+		bool emplacementLibre(Robot *rob, Position pos);
+		void deplacementRobot(Robot *r, Player *p);
 		void tourRobot();	//les actions du robot dans un tour
 		void gestionMissile();
 		bool gameOver();
@@ -55,6 +67,25 @@ class Map {
 		int getMinTailleY();
 
 		int getMaxTailleY();
-            			
+        /*			
+		~Map(){
+			int i;
+			int const tailleA(accs.size());
+			for(i =0; i<tailleA; i++){
+				delete accs[i];
+			}
+			int const tailleP(plys.size());
+			for(i =0; i<tailleP; i++){
+				delete plys[i];
+			}
+			int const tailleR(robs.size());
+			for(i =0; i<tailleR; i++){
+				delete robs[i];
+			}
+			int const tailleS(spawn.size());
+			for(i =0; i<tailleS; i++){
+				delete spawn[i];
+			}
+		}*/
 };
 #endif

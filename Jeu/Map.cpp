@@ -44,18 +44,22 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	//Initialistaion des joueurs
 	plys.push_back(new Player(moy_x, moy_y, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 	plys.push_back(new Player(moy_x+LARGEUR_PERSO, moy_y, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
-			
-	//Initialisation des robots
-	int r;
-	for (int i=0; i<NB_ROB_INIT; i++){
-		r = rand()%spawn.size();
-       	robs.push_back(new Robot(spawn[r]));
-    }
-    
+		
     //Initialisation des accessoires
 	for(int i=0; i<NB_ACCESSOIRES_INIT; i++){
 		accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
 	}
+
+	
+	//Initialisation des timers
+	wait = clock();
+	cptRob=0;
+	robVague=18;
+	isVague = true;	//le jeu commence sur une vague de robot
+
+	spawnRobot();//Init robot
+
+	apparAcc = clock();
 	
 }
 Map::Map(){
@@ -128,11 +132,7 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 }
 
 //Ajout  d'Element sur la map
-void Map::addRobot(){
-	int const sizeSpa(spawn.size());
-	int r = rand()%sizeSpa;
-	robs.push_back(new Robot(spawn[r]));
-}
+
 void Map::addAccs(){
 	
 	accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
@@ -154,100 +154,189 @@ void Map::recuperationAcc(){
 	}
 }
 
-//Attaque des robot
-void Map::tourRobot(){
+void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
+	
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_min+TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_min+TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_min+TAILLE_ROBOT/2));
+
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_min+TAILLE_ROBOT*1.5));
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_min+TAILLE_ROBOT*1.5));
+	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_min+TAILLE_ROBOT*1.5));
+	
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_max-TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_max-TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_max-TAILLE_ROBOT/2));
+
+	cptRob+=9;
+}
+
+
+void Map::spawnRobot(){
+	if (cptRob>=robVague){
+		isVague=false;
+		cptRob=0;
+		robVague*=1.5;
+	} else if (isVague){
+		int const sizeSpa(spawn.size());
+		int const sizeRob(robs.size());
+		int r;
+		int x_min;//On délimite la zone de spawn
+		int x_max;
+		int y_min;
+		int y_max;
+		
+		for(r=0; r<sizeSpa; r++){
+			x_min = spawn[r]->getX()-TAILLE_ROBOT*1.5;//On délimite la zone de spawn
+			x_max = spawn[r]->getX()+TAILLE_ROBOT*1.5;
+			y_min = spawn[r]->getY()-TAILLE_ROBOT*1.5;
+			y_max = spawn[r]->getY()+TAILLE_ROBOT*1.5;
+			bool free=true;
+			int i;
+			for(i=0; i<sizeRob; i++){
+				if((robs[i]->getPos().getX()<x_max && robs[i]->getPos().getX()>x_min) && (robs[i]->getPos().getY()<y_max && robs[i]->getPos().getY()>y_min)){
+					free=false;
+					break;
+				}
+			}
+
+			if(free){
+				break;
+			}
+		}
+		this->addRobot(x_min, x_max, y_min, y_max);
+	}
+}
+
+bool Map::emplacementLibre(Robot *rob, Position pos){
 	int i;
 	int const tailleR(robs.size());
+	//cout<<"Position désiré : x="<<pos.getX()<<", y="<<pos.getY()<<endl;
+	for(i=0; i<tailleR; i++){
+		if (robs[i]!=rob && pos.distance(robs[i]->getPos())<TAILLE_ROBOT/2){
+			return false;
+		}
+	}
+	return true;
+}
+
+void Map::deplacementRobot(Robot *r, Player *p){
+	Position pos = p->getPos();	//on stock l'emplacement du joueur
+	bool moved=false;
+	int newX = r->getPos().getX(); 
+	int newY = r->getPos().getY();
+	//on se rapproche du joueur
+	if(pos.getX()<r->getPos().getX()){
+		newX = r->getPos().getX()-VIT_ROBOT;
+		if(emplacementLibre(r, Position(newX, newY, 0))){	//on vérifie si il peut aller a gauche
+			r->moveLeft();
+			moved=true;
+		}
+	} else if (pos.getX()>r->getPos().getX()){
+		newX = r->getPos().getX()+VIT_ROBOT;
+		if(emplacementLibre(r, Position(newX, newY, 0))){	//on vérifie si il peut aller a droite
+			r->moveRight();
+			moved=true;
+		}
+	}
+	if(pos.getY()<r->getPos().getY()){
+		newY = r->getPos().getY()-VIT_ROBOT;
+		if(emplacementLibre(r, Position(newX, newY, 0))){	//on vérifie si il peut aller en haut
+			r->moveUp();
+			moved=true;
+		}
+	} else if (pos.getY()>r->getPos().getY()){
+		newY = r->getPos().getY()+VIT_ROBOT;
+		if(emplacementLibre(r, Position(newX, newY, 0))){	//on vérifie si il peut aller en bas
+			r->moveDown();
+			moved=true;
+		}
+	}
 	
+	if(!moved){	//si il n'a pas bougé on essaie de le faire aller dans une autre direction
+		if(newY == r->getPos().getY()){	//si il voulait aller à droite ou a gauche
+			if(emplacementLibre(r, Position(newX, newY-TAILLE_ROBOT, 0))){	//on vérifie si il peut aller en bas
+				r->moveUp();
+				moved=true;
+			} else if (emplacementLibre(r, Position(newX, newY+TAILLE_ROBOT, 0))){	//ou en haut
+				r->moveDown();
+				moved=true;
+			}
+		} else {	//si il voulait aller en haut ou en bas
+			if(emplacementLibre(r, Position(newX-TAILLE_ROBOT, newY, 0))){	//on vérifie si il peut aller a gauche
+				r->moveLeft();
+				moved=true;
+			} else if (emplacementLibre(r, Position(newX+TAILLE_ROBOT, newY, 0))){	//ou a droite
+				r->moveRight();
+				moved=true;
+			}
+		}
+	}
+	if(moved){
+		r->setMarche();
+	}
+
+}
+
+
+//Attaque des robot
+void Map::tourRobot(){
+	if(robs.size()==0 && !isVague){	
+		cout<<"remise de l'horloge a 0"<<endl;
+		wait=clock();
+	}
+		
+	if((clock()-wait)/(double)CLOCKS_PER_SEC>5 && !isVague){
+		isVague=true;
+	}
 	
+	spawnRobot();
+
+	int i;
+	int const tailleR(robs.size());
+
 	for (i=0; i<tailleR; i++){
 		Position p;
-		if(plys[0]->vivant() && plys[1]->vivant()){
+		if(plys[0]->vivant() && plys[1]->vivant()){	//si les 2 joueurs sont en vit
 			//on cherche le joueur le plus proche
 			double d0 = plys[0]->getPos().distance(robs[i]->getPos());
 			double d1 = plys[1]->getPos().distance(robs[i]->getPos());
 			
-			if(d0<d1){
+			if(d0<d1){	//si P1 est plus proche
 				//on vérifie si il est a côté du joueur
 				if (d0<=LARGEUR_PERSO/2){
 					plys[0]->setPV(plys[0]->getPV()-DMG_ROBOT);
-				} else {
-					p = plys[0]->getPos();	//on stock l'emplacement du joueur;
-					//on se rapproche du joueur
-					if(p.getX()<robs[i]->getPos().getX()){
-						robs[i]->moveLeft();
-					} else if (p.getX()>robs[i]->getPos().getX()){
-						robs[i]->moveRight();
-					}
-					if(p.getY()<robs[i]->getPos().getY()){
-						robs[i]->moveUp();
-					} else if (p.getY()>robs[i]->getPos().getY()){
-						robs[i]->moveDown();
-					}
-					robs[i]->setMarche();
+				} else {	//sinon on se rapproche
+					this->deplacementRobot(robs[i], plys[0]);
 				}
 
-			} else {
+			} else {	//si P2 est plus proche
 				if (d1<=LARGEUR_PERSO/2){
 					plys[1]->setPV(plys[1]->getPV()-DMG_ROBOT);
 				} else {
-					p= plys[1]->getPos();
-					if(p.getX()<robs[i]->getPos().getX()){
-						robs[i]->moveLeft();
-					} else if (p.getX()>robs[i]->getPos().getX()){
-						robs[i]->moveRight();
-					}
-					if(p.getY()<robs[i]->getPos().getY()){
-						robs[i]->moveUp();
-					} else if (p.getY()>robs[i]->getPos().getY()){
-						robs[i]->moveDown();
-					}
-					robs[i]->setMarche();
+					this->deplacementRobot(robs[i], plys[1]);
 				}
 			}
-		} else if (!plys[0]->vivant()){
+		} else if (!plys[0]->vivant()){	//si P1 est mort
 			double d1 = plys[1]->getPos().distance(robs[i]->getPos());
 			if (d1<=LARGEUR_PERSO/2){
 					plys[1]->setPV(plys[1]->getPV()-DMG_ROBOT);
 				} else {
-					p= plys[1]->getPos();
-					if(p.getX()<robs[i]->getPos().getX()){
-						robs[i]->moveLeft();
-					} else if (p.getX()>robs[i]->getPos().getX()){
-						robs[i]->moveRight();
-					}
-					if(p.getY()<robs[i]->getPos().getY()){
-						robs[i]->moveUp();
-					} else if (p.getY()>robs[i]->getPos().getY()){
-						robs[i]->moveDown();
-					}
-					robs[i]->setMarche();
+					this->deplacementRobot(robs[i], plys[1]);
 				}
-		} else {
+		} else {	//Si le P2 est mort
 			double d0 = plys[0]->getPos().distance(robs[i]->getPos());
 			if (d0<=LARGEUR_PERSO/2){
 				plys[0]->setPV(plys[0]->getPV()-DMG_ROBOT);
 			} else {
-				p = plys[0]->getPos();	//on stock l'emplacement du joueur;
-				//on se rapproche du joueur
-				if(p.getX()<robs[i]->getPos().getX()){
-					robs[i]->moveLeft();
-				} else if (p.getX()>robs[i]->getPos().getX()){
-					robs[i]->moveRight();
-				}
-				if(p.getY()<robs[i]->getPos().getY()){
-					robs[i]->moveUp();
-				} else if (p.getY()>robs[i]->getPos().getY()){
-					robs[i]->moveDown();
-				}
-				robs[i]->setMarche();
+				this->deplacementRobot(robs[i], plys[0]);
 			}
 		}
-		
-		
 	}
 	sleep(0.01);
 }
+
+
 
 
 void Map::gestionMissile(){
