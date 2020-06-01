@@ -10,6 +10,7 @@ using namespace std;
 
 class Arme{
 	protected :
+        int nbMunMax;
 		int nbMunitions;
         int zoneDeDmg;
         int dmg;
@@ -37,9 +38,12 @@ class Arme{
             return text;
         }
 
+        void addMun(){
+            nbMunitions=nbMunMax;
+        }
+
         virtual Missile* tirer(Position p)=0;   //Apelle décrémente mun et retourne le missile associé à l'arme
         virtual string toString()=0;    //Décrit l'arme et le nombre de munitions
-
         
 };
 #endif

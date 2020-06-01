@@ -17,9 +17,9 @@
 #define TAILLE_MAP_ARENE_X 5000
 #define TAILLE_MAP_ARENE_Y 1000
 
-
+#define NB_ARME 3
 #define NB_ROB_INIT 10
-#define NB_ACCESSOIRES_INIT 20
+#define NB_ACCESSOIRES_INIT 10
 
 #define NB_MUN_MAX_LASER 1  //infini
 #define NB_MUN_MAX_BAZOOKA 10
@@ -34,7 +34,7 @@
 #define DMG_LASER 6
 #define DMG_BAZOOKA 10
 #define DMG_GRENADE 20
-#define DMG_ROBOT 10
+#define DMG_ROBOT 2
 
 //PV
 #define PV_MAX_JOUEUR 100

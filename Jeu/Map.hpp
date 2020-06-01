@@ -29,25 +29,26 @@ class Map {
 		int max_taille_y;
 
 		int cptRob;	//cpt de robot par vague
-		int robVague;	//nombre de robot qui doivent apparaitre par vague
+		int cptVague;	//nombre de robot qui doivent apparaitre par vague
 		clock_t wait;	//temps d'attente entre chaque vague
 		bool isVague;	//true si on est dans une vague false sinon
 		bool enAttente;
 		clock_t apparAcc;	//apparition des accessoires
-		
+
 	public :
 		Map(bool sexP1, bool sexP2, int map); //CONSTRUCTEUR
-		Map();
+		Map(){}
 		
 		string toString();	// Affiche la composition de la map
 		
 		vector<sf::Sprite> listeSprite(int tailleX, int tailleY, int x, int y); //Donne l'affichage de tous les éléments de la map
 		void actualise(sf::RenderWindow* window); // Dessine la map en sfml
+		vector<sf::Text> infoPlayer(int tailleX, int tailleY, int x, int y);
 		
 		void addRobot(); // Ajoute un robot à la map
 		void addAccs(); // Ajoute un accessoire à la map
 		
-		sf::Text recuperationAcc();		//récupération des accessoire dans un tour
+		void recuperationAcc();		//récupération des accessoire dans un tour
 
 
 		void addRobot(int, int, int, int);
@@ -68,6 +69,8 @@ class Map {
 		int getMinTailleY();
 
 		int getMaxTailleY();
+
+		const int& getCptVague() const;
         /*			
 		~Map(){
 			int i;

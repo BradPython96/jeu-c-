@@ -11,6 +11,7 @@
 #include "Arme.hpp"
 #include "Laser.hpp"
 #include "Bazooka.hpp"
+#include "Grenade.hpp"
 #include "Position.hpp"
 #include "Robot.hpp"
 
@@ -20,7 +21,7 @@ class Player{
 	private :
 		Position pos;
 		bool sex; //boy == false, girl==true
-		vector<Arme*> arms;	//liste des armes du joueur
+		Arme* arms[NB_ARME];	//liste des armes du joueur
 		vector<Missile*> miss;
 		int armCur;	//position dans la liste de l'arme courrante
 		int pv;	//points de vie du joueur
@@ -33,6 +34,8 @@ class Player{
 
 		sf::Texture dead;	//Affichage du perso
 		sf::Texture perso;
+		sf::Text txt;
+		sf::Font font;
 
 		sf::Sprite sprite_perso;
 		sf::Vector2i anim;
@@ -47,7 +50,8 @@ class Player{
 		
 		string toString();	// Affichage de la composition du joueur
 		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY, int xi, int yi);	// Affichage SFML du joueur
-		
+		sf::Text info(int xa, int ya, int tailleX, int tailleY, int xi, int yi);
+
 		//Déplacement
 		void moveLeft(int x_fen);	
 		void moveUp(int y_fen);
@@ -58,7 +62,9 @@ class Player{
 		void moveDownLeft(int x_fen,int y_fen);
 		void moveUpLeft(int x_fen,int y_fen);
 		
-		void addArme(Arme* a);	//Ajoute une arme à la liste
+		void addBazooka();	//Ajoute une arme à la liste
+		void addGrenade();
+
 		void swapArme();	//Change d'arme
 		void tir();
 		void tourMissile(vector<Robot*>);
@@ -66,7 +72,6 @@ class Player{
 		const int& getPV() const;	//Accesseur PV
 		void setPV(const int p);	//Mutateur PV
 		const bool& getSex() const;	//Accesseur Sex
-
 		void setMarche();	//Gère l'animation de déplacement du joueur
 		
 		

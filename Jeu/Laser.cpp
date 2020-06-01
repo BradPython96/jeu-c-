@@ -2,7 +2,8 @@
 
 // CONSTRUCTEUR
 Laser :: Laser(){
-			
+	
+	nbMunMax = NB_MUN_MAX_LASER;
 	nbMunitions=NB_MUN_MAX_LASER;
 	zoneDeDmg=ZONE_DE_DMG_LASER;
 	dmg=DMG_LASER;
@@ -13,7 +14,8 @@ Laser :: Laser(){
 }
 
 Laser :: Laser(bool sex){
-			
+
+	nbMunMax = NB_MUN_MAX_LASER;	
 	nbMunitions=NB_MUN_MAX_LASER;
 	zoneDeDmg=ZONE_DE_DMG_LASER;
 	dmg=DMG_LASER;
@@ -32,7 +34,7 @@ Laser :: Laser(bool sex){
 
 // Affichage
 string Laser::toString(){
-	return "- Un pistolet laser avec "+to_string(nbMunitions)+" munitions\n";
+	return "Pistolet laser Infini\n";
 }
 
 

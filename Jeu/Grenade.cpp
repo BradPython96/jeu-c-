@@ -3,6 +3,7 @@
 // CONSTRUCTEUR
 Grenade :: Grenade(){
 			
+	nbMunMax = NB_MUN_MAX_GRENADE;
 	nbMunitions=NB_MUN_MAX_GRENADE;
 	zoneDeDmg=ZONE_DE_DMG_GRENADE;
 	dmg=DMG_GRENADE;
@@ -13,7 +14,8 @@ Grenade :: Grenade(){
 }
 
 Grenade :: Grenade(bool sex){
-			
+	
+	nbMunMax = NB_MUN_MAX_GRENADE;
 	nbMunitions=NB_MUN_MAX_GRENADE;
 	zoneDeDmg=ZONE_DE_DMG_GRENADE;
 	dmg=DMG_GRENADE;
@@ -32,7 +34,7 @@ Grenade :: Grenade(bool sex){
 
 // Affichage
 string Grenade::toString(){
-	return "- Une grenade avec "+to_string(nbMunitions)+" munitions\n";
+	return "Grenade "+to_string(nbMunitions)+"\n";
 }
 
 

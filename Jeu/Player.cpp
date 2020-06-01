@@ -17,7 +17,9 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	sf::Vector2i anim(1, Down);
 	
 	sex=s;//initialisation du sex du joueur
-	arms.push_back(new Laser(sex));
+	arms[0] = new Laser(sex);
+	arms[1] = nullptr;
+	arms[2] = nullptr;
 	armCur=0;
 
 	if (sex==true){
@@ -33,6 +35,15 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 	perso.setSmooth(true);
 	sprite_perso.setTexture(perso);
 	sprite_perso.setPosition(pos.getX()-LARGEUR_PERSO/2, pos.getY()-HAUTEUR_PERSO/2);
+
+	if(!font.loadFromFile("Robot_Font.otf")){
+		cout<<"Erreur chargement de la font"<<endl;
+	}
+	
+	txt.setFont(font);
+	txt.setCharacterSize(15);
+	txt.setFillColor(sf::Color::Magenta);
+
 }
 
 bool Player::vivant() const{
@@ -48,10 +59,10 @@ string Player::toString(){
 	string s;
 	s="Un joueur se trouve à l'emplacement x = "+to_string(pos.getX())+", y = "+to_string(pos.getY())+", angle = "+to_string(pos.getAngle())+"\n";
 	s+="Ce joueur possède "+to_string(pv)+"PV\n";
-	if(arms.size()!=0){
+	if(NB_ARME!=0){
 		s+="Il possède les armes suivantes :\n";
 		int i;
-		int const taille(arms.size());
+		int const taille(NB_ARME);
 		for(i=0; i<taille; i++){
 			s+=arms[i]->toString();
 		}
@@ -101,16 +112,60 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int
 		
 		sprite_perso.setPosition(x,y);
 	}
-
+	int i;
 	//Liste des sprite des missiles
 	int const tailleM(miss.size());
-	for(int i=0;i<tailleM; i++){
+	for(i=0;i<tailleM; i++){
 		liste.push_back(miss[i]->affiche(xi, yi));
 	}
 
 	liste.push_back(sprite_perso);
-
 	return liste;
+}
+
+sf::Text Player::info(int xa, int ya, int tailleX, int tailleY, int xi, int yi){
+
+	if(this->vivant()){
+		int x;
+		int y;
+		int i;
+
+		if(xa<TAILLE/2){
+			x=pos.getX()-LARGEUR_PERSO/2;
+		} else if (xa>(tailleX-TAILLE/2)){
+			x=pos.getX()-(tailleX-TAILLE)-LARGEUR_PERSO/2;
+		} else {
+			x=pos.getX()-(xa-TAILLE/2)-LARGEUR_PERSO/2;
+		}
+		
+		if(ya<TAILLE/2){
+			y=pos.getY()-HAUTEUR_PERSO/2;
+		} else if (ya>(tailleY-TAILLE/2)){
+			y=pos.getY()-(tailleY-TAILLE)-HAUTEUR_PERSO/2;
+		} else {
+			y=pos.getY()-(ya-TAILLE/2)-HAUTEUR_PERSO/2;
+		}
+
+		string s;
+		s="   PV "+to_string(pv)+"\n";
+		
+		
+		int const taille(NB_ARME);
+		for(i=0; i<taille; i++){
+			if(arms[i]!=nullptr){
+				s+=arms[i]->toString();
+			}
+		}
+		
+		txt.setString(s);
+		sf::Rect<float> f = txt.getLocalBounds();
+		txt.setPosition(x,y-f.height);
+	}
+
+
+	
+	return txt;
+
 }
 
 
@@ -180,15 +235,34 @@ void Player::moveUpLeft(int x_fen,int y_fen){
 	pos.setAngle(135);
 }
 
-void Player::addArme(Arme* a){
-	arms.push_back(a);
-}
-void Player::swapArme(){
-	int const taille(arms.size());
-	armCur++;
-	if(taille==armCur){
-		armCur=0;
+void Player::addBazooka(){
+	if(arms[1]==nullptr){
+		arms[1]= new Bazooka(sex);
+	} else {
+		arms[1]->addMun();
 	}
+}
+
+void Player::addGrenade(){
+	if(arms[2]==nullptr){
+		arms[2]= new Grenade(sex);
+	} else {
+		arms[2]->addMun();
+	}
+}
+
+void Player::swapArme(){
+	int x = armCur+1;
+	if(NB_ARME==x){
+		x=0;
+	}
+	while(arms[x]==nullptr){
+		x++;
+		if(NB_ARME==x){
+			x=0;
+		}
+	}
+	armCur=x;
 }
 
 void Player::tir(){
@@ -196,7 +270,7 @@ void Player::tir(){
 		recharge = clock();
 		miss.push_back(arms[armCur]->tirer(pos));	//on tire un missile
 		if(arms[armCur]->getMunitions()<=0){	//on supprime l'arme si elle n'a plus de munition
-			arms.erase(arms.begin()+armCur);
+			arms[armCur] = nullptr;
 			armCur=0;
 		}
 	}

@@ -16,14 +16,15 @@ class Game{
 		sf::Texture gameOver;	//Affichage du Game Over
 		sf::Sprite sprite_gameOver;
 
-		sf::Text txtRecu;
-
 		Map m;	//Map de déplacemeent
 
 		int taille_x;//Taille de la map
 		int taille_y;
 		int x_fen;
 		int y_fen;
+
+		sf::Text txtVag;
+		sf::Font font_3;
 		
 	public :
 	
@@ -34,7 +35,14 @@ class Game{
 				cout<<"Erreur de chargement du game over"<<endl;
 			}
 
-			sprite_gameOver.setTexture(gameOver);
+			if(!font_3.loadFromFile("Robot_Font_2.otf")){
+				cout<<"Erreur chargement de la font"<<endl;
+			}
+			
+			txtVag.setFont(font_3);
+			//txtVag.setString("Essai 2");
+			txtVag.setCharacterSize(25);
+			txtVag.setFillColor(sf::Color::Magenta);
 		}	
 
 

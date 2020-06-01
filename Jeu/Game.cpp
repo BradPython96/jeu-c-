@@ -144,6 +144,7 @@ void Game:: gestion(){
 			window.display();
 		} else {
 			m.tourRobot();
+			m.addAccs();
 			m.gestionMissile();
 			this->actualise();	//Chargement des éléments sur la map
 		}
@@ -163,18 +164,39 @@ void Game::tour(sf::Event event){
 //Actualisation de la map
 void Game::actualise(){
 
+	int x;
+	int y;
 	//On centre la map sur les joueurs
-	int x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
-	if (x<0){x = 0;}
-	if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+	if(m.getP1()->vivant() && m.getP2()->vivant()){
+		x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
+		y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
+		if (x<0){x = 0;}
+		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+		if (y<0){y = 0;}
+		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
+		
+	} else if (!m.getP1()->vivant()){
+		x = m.getP2()->getPos().getX()-TAILLE/2;
+		y = m.getP2()->getPos().getY()-TAILLE/2;
+		if (x<0){x = 0;}
+		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+		if (y<0){y = 0;}
+		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
+	} else {
+		x = m.getP1()->getPos().getX()-TAILLE/2;
+		y = m.getP1()->getPos().getY()-TAILLE/2;
+		if (x<0){x = 0;}
+		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
+		if (y<0){y = 0;}
+		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
+	}
+
 	x_fen = x;
-	int y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
-	if (y<0){y = 0;}
-	if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
 	y_fen = y;
+	
 	sprite_fond.setTextureRect(sf::IntRect(x_fen,y_fen,TAILLE,TAILLE));
 	window.draw(sprite_fond);
-	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x, y);
+	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x_fen, y_fen);
 	int i;
     //Affichage des éléments
     int const tailleS(sp.size());
@@ -182,7 +204,17 @@ void Game::actualise(){
 		window.draw(sp[i]);
 	}
 	
-	window.draw(txtRecu);
+	//Affiche les infos des joueurs 
+	vector<sf::Text>  txt=m.infoPlayer(taille_x, taille_y, x_fen, y_fen);
+	int const tailleT(txt.size());
+    for (i=0; i<tailleT; i++){
+		window.draw(txt[i]);
+	}
+
+	string s = "  Vague "+to_string(m.getCptVague());
+	txtVag.setString(s);
+	//txtVag.setString("Essai2");
+	window.draw(txtVag);
 	window.display();
 }
 
@@ -280,5 +312,5 @@ void Game::action(sf::Event event){
 	}
 
 	//RECUPERATION DES ACCESSOIRES
-	txtRecu = m.recuperationAcc();
+	m.recuperationAcc();
 }

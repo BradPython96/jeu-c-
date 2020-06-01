@@ -5,10 +5,10 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	int moy_x;
 	int moy_y;
 	//Taille de la map
-	Position* p1;
-	Position* p2;
-	Position* p3;
-	Position* p4;
+	Position* p1=nullptr;
+	Position* p2=nullptr;
+	Position* p3=nullptr;
+	Position* p4=nullptr;
 	switch(map){
 		case 0: //map couloir
 			min_taille_x = MIN_MAP_COULOIR_X;
@@ -44,9 +44,6 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	//Initialistaion des joueurs
 	plys.push_back(new Player(moy_x, moy_y, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 	plys.push_back(new Player(moy_x+LARGEUR_PERSO, moy_y, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
-		
-    //plys.push_back(new Player(4500, 500, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
-	//plys.push_back(new Player(4500+LARGEUR_PERSO, 500, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 	
 	
 	//Initialisation des accessoires
@@ -55,25 +52,15 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	}
 
 	
-	//Initialisation des timers
+	//Gestion des vagues
 	wait = clock();
 	cptRob=0;
-	robVague=18;
+	cptVague=1;
 	isVague = true;	//le jeu commence sur une vague de robot
 	enAttente = false;
-
 	apparAcc = clock();
-	
 }
-Map::Map(){
-		
-	//Initialistaion des joueurs
-	plys.push_back(new Player(TAILLE/2, TAILLE/2, true, 0, TAILLE, 0,TAILLE));
-	plys.push_back(new Player(TAILLE/2+1, TAILLE/2, false, 0, TAILLE, 0,  TAILLE));
-	
-	
-}
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // Affichage
@@ -104,8 +91,19 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 	vector<sf::Sprite> sp;
 
 	//Centre de l'affichage
-	int xa = (plys[0]->getPos().getX()+plys[1]->getPos().getX())/2;
-	int ya = (plys[0]->getPos().getY()+plys[1]->getPos().getY())/2;
+	int xa;
+	int ya;
+	if(plys[0]->vivant() && plys[1]->vivant()){
+		xa = (plys[0]->getPos().getX()+plys[1]->getPos().getX())/2;
+		ya = (plys[0]->getPos().getY()+plys[1]->getPos().getY())/2;
+	} else if(!plys[0]->vivant()){
+		xa = plys[1]->getPos().getX();
+		ya = plys[1]->getPos().getY();
+	} else {
+		xa = plys[0]->getPos().getX();
+		ya = plys[0]->getPos().getY();
+	}
+	
 	
 	//Liste des accessoires
 	if(accs.size()!=0){
@@ -125,38 +123,66 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 	}
 	
 	//Liste perso
-	
 	vector<sf::Sprite> mis0 = plys[0]->affiche(xa, ya, tailleX, tailleY, x, y);
 	vector<sf::Sprite> mis1 = plys[1]->affiche(xa, ya, tailleX, tailleY, x, y);
+
 	mis0.insert(mis0.end(), mis1.begin(), mis1.end());
 	sp.insert(sp.end(), mis0.begin(), mis0.end());
 
 	return sp;
 }
 
+
+vector<sf::Text> Map::infoPlayer(int tailleX, int tailleY, int x, int y){
+	vector<sf::Text> liste;
+
+	//Centre de l'affichage
+	int xa;
+	int ya;
+	if(plys[0]->vivant() && plys[1]->vivant()){
+		xa = (plys[0]->getPos().getX()+plys[1]->getPos().getX())/2;
+		ya = (plys[0]->getPos().getY()+plys[1]->getPos().getY())/2;
+	} else if(!plys[0]->vivant()){
+		xa = plys[1]->getPos().getX();
+		ya = plys[1]->getPos().getY();
+	} else {
+		xa = plys[0]->getPos().getX();
+		ya = plys[0]->getPos().getY();
+	}
+	liste.push_back(plys[0]->info(xa, ya, tailleX, tailleY, x, y));
+	liste.push_back(plys[1]->info(xa, ya, tailleX, tailleY, x, y));
+
+	
+
+	return liste;
+}
+
+
+
 //Ajout  d'Element sur la map
 
 void Map::addAccs(){
-	
-	accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
+	if((clock()-apparAcc)/(double)CLOCKS_PER_SEC>5){
+		apparAcc=clock();
+		accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
+	}
 }
 
 
 //Récup Acc par les P
-sf::Text Map::recuperationAcc(){
+void Map::recuperationAcc(){
 	int i;
 	sf::Text text;
 	int const tailleA(accs.size());
 	for (i=0; i<tailleA; i++){
 		if(sqrt(plys[0]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[0]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
-			text = accs[i]->win(plys[0]);
+			accs[i]->win(plys[0]);
 			accs.erase(accs.begin()+i);
 		} else if (sqrt(plys[1]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[1]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
-			text = accs[i]->win(plys[1]);
+			accs[i]->win(plys[1]);
 			accs.erase(accs.begin()+i);
 		}
 	}
-	return text;
 }
 
 void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
@@ -178,10 +204,9 @@ void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
 
 
 void Map::spawnRobot(){
-	if (cptRob>=robVague){
+	if (cptRob>=NB_ROB_INIT*pow(1.5, cptVague)){
 		isVague=false;
 		cptRob=0;
-		robVague*=1.5;
 	} else {
 		int const sizeSpa(spawn.size());
 		int const sizeRob(robs.size());
@@ -316,6 +341,7 @@ void Map::tourRobot(){
 		if(enAttente && (clock()-wait)/(double)CLOCKS_PER_SEC>5){
 			isVague=true;
 			enAttente=false;
+			cptVague++;
 		}
 	}
 
@@ -409,4 +435,8 @@ int Map::getMinTailleY(){
 
 int Map::getMaxTailleY(){
 	return max_taille_y;
+}
+
+const int& Map::getCptVague() const{
+	return cptVague;
 }

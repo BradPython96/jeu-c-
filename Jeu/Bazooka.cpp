@@ -3,6 +3,7 @@
 // CONSTRUCTEUR
 Bazooka :: Bazooka(){
 
+	nbMunMax = NB_MUN_MAX_BAZOOKA;
 	nbMunitions=NB_MUN_MAX_BAZOOKA;
 	zoneDeDmg=ZONE_DE_DMG_BAZOOKA;
 	dmg=DMG_BAZOOKA;
@@ -14,6 +15,7 @@ Bazooka :: Bazooka(){
 
 Bazooka :: Bazooka(bool sex){
 
+	nbMunMax = NB_MUN_MAX_BAZOOKA;
 	nbMunitions=NB_MUN_MAX_BAZOOKA;
 	zoneDeDmg=ZONE_DE_DMG_BAZOOKA;
 	dmg=DMG_BAZOOKA;
@@ -31,7 +33,7 @@ Bazooka :: Bazooka(bool sex){
 }
 // Affichage
 string Bazooka::toString(){
-	return "- Un bazooka avec "+to_string(nbMunitions)+" munitions\n";
+	return "Bazooka "+to_string(nbMunitions)+"\n";
 }
 
 Missile* Bazooka::tirer(Position p){
