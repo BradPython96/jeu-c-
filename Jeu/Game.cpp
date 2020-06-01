@@ -145,9 +145,9 @@ void Game:: gestion(){
 		} else {
 			m.tourRobot();
 			m.gestionMissile();
-			
 			this->actualise();	//Chargement des éléments sur la map
 		}
+
     }
     
 }
@@ -182,6 +182,7 @@ void Game::actualise(){
 		window.draw(sp[i]);
 	}
 	
+	window.draw(txtRecu);
 	window.display();
 }
 
@@ -279,5 +280,5 @@ void Game::action(sf::Event event){
 	}
 
 	//RECUPERATION DES ACCESSOIRES
-	m.recuperationAcc();
+	txtRecu = m.recuperationAcc();
 }

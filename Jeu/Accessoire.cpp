@@ -37,22 +37,29 @@ sf::Sprite Accessoire::affiche(int x, int y){
 	return sprite_acc;
 }
 
-void Accessoire::win(Player* p){
+sf::Text Accessoire::win(Player* p){
 	int i = rand()%3;
+	sf::Text text;
 	switch(i){
 		case 0:
 			p->setPV(PV_MAX_JOUEUR);
-			cout<<"Votre vie est totalement restaurée"<<endl;
+			text.setString("Vie est totalement restaurée");
 			break;
 		case 1:
 			p->addArme(new Bazooka(p->getSex()));
-			cout<<"Vous avez trouvé un bazooka"<<endl;
+			text.setString("Vous avez trouvé un bazooka");
 			break;
 		case 2:
 			p->addArme(new Grenade(p->getSex()));
-			cout<<"Vous avez trouvé une grenade"<<endl;
+			text.setString("Vous avez trouvé une grenade");
+			break;
+		default:
 			break;
 	}
+	text.setCharacterSize(20);
+	text.setPosition(10.f,10.f);
+	text.setFillColor(sf::Color::White);
+	return text;
 }
 
 

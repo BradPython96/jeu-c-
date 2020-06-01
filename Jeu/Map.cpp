@@ -45,7 +45,11 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	plys.push_back(new Player(moy_x, moy_y, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 	plys.push_back(new Player(moy_x+LARGEUR_PERSO, moy_y, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
 		
-    //Initialisation des accessoires
+    //plys.push_back(new Player(4500, 500, sexP1, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
+	//plys.push_back(new Player(4500+LARGEUR_PERSO, 500, sexP2, min_taille_x,max_taille_x,min_taille_y, max_taille_y));
+	
+	
+	//Initialisation des accessoires
 	for(int i=0; i<NB_ACCESSOIRES_INIT; i++){
 		accs.push_back(new Accessoire(min_taille_x, max_taille_x, min_taille_y, max_taille_y));
 	}
@@ -56,8 +60,7 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	cptRob=0;
 	robVague=18;
 	isVague = true;	//le jeu commence sur une vague de robot
-
-	spawnRobot();//Init robot
+	enAttente = false;
 
 	apparAcc = clock();
 	
@@ -140,18 +143,20 @@ void Map::addAccs(){
 
 
 //Récup Acc par les P
-void Map::recuperationAcc(){
+sf::Text Map::recuperationAcc(){
 	int i;
+	sf::Text text;
 	int const tailleA(accs.size());
 	for (i=0; i<tailleA; i++){
 		if(sqrt(plys[0]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[0]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
-			accs[i]->win(plys[0]);
+			text = accs[i]->win(plys[0]);
 			accs.erase(accs.begin()+i);
 		} else if (sqrt(plys[1]->getPos().getX() - accs[i]->getPos().getX()) + sqrt(plys[1]->getPos().getY() - accs[i]->getPos().getY()) <= 10){
-			accs[i]->win(plys[1]);
+			text = accs[i]->win(plys[1]);
 			accs.erase(accs.begin()+i);
 		}
 	}
+	return text;
 }
 
 void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
@@ -177,7 +182,7 @@ void Map::spawnRobot(){
 		isVague=false;
 		cptRob=0;
 		robVague*=1.5;
-	} else if (isVague){
+	} else {
 		int const sizeSpa(spawn.size());
 		int const sizeRob(robs.size());
 		int r;
@@ -185,17 +190,33 @@ void Map::spawnRobot(){
 		int x_max;
 		int y_min;
 		int y_max;
-		
+		int x_spa;
+		int y_spa;
+		bool free;
+
 		for(r=0; r<sizeSpa; r++){
+			x_spa = spawn[r]->getX();
+			y_spa = spawn[r]->getY();
 			x_min = spawn[r]->getX()-TAILLE_ROBOT*1.5;//On délimite la zone de spawn
 			x_max = spawn[r]->getX()+TAILLE_ROBOT*1.5;
 			y_min = spawn[r]->getY()-TAILLE_ROBOT*1.5;
 			y_max = spawn[r]->getY()+TAILLE_ROBOT*1.5;
-			bool free=true;
+			free=true;
 			int i;
 			for(i=0; i<sizeRob; i++){
-				if((robs[i]->getPos().getX()<x_max && robs[i]->getPos().getX()>x_min) && (robs[i]->getPos().getY()<y_max && robs[i]->getPos().getY()>y_min)){
-					free=false;
+				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa-TAILLE_ROBOT, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa+TAILLE_ROBOT, 0));
+
+				free*=emplacementLibre(robs[i], Position(x_spa, y_spa-TAILLE_ROBOT, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa, y_spa, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa, y_spa+TAILLE_ROBOT, 0));
+
+				free*=emplacementLibre(robs[i], Position(x_spa+TAILLE_ROBOT, y_spa-TAILLE_ROBOT, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa+TAILLE_ROBOT, y_spa, 0));
+				free*=emplacementLibre(robs[i], Position(x_spa+TAILLE_ROBOT, y_spa+TAILLE_ROBOT, 0));
+				
+				if(!free){
 					break;
 				}
 			}
@@ -204,7 +225,10 @@ void Map::spawnRobot(){
 				break;
 			}
 		}
-		this->addRobot(x_min, x_max, y_min, y_max);
+		if(free){
+			this->addRobot(x_min, x_max, y_min, y_max);
+		}
+		
 	}
 }
 
@@ -281,16 +305,19 @@ void Map::deplacementRobot(Robot *r, Player *p){
 
 //Attaque des robot
 void Map::tourRobot(){
-	if(robs.size()==0 && !isVague){	
-		cout<<"remise de l'horloge a 0"<<endl;
-		wait=clock();
+	if(isVague){
+		spawnRobot();
+	} else {
+		if(robs.size()==0 && !enAttente){		//si il n'
+			cout<<"remise de l'horloge a 0"<<endl;
+			wait=clock();
+			enAttente=true;
+		}		
+		if(enAttente && (clock()-wait)/(double)CLOCKS_PER_SEC>5){
+			isVague=true;
+			enAttente=false;
+		}
 	}
-		
-	if((clock()-wait)/(double)CLOCKS_PER_SEC>5 && !isVague){
-		isVague=true;
-	}
-	
-	spawnRobot();
 
 	int i;
 	int const tailleR(robs.size());

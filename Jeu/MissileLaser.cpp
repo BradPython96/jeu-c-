@@ -160,13 +160,7 @@ sf::Sprite MissileLaser::affiche(int xa, int ya){
 }
 
 void MissileLaser::explose(vector<Robot*> robots){
-    int i;
-    int const taille(robots.size());
-    for(i=0; i<taille; i++){
-        if(pos.distance(robots[i]->getPos())<ZONE_DE_DMG_LASER){
-            robots[i]->setPV(robots[i]->getPV()-DMG_LASER);
-        }
-    }
+    //Pas necessaire dans le cas du laser
 }
 
 void MissileLaser::robotTouche(vector<Robot*> robots){
@@ -175,6 +169,7 @@ void MissileLaser::robotTouche(vector<Robot*> robots){
     for(i=0; i<taille; i++){
         if(pos.distance(robots[i]->getPos())<TAILLE_ROBOT/2){
             boom=true;
+            robots[i]->setPV(robots[i]->getPV()-DMG_LASER);
         }
     }
 }

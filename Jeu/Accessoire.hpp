@@ -28,7 +28,7 @@ class Accessoire{
 		string toString();	//affichage de l'emplacement de l'accessoire
 		sf::Sprite affiche(int x, int y); // Affichage SFML de l'accessoire
 		
-		void win(Player* p);
+		sf::Text win(Player* p);
 		
 		const Position& getPos() const;	//Accesseur Position
 }; 

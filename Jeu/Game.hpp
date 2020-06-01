@@ -16,6 +16,8 @@ class Game{
 		sf::Texture gameOver;	//Affichage du Game Over
 		sf::Sprite sprite_gameOver;
 
+		sf::Text txtRecu;
+
 		Map m;	//Map de déplacemeent
 
 		int taille_x;//Taille de la map

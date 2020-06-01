@@ -32,6 +32,7 @@ class Map {
 		int robVague;	//nombre de robot qui doivent apparaitre par vague
 		clock_t wait;	//temps d'attente entre chaque vague
 		bool isVague;	//true si on est dans une vague false sinon
+		bool enAttente;
 		clock_t apparAcc;	//apparition des accessoires
 		
 	public :
@@ -46,7 +47,7 @@ class Map {
 		void addRobot(); // Ajoute un robot à la map
 		void addAccs(); // Ajoute un accessoire à la map
 		
-		void recuperationAcc();		//récupération des accessoire dans un tour
+		sf::Text recuperationAcc();		//récupération des accessoire dans un tour
 
 
 		void addRobot(int, int, int, int);
