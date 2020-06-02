@@ -52,18 +52,27 @@ Map::Map(bool sexP1, bool sexP2, int map){
 	}
 
 	
-	//Gestion des vagues
+	//Lancement de la première vague de robot
 	wait = clock();
 	cptRob=0;
 	cptVague=1;
-	isVague = true;	//le jeu commence sur une vague de robot
+	isVague = true;
 	enAttente = false;
+
+	//Lance les chronomètres
 	apparAcc = clock();
+	marcheRobot = clock();
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Map::Map(){
+		//Initialistaion des joueurs
+	p1 = new Player(0, 0, true, min_taille_x,max_taille_x,min_taille_y, max_taille_y);
+	p2 = new Player(0+LARGEUR_PERSO, 0, false, min_taille_x,max_taille_x,min_taille_y, max_taille_y);
+	
+}
+///Affichage//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Affichage
+//Renvoie la description complete de la map
 string Map::toString(){
 	string s="Cette carte contient :\n";
 	int i;
@@ -83,14 +92,14 @@ string Map::toString(){
 	return s;
 }
 
-vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
+//Affichage SFML des éléments de la map
+vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){	
 	int i;
 	vector<sf::Sprite> sp;
 
 	//Centre de l'affichage
 	int xa;
 	int ya;
-	cout<<"debut"<<endl;
 	if(p1->vivant() && p2->vivant()){
 		xa = (p1->getPos().getX()+p2->getPos().getX())/2;
 		ya = (p1->getPos().getY()+p2->getPos().getY())/2;
@@ -102,15 +111,13 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 		ya = p1->getPos().getY();
 	}
 	
-	cout<<"milieu"<<endl;
 	//Liste des accessoires
 	if(accs.size()!=0){
 		int const tailleA(accs.size());
 		for (i=0; i<tailleA; i++){
 			sp.push_back(accs[i]->affiche(x, y));
 		}
-	}	
-	cout<<"milieu2"<<endl;
+	}
 	
 	//Liste de robot
 	if(robs.size()!=0){
@@ -119,18 +126,16 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 				sp.push_back(robs[i]->affiche(x,y));
 		}
 	}
-	cout<<"milieu3"<<endl;
 	//Liste perso
 	vector<sf::Sprite> mis0 = p1->affiche(xa, ya, tailleX, tailleY, x, y);
 	vector<sf::Sprite> mis1 = p2->affiche(xa, ya, tailleX, tailleY, x, y);
 
 	mis0.insert(mis0.end(), mis1.begin(), mis1.end());
 	sp.insert(sp.end(), mis0.begin(), mis0.end());
-	cout<<"fin"<<endl;
 	return sp;
 }
 
-
+//Affichage SFML des données au dessus de la tête de chacun des joueurs
 vector<sf::Text> Map::infoPlayer(int tailleX, int tailleY){
 	vector<sf::Text> liste;
 
@@ -155,10 +160,9 @@ vector<sf::Text> Map::infoPlayer(int tailleX, int tailleY){
 	return liste;
 }
 
+//Accessoires/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-//Ajout  d'Element sur la map
-
+//Ajout  des accessoires sur la map
 void Map::addAccs(){
 	if((clock()-apparAcc)/(double)CLOCKS_PER_SEC>5){
 		apparAcc=clock();
@@ -166,8 +170,7 @@ void Map::addAccs(){
 	}
 }
 
-
-//Récup Acc par les P
+//Récup Acc par les Players
 void Map::recuperationAcc(){
 	int i;
 	sf::Text text;
@@ -183,6 +186,9 @@ void Map::recuperationAcc(){
 	}
 }
 
+//Robots////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Ajout des robots sur la map par groupe de 9 autour des points de spawn
 void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
 	
 	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_min+TAILLE_ROBOT/2));
@@ -200,16 +206,29 @@ void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
 	cptRob+=9;
 }
 
+//Détecte si l'emplacement désiré pour placer le robot est libre
+bool Map::emplacementLibre(Robot *rob, Position pos){
+	int i;
+	int const tailleR(robs.size());
+	//cout<<"Position désiré : x="<<pos.getX()<<", y="<<pos.getY()<<endl;
+	for(i=0; i<tailleR; i++){
+		if (robs[i]!=rob && pos.distance(robs[i]->getPos())<TAILLE_ROBOT/2){
+			return false;
+		}
+	}
+	return true;
+}
 
+//Cherche le prochain point de spawn libre ou faire apparaitre les nouveau robots de la vague
 void Map::spawnRobot(){
-	if (cptRob>=NB_ROB_INIT*pow(1.5, cptVague)){
+	if (cptRob>=NB_ROB_INIT*pow(1.5, cptVague)){	//On vérifie si la vague est complète
 		isVague=false;
 		cptRob=0;
-	} else {
+	} else {	//Si des robots doivent encore apparaitre dans cette vague
 		int const sizeSpa(spawn.size());
 		int const sizeRob(robs.size());
 		int r;
-		int x_min;//On délimite la zone de spawn
+		int x_min;
 		int x_max;
 		int y_min;
 		int y_max;
@@ -226,7 +245,7 @@ void Map::spawnRobot(){
 			y_max = spawn[r]->getY()+TAILLE_ROBOT*1.5;
 			free=true;
 			int i;
-			for(i=0; i<sizeRob; i++){
+			for(i=0; i<sizeRob; i++){	//On vérifie que les 9 emplacements soit disponible
 				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa-TAILLE_ROBOT, 0));
 				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa, 0));
 				free*=emplacementLibre(robs[i], Position(x_spa-TAILLE_ROBOT, y_spa+TAILLE_ROBOT, 0));
@@ -239,34 +258,23 @@ void Map::spawnRobot(){
 				free*=emplacementLibre(robs[i], Position(x_spa+TAILLE_ROBOT, y_spa, 0));
 				free*=emplacementLibre(robs[i], Position(x_spa+TAILLE_ROBOT, y_spa+TAILLE_ROBOT, 0));
 				
-				if(!free){
+				if(!free){	//si l'un des emplacement est occupé on chage de spawn
 					break;
 				}
 			}
 
-			if(free){
+			if(free){	//si tous les emplacement sont libres on garde le spawn
 				break;
 			}
 		}
-		if(free){
+		if(free){	//si on a trouvé un spawn disponible on y place les robots
 			this->addRobot(x_min, x_max, y_min, y_max);
 		}
 		
 	}
 }
 
-bool Map::emplacementLibre(Robot *rob, Position pos){
-	int i;
-	int const tailleR(robs.size());
-	//cout<<"Position désiré : x="<<pos.getX()<<", y="<<pos.getY()<<endl;
-	for(i=0; i<tailleR; i++){
-		if (robs[i]!=rob && pos.distance(robs[i]->getPos())<TAILLE_ROBOT/2){
-			return false;
-		}
-	}
-	return true;
-}
-
+//Gère le déplacement des robots sur la map
 void Map::deplacementRobot(Robot *r, Player *p){
 	Position pos = p->getPos();	//on stock l'emplacement du joueur
 	bool moved=false;
@@ -326,7 +334,7 @@ void Map::deplacementRobot(Robot *r, Player *p){
 }
 
 
-//Attaque des robot
+//Gère le tour complet des robots (Rassemblr les méthodes ci-dessus)
 void Map::tourRobot(){
 	if(isVague){
 		spawnRobot();
@@ -343,66 +351,69 @@ void Map::tourRobot(){
 		}
 	}
 
-	int i;
-	int const tailleR(robs.size());
+	if((clock()-marcheRobot)/(double)CLOCKS_PER_SEC>0.01){
+		marcheRobot= clock();
+		int i;
+		int const tailleR(robs.size());
 
-	for (i=0; i<tailleR; i++){
-		Position p;
-		if(p1->vivant() && p2->vivant()){	//si les 2 joueurs sont en vit
-			//on cherche le joueur le plus proche
-			double d0 = p1->getPos().distance(robs[i]->getPos());
-			double d1 = p2->getPos().distance(robs[i]->getPos());
-			
-			if(d0<d1){	//si P1 est plus proche
-				//on vérifie si il est a côté du joueur
+		for (i=0; i<tailleR; i++){
+			Position p;
+			if(p1->vivant() && p2->vivant()){	//si les 2 joueurs sont en vit
+				//on cherche le joueur le plus proche
+				double d0 = p1->getPos().distance(robs[i]->getPos());
+				double d1 = p2->getPos().distance(robs[i]->getPos());
+				
+				if(d0<d1){	//si P1 est plus proche
+					//on vérifie si il est a côté du joueur
+					if (d0<=LARGEUR_PERSO/2){
+						p1->setPV(p1->getPV()-DMG_ROBOT);
+					} else {	//sinon on se rapproche
+						this->deplacementRobot(robs[i], p1);
+					}
+
+				} else {	//si P2 est plus proche
+					if (d1<=LARGEUR_PERSO/2){
+						p2->setPV(p2->getPV()-DMG_ROBOT);
+					} else {
+						this->deplacementRobot(robs[i], p2);
+					}
+				}
+			} else if (!p1->vivant()){	//si P1 est mort
+				double d1 = p2->getPos().distance(robs[i]->getPos());
+				if (d1<=LARGEUR_PERSO/2){
+						p2->setPV(p2->getPV()-DMG_ROBOT);
+					} else {
+						this->deplacementRobot(robs[i], p2);
+					}
+			} else {	//Si le P2 est mort
+				double d0 = p1->getPos().distance(robs[i]->getPos());
 				if (d0<=LARGEUR_PERSO/2){
 					p1->setPV(p1->getPV()-DMG_ROBOT);
-				} else {	//sinon on se rapproche
+				} else {
 					this->deplacementRobot(robs[i], p1);
 				}
-
-			} else {	//si P2 est plus proche
-				if (d1<=LARGEUR_PERSO/2){
-					p2->setPV(p2->getPV()-DMG_ROBOT);
-				} else {
-					this->deplacementRobot(robs[i], p2);
-				}
-			}
-		} else if (!p1->vivant()){	//si P1 est mort
-			double d1 = p2->getPos().distance(robs[i]->getPos());
-			if (d1<=LARGEUR_PERSO/2){
-					p2->setPV(p2->getPV()-DMG_ROBOT);
-				} else {
-					this->deplacementRobot(robs[i], p2);
-				}
-		} else {	//Si le P2 est mort
-			double d0 = p1->getPos().distance(robs[i]->getPos());
-			if (d0<=LARGEUR_PERSO/2){
-				p1->setPV(p1->getPV()-DMG_ROBOT);
-			} else {
-				this->deplacementRobot(robs[i], p1);
 			}
 		}
 	}
-	sleep(0.01);
 }
 
-
-
+//Missiles///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Map::gestionMissile(){
-	p1->tourMissile(robs);
+	p1->tourMissile(robs);	//Les joueurs font avancer leurs missiles respectif
 	p2->tourMissile(robs);
 	int i;
 	int taille(robs.size());
-	for(i=0;i<taille; i++){
+	for(i=0;i<taille; i++){	//Si l'un des robots n'a plus de vie on le retire de la map
 		if(robs[i]->getPV()<=0){
 			robs.erase(robs.begin()+i);
-			taille--;
+			taille--;	//on fait attention de ne pas sortir de la liste
 			i--;
 		}
 	}
 }
+
+//GameOver//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 bool Map::gameOver(){
 	if (p1->vivant()){
@@ -414,7 +425,8 @@ bool Map::gameOver(){
 	}
 }
 
-//Récupérer P1 et P2
+//Accesseurs/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Player* Map::getP1(){
 	return p1;
 }
@@ -422,19 +434,19 @@ Player* Map::getP2(){
 	return p2;
 }
 
-int Map::getMinTailleX(){
+const int& Map::getMinTailleX() const{
 	return min_taille_x;
 }
 
-int Map::getMaxTailleX(){
+const int& Map::getMaxTailleX() const{
 	return max_taille_x;
 }
 
-int Map::getMinTailleY(){
+const int& Map::getMinTailleY() const{
 	return min_taille_y;
 }
 
-int Map::getMaxTailleY(){
+const int& Map::getMaxTailleY() const{
 	return max_taille_y;
 }
 

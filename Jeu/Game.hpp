@@ -16,7 +16,7 @@ class Game{
 		sf::Texture gameOver;	//Affichage du Game Over
 		sf::Sprite sprite_gameOver;
 
-		Map m;	//Map de déplacemeent
+		Map *m;	//Map de déplacemeent
 
 		int taille_x;//Taille de la map
 		int taille_y;
@@ -46,7 +46,7 @@ class Game{
 		}	
 
 		~Game(){
-			delete &m;
+			delete m;
 		}
 		
 		void lancement();

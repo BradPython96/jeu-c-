@@ -89,7 +89,7 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int
 		sprite_perso.setPosition(pos.getX()-xi-LARGEUR_PERSO/2, pos.getY()-yi-HAUTEUR_PERSO/2);
 
 	} else {
-		cout<<armCur<<endl;
+		
 		perso = arms[armCur]->texture();
 		sprite_perso.setTexture(perso);
 		int x;

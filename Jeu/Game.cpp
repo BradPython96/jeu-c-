@@ -52,7 +52,7 @@ void Game::lancement(){
 					menu.close();
 					taille_x = TAILLE_MAP_COULOIR_X;
 					taille_y = TAILLE_MAP_COULOIR_Y;
-					m = Map(p1,p2,0);
+					m = new Map(p1,p2,0);
 					
 				} else if (event.key.code==sf::Keyboard::Num2 && m1 && m2){
 					if (!fond.loadFromFile("fond_caillou.jpg")){
@@ -63,7 +63,7 @@ void Game::lancement(){
 					menu.close();
 					taille_x = TAILLE_MAP_ARENE_X;
 					taille_y = TAILLE_MAP_ARENE_Y;
-					m = Map(p1,p2,1);
+					m = new Map(p1,p2,1);
 				}
 
 				//Choix des personnages
@@ -129,7 +129,7 @@ void Game:: gestion(){
 			if(event.type==sf::Event::Closed){
 				window.close();
 			}
-			if (!m.gameOver()){
+			if (!m->gameOver()){
 				if(event.type==sf::Event::KeyPressed){
 					this->tour(event);
 				}
@@ -138,13 +138,13 @@ void Game:: gestion(){
 		}
 		window.clear();
 
-		if (m.gameOver()){
+		if (m->gameOver()){
 			window.draw(sprite_gameOver);
 			window.display();
 		} else {
-			m.tourRobot();
-			m.addAccs();
-			m.gestionMissile();
+			m->tourRobot();
+			m->addAccs();
+			m->gestionMissile();
 			this->actualise();	//Chargement des éléments sur la map
 		}
 
@@ -166,24 +166,24 @@ void Game::actualise(){
 	int x;
 	int y;
 	//On centre la map sur les joueurs
-	if(m.getP1()->vivant() && m.getP2()->vivant()){
-		x = (m.getP1()->getPos().getX()+m.getP2()->getPos().getX())/2-TAILLE/2;
-		y = (m.getP1()->getPos().getY()+m.getP2()->getPos().getY())/2-TAILLE/2;
+	if(m->getP1()->vivant() && m->getP2()->vivant()){
+		x = (m->getP1()->getPos().getX()+m->getP2()->getPos().getX())/2-TAILLE/2;
+		y = (m->getP1()->getPos().getY()+m->getP2()->getPos().getY())/2-TAILLE/2;
 		if (x<0){x = 0;}
 		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
 		if (y<0){y = 0;}
 		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
 		
-	} else if (!m.getP1()->vivant()){
-		x = m.getP2()->getPos().getX()-TAILLE/2;
-		y = m.getP2()->getPos().getY()-TAILLE/2;
+	} else if (!m->getP1()->vivant()){
+		x = m->getP2()->getPos().getX()-TAILLE/2;
+		y = m->getP2()->getPos().getY()-TAILLE/2;
 		if (x<0){x = 0;}
 		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
 		if (y<0){y = 0;}
 		if (y>taille_y - TAILLE){y = taille_y - TAILLE;}
 	} else {
-		x = m.getP1()->getPos().getX()-TAILLE/2;
-		y = m.getP1()->getPos().getY()-TAILLE/2;
+		x = m->getP1()->getPos().getX()-TAILLE/2;
+		y = m->getP1()->getPos().getY()-TAILLE/2;
 		if (x<0){x = 0;}
 		if (x>taille_x - TAILLE){x = taille_x - TAILLE;}
 		if (y<0){y = 0;}
@@ -194,7 +194,7 @@ void Game::actualise(){
 	y_fen = y;
 	sprite_fond.setTextureRect(sf::IntRect(x_fen,y_fen,TAILLE,TAILLE));
 	window.draw(sprite_fond);
-	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x_fen, y_fen);
+	vector<sf::Sprite> sp = m->listeSprite(taille_x, taille_y, x_fen, y_fen);
 	int i;
     //Affichage des éléments
     int const tailleS(sp.size());
@@ -203,13 +203,13 @@ void Game::actualise(){
 	}
 	
 	//Affiche les infos des joueurs 
-	vector<sf::Text>  txt=m.infoPlayer(taille_x, taille_y);
+	vector<sf::Text>  txt=m->infoPlayer(taille_x, taille_y);
 	int const tailleT(txt.size());
     for (i=0; i<tailleT; i++){
 		window.draw(txt[i]);
 	}
 	
-	string s = "  Vague "+to_string(m.getCptVague());
+	string s = "  Vague "+to_string(m->getCptVague());
 	txtVag.setString(s);
 	//txtVag.setString("Essai2");
 	window.draw(txtVag);
@@ -220,36 +220,36 @@ void Game::actualise(){
 //Déplacement des joueurs
 void Game::deplacement(){
 	
-	Player* P1=m.getP1();
-	Player* P2=m.getP2();
+	Player* P1=m->getP1();
+	Player* P2=m->getP2();
 
 		//Déplacement P1
 	if(P1->vivant()){
 
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
 			P1->moveUpRight(x_fen, y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
 			P1->moveDownRight(x_fen, y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
 			P1->moveDownLeft(x_fen, y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
 			P1->moveUpLeft(x_fen, y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
 			P1->moveRight(x_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
 			P1->moveDown(y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){
 			P1->moveLeft(x_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
 			P1->moveUp(y_fen);
-			m.getP1()->setMarche();
+			m->getP1()->setMarche();
 		}
 	}
 	//Déplacement P2
@@ -257,36 +257,36 @@ void Game::deplacement(){
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
 			P2->moveUpRight(x_fen, y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
 			P2->moveDownRight(x_fen, y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
 			P2->moveDownLeft(x_fen, y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
 			P2->moveUpLeft(x_fen, y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
 			P2->moveRight(x_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
 			P2->moveDown(y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
 			P2->moveLeft(x_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
 			P2->moveUp(y_fen);
-			m.getP2()->setMarche();
+			m->getP2()->setMarche();
 		}
 	}
 }
 
 void Game::action(sf::Event event){
 
-	Player* P1=m.getP1();
-	Player* P2=m.getP2();
+	Player* P1=m->getP1();
+	Player* P2=m->getP2();
 
 	//CHANGEMENT ARME P1
 	if(P1->vivant()){
@@ -310,5 +310,5 @@ void Game::action(sf::Event event){
 	}
 
 	//RECUPERATION DES ACCESSOIRES
-	m.recuperationAcc();
+	m->recuperationAcc();
 }
