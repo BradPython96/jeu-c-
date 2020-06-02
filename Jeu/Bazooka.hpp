@@ -14,8 +14,8 @@ class Bazooka : public Arme{
 	
 		Bazooka(); // CONSTRUCTEUR par défaut
 		Bazooka(bool sex);
-		string toString(); // Affichage de la composition d'un bazooka
 
+		string toString(); // Affichage de la composition d'un bazooka
 		Missile* tirer(Position p);		
 };
 #endif

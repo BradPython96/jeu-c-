@@ -73,7 +73,8 @@ string Player::toString(){
 
 void Player::setMarche(){
 	anim.x++;
-	if(anim.x*LARGEUR_PERSO>=perso.getSize().x){
+	int const taille(perso.getSize().x);
+	if(anim.x*LARGEUR_PERSO>=taille){
 		anim.x=0;
 	}
 }
@@ -88,7 +89,7 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int
 		sprite_perso.setPosition(pos.getX()-xi-LARGEUR_PERSO/2, pos.getY()-yi-HAUTEUR_PERSO/2);
 
 	} else {
-	
+		cout<<armCur<<endl;
 		perso = arms[armCur]->texture();
 		sprite_perso.setTexture(perso);
 		int x;
@@ -123,7 +124,7 @@ vector<sf::Sprite> Player::affiche(int xa, int ya, int tailleX, int tailleY, int
 	return liste;
 }
 
-sf::Text Player::info(int xa, int ya, int tailleX, int tailleY, int xi, int yi){
+sf::Text Player::info(int xa, int ya, int tailleX, int tailleY){
 
 	if(this->vivant()){
 		int x;
@@ -252,6 +253,7 @@ void Player::addGrenade(){
 }
 
 void Player::swapArme(){
+	cout<<"swap"<<endl;
 	int x = armCur+1;
 	if(NB_ARME==x){
 		x=0;

@@ -8,6 +8,6 @@ int main(){
 	srand (time(NULL));
 	Game* g = new Game();
 	g->lancement();
-	
+	delete g;
 	return 0;
 }

@@ -18,7 +18,8 @@ using namespace std;
 class Map {
 
 	private :
-		vector <Player*> plys;	//liste de joueurs dans le jeu
+		Player* p1;
+		Player* p2;
 		vector <Robot*> robs;	//liste de robots dans le jeu
 		vector <Accessoire*> accs;	//liste d'accessoires
 		vector <Position*> spawn;	//liste des positions d'apparition
@@ -37,13 +38,31 @@ class Map {
 
 	public :
 		Map(bool sexP1, bool sexP2, int map); //CONSTRUCTEUR
-		Map(){}
-		
+		Map(){}	//Constructeur par défault
+		~Map(){	//Destructeur
+			delete p1;
+			delete p2;
+			int const tailleR(robs.size());	//Libération de la mémoire pour les robots
+			for(int i=0; i<tailleR; i++){
+				free(robs[i]);
+			}
+
+			int const tailleA(accs.size());	//Libération de la mémoire pour les accessoires
+			for(int i=0; i<tailleA; i++){
+				free(accs[i]);
+			}
+
+			int const tailleS(spawn.size());	//Libération de la mémoire des position de spawn
+			for(int i=0; i<tailleS; i++){
+				free(spawn[i]);
+			}
+
+		}
 		string toString();	// Affiche la composition de la map
 		
 		vector<sf::Sprite> listeSprite(int tailleX, int tailleY, int x, int y); //Donne l'affichage de tous les éléments de la map
 		void actualise(sf::RenderWindow* window); // Dessine la map en sfml
-		vector<sf::Text> infoPlayer(int tailleX, int tailleY, int x, int y);
+		vector<sf::Text> infoPlayer(int tailleX, int tailleY);
 		
 		void addRobot(); // Ajoute un robot à la map
 		void addAccs(); // Ajoute un accessoire à la map

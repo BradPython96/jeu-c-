@@ -50,7 +50,7 @@ class Player{
 		
 		string toString();	// Affichage de la composition du joueur
 		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY, int xi, int yi);	// Affichage SFML du joueur
-		sf::Text info(int xa, int ya, int tailleX, int tailleY, int xi, int yi);
+		sf::Text info(int xa, int ya, int tailleX, int tailleY);
 
 		//Déplacement
 		void moveLeft(int x_fen);	
@@ -76,18 +76,17 @@ class Player{
 		
 		
 		const Position& getPos() const;	//Accesseur Position
-		/*
+		
 		~Player(){
 
-			int const tailleA(arms.size());
-			for(int i =0; i<tailleA; i++){
-				delete arms[i];
+			for(int i =0; i<NB_ARME; i++){
+				free(arms[i]);
 			}
 			int const tailleM(miss.size());
 			for(int i =0; i<tailleM; i++){
-				delete miss[i];
+				free(miss[i]);
 			}
-		}*/
+		}
 		
 }; 
 #endif

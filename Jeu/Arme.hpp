@@ -18,7 +18,6 @@ class Arme{
         
 	public :
 		Arme(){}
-        ~Arme(){}
 
 		const int& getMunitions() const {   //Accesseur nbr de munitions
             return nbMunitions;

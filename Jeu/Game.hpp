@@ -45,7 +45,9 @@ class Game{
 			txtVag.setFillColor(sf::Color::Magenta);
 		}	
 
-
+		~Game(){
+			delete &m;
+		}
 		
 		void lancement();
 		void gestion();

@@ -51,7 +51,8 @@ sf::Sprite Robot::affiche(int x, int y){
 
 void Robot::setMarche(){
 	anim.x++;
-	if(anim.x*TAILLE_ROBOT>=robot.getSize().x){
+	int const taille(robot.getSize().x);
+	if(anim.x*TAILLE_ROBOT>=taille){
 		anim.x=0;
 	}
 }

@@ -139,7 +139,6 @@ void Game:: gestion(){
 		window.clear();
 
 		if (m.gameOver()){
-			
 			window.draw(sprite_gameOver);
 			window.display();
 		} else {
@@ -193,7 +192,6 @@ void Game::actualise(){
 
 	x_fen = x;
 	y_fen = y;
-	
 	sprite_fond.setTextureRect(sf::IntRect(x_fen,y_fen,TAILLE,TAILLE));
 	window.draw(sprite_fond);
 	vector<sf::Sprite> sp = m.listeSprite(taille_x, taille_y, x_fen, y_fen);
@@ -205,12 +203,12 @@ void Game::actualise(){
 	}
 	
 	//Affiche les infos des joueurs 
-	vector<sf::Text>  txt=m.infoPlayer(taille_x, taille_y, x_fen, y_fen);
+	vector<sf::Text>  txt=m.infoPlayer(taille_x, taille_y);
 	int const tailleT(txt.size());
     for (i=0; i<tailleT; i++){
 		window.draw(txt[i]);
 	}
-
+	
 	string s = "  Vague "+to_string(m.getCptVague());
 	txtVag.setString(s);
 	//txtVag.setString("Essai2");
