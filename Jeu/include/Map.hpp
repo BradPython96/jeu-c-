@@ -73,7 +73,7 @@ class Map {
 		void recuperationAcc();		//récupération des accessoire dans un tour
 
 		//Gestion des robots
-		void addRobot(int, int, int, int);
+		void addRobot(int, int);
 		bool emplacementLibre(Robot *rob, Position pos);
 		void spawnRobot();		
 		void deplacementRobot(Robot *r, Player *p);
@@ -94,6 +94,7 @@ class Map {
 		const int& getMinTailleY() const;
 		const int& getMaxTailleY() const;
 		const int& getCptVague() const;
+		const vector<Robot*> getListeRobots() const;
         
 };
 #endif

@@ -9,6 +9,7 @@
 #define MAX_MAP_COULOIR_Y 823 - HAUTEUR_PERSO/2
 #define TAILLE_MAP_COULOIR_X 5000
 #define TAILLE_MAP_COULOIR_Y 1000
+
 //Dimension de la map arene
 #define MIN_MAP_ARENE_X 0
 #define MAX_MAP_ARENE_X 5000
@@ -40,7 +41,7 @@
 #define PV_MAX_JOUEUR 100
 #define PV_MAX_ROBOT 30
 
-//Vitesse
+//Vitesses
 #define VIT_JOUEUR 8
 #define VIT_ROBOT 1
 #define VIT_LASER 5

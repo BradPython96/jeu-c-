@@ -197,19 +197,19 @@ void Map::recuperationAcc(){
 //Robots////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Ajout des robots sur la map par groupe de 9 autour des points de spawn
-void Map::addRobot(int x_min, int x_max, int y_min, int y_max){
+void Map::addRobot(int x_spa, int y_spa){
 	
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_min+TAILLE_ROBOT/2));
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_min+TAILLE_ROBOT/2));
-	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_min+TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_spa-TAILLE_ROBOT, y_spa-TAILLE_ROBOT));
+	robs.push_back(new Robot(x_spa, y_spa-TAILLE_ROBOT));
+	robs.push_back(new Robot(x_spa+TAILLE_ROBOT, y_spa-TAILLE_ROBOT));
 
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_min+TAILLE_ROBOT*1.5));
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_min+TAILLE_ROBOT*1.5));
-	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_min+TAILLE_ROBOT*1.5));
+	robs.push_back(new Robot(x_spa-TAILLE_ROBOT, y_spa));
+	robs.push_back(new Robot(x_spa, y_spa));
+	robs.push_back(new Robot(x_spa+TAILLE_ROBOT, y_spa));
 	
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT/2, y_max-TAILLE_ROBOT/2));
-	robs.push_back(new Robot(x_min+TAILLE_ROBOT*1.5, y_max-TAILLE_ROBOT/2));
-	robs.push_back(new Robot(x_max-TAILLE_ROBOT/2, y_max-TAILLE_ROBOT/2));
+	robs.push_back(new Robot(x_spa-TAILLE_ROBOT, y_spa+TAILLE_ROBOT));
+	robs.push_back(new Robot(x_spa, y_spa+TAILLE_ROBOT));
+	robs.push_back(new Robot(x_spa+TAILLE_ROBOT, y_spa+TAILLE_ROBOT));
 
 	cptRob+=9;
 }
@@ -236,10 +236,7 @@ void Map::spawnRobot(){
 		int const sizeSpa(spawn.size());
 		int const sizeRob(robs.size());
 		int r;
-		int x_min;
-		int x_max;
-		int y_min;
-		int y_max;
+
 		int x_spa;
 		int y_spa;
 		bool free;
@@ -247,10 +244,6 @@ void Map::spawnRobot(){
 		for(r=0; r<sizeSpa; r++){
 			x_spa = spawn[r]->getX();
 			y_spa = spawn[r]->getY();
-			x_min = spawn[r]->getX()-TAILLE_ROBOT*1.5;//On délimite la zone de spawn
-			x_max = spawn[r]->getX()+TAILLE_ROBOT*1.5;
-			y_min = spawn[r]->getY()-TAILLE_ROBOT*1.5;
-			y_max = spawn[r]->getY()+TAILLE_ROBOT*1.5;
 			free=true;
 			int i;
 			for(i=0; i<sizeRob; i++){	//On vérifie que les 9 emplacements soit disponible
@@ -276,7 +269,7 @@ void Map::spawnRobot(){
 			}
 		}
 		if(free){	//si on a trouvé un spawn disponible on y place les robots
-			this->addRobot(x_min, x_max, y_min, y_max);
+			this->addRobot(x_spa,y_spa);
 		}
 		
 	}
@@ -347,8 +340,7 @@ void Map::tourRobot(){
 	if(isVague){
 		spawnRobot();
 	} else {
-		if(robs.size()==0 && !enAttente){		//si il n'
-			cout<<"remise de l'horloge a 0"<<endl;
+		if(robs.size()==0 && !enAttente){
 			wait=clock();
 			enAttente=true;
 		}		
@@ -460,4 +452,8 @@ const int& Map::getMaxTailleY() const{
 
 const int& Map::getCptVague() const{
 	return cptVague;
+}
+
+const vector<Robot*> Map::getListeRobots() const{
+	return robs;
 }

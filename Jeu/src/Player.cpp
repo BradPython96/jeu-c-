@@ -47,7 +47,7 @@ Player::Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min
 }
 
 bool Player::vivant() const{
-	if (pv==0){
+	if (pv<=0){
 		return false;
 	} else {
 		return true;

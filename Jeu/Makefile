@@ -10,13 +10,13 @@ OBJ = $(SRC:.cpp=.o) # Liste des fichiers objets
 BIN = jeu # Nom de l'exécutable
 
 SRCT = $(wildcard test/*.cpp)
-OBJT = $(SRC:.cpp=.o)  $(OBJ)
+OBJT = $(SRCT:.cpp=.o)  $(OBJ)
 BINT = Test #Nom de l'executable des tests
 
-all: build test 
+all: build Test 
 
-test : $(OBJ)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINT) $^
+Test : test.o $(OBJT)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINT) $^ $(LDLIBS)
 	
 build: main.o $(OBJ)
 	$(CXX) $(LDFLAGS) -o $(BIN) $^ $(LDLIBS)
@@ -31,4 +31,4 @@ clear:
 vclear: clear
 	rm -rf $(BIN)
 
-rebuild: vclear build
+rebuild: vclear all
