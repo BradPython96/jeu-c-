@@ -127,8 +127,13 @@ vector<sf::Sprite> Map::listeSprite(int tailleX, int tailleY, int x, int y){
 		}
 	}
 	//Liste perso
-	vector<sf::Sprite> mis0 = p1->affiche(xa, ya, tailleX, tailleY, x, y);
-	vector<sf::Sprite> mis1 = p2->affiche(xa, ya, tailleX, tailleY, x, y);
+	vector<sf::Sprite> mis0;
+	vector<sf::Sprite> mis1;
+
+
+	mis0 = p1->affiche(xa, ya, tailleX, tailleY, x, y);
+
+	mis1 = p2->affiche(xa, ya, tailleX, tailleY, x, y);
 
 	mis0.insert(mis0.end(), mis1.begin(), mis1.end());
 	sp.insert(sp.end(), mis0.begin(), mis0.end());
@@ -152,10 +157,13 @@ vector<sf::Text> Map::infoPlayer(int tailleX, int tailleY){
 		xa = p1->getPos().getX();
 		ya = p1->getPos().getY();
 	}
-	liste.push_back(p1->info(xa, ya, tailleX, tailleY));
-	liste.push_back(p2->info(xa, ya, tailleX, tailleY));
+	if(p1->vivant()){
+		liste.push_back(p1->info(xa, ya, tailleX, tailleY));
+	}
 
-	
+	if(p2->vivant()){
+		liste.push_back(p2->info(xa, ya, tailleX, tailleY));
+	}	
 
 	return liste;
 }

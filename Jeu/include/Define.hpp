@@ -43,9 +43,10 @@
 //Vitesse
 #define VIT_JOUEUR 8
 #define VIT_ROBOT 1
-#define VIT_LASER 10
-#define VIT_BAZOOKA 8
-#define VIT_GRENADE 6
+#define VIT_LASER 5
+#define VIT_BAZOOKA 4
+#define VIT_GRENADE 4
+#define CADENCE_TIR 0.5
 
 // AFFICHAGE
 //Dimension Personnage

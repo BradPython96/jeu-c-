@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -g -O0
+CXXFLAGS = -Wall -Wextra -g -O0 -Iinclude
 
 LDFLAGS = # Paramètres : -L
 LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system
@@ -18,14 +18,14 @@ all: build test
 test : $(OBJ)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINT) $^
 	
-build: src/main.o $(OBJ)
+build: main.o $(OBJ)
 	$(CXX) $(LDFLAGS) -o $(BIN) $^ $(LDLIBS)
 
 %.o: $(HDR)
 
 .PHONY: clear
 clear:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) main.o $(OBJT)
 
 .PHONY: vclear
 vclear: clear

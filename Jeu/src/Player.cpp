@@ -253,7 +253,6 @@ void Player::addGrenade(){
 }
 
 void Player::swapArme(){
-	cout<<"swap"<<endl;
 	int x = armCur+1;
 	if(NB_ARME==x){
 		x=0;
@@ -268,7 +267,7 @@ void Player::swapArme(){
 }
 
 void Player::tir(){
-	if((clock()-recharge)/(double)CLOCKS_PER_SEC>1){	//si on a tirer depuis plus de 1 sec
+	if((clock()-recharge)/(double)CLOCKS_PER_SEC>CADENCE_TIR){	//si on a tirer depuis plus de 1 sec
 		recharge = clock();
 		miss.push_back(arms[armCur]->tirer(pos));	//on tire un missile
 		if(arms[armCur]->getMunitions()<=0){	//on supprime l'arme si elle n'a plus de munition
