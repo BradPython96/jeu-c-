@@ -4,14 +4,21 @@ CXXFLAGS = -Wall -Wextra -g -O0
 LDFLAGS = # Paramètres : -L
 LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system
 
-HDR = $(wildcard *.hpp) # Liste des fichiers d'entêtes
-SRC = $(wildcard *.cpp) # Liste des fichiers sources
+HDR = $(wildcard include/*.hpp) # Liste des fichiers d'entêtes
+SRC = $(wildcard src/*.cpp) # Liste des fichiers sources
 OBJ = $(SRC:.cpp=.o) # Liste des fichiers objets
 BIN = jeu # Nom de l'exécutable
 
-all: build
+SRCT = $(wildcard test/*.cpp)
+OBJT = $(SRC:.cpp=.o)  $(OBJ)
+BINT = Test #Nom de l'executable des tests
 
-build: $(OBJ)
+all: build test 
+
+test : $(OBJ)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(BINT) $^
+	
+build: src/main.o $(OBJ)
 	$(CXX) $(LDFLAGS) -o $(BIN) $^ $(LDLIBS)
 
 %.o: $(HDR)
