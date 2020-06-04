@@ -81,6 +81,15 @@ class Player{
 			pos.setX(x);
 			pos.setY(y);
 		}
+		const Arme* getLaser() const{
+			return arms[0];
+		}
+		const Arme* getBazooka() const{
+			return arms[1];
+		}
+		const Arme* getGrenade() const{
+			return arms[2];
+		}
 		
 		~Player(){
 

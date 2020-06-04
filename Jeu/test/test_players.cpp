@@ -1,6 +1,5 @@
 #include <vector>
 #include "Player.hpp"
-#include "Map.hpp"
 #include "catch.hpp"
 
 
@@ -83,9 +82,6 @@ TEST_CASE("Actions des joueurs", "[joueur]"){
     SECTION("Tir"){
         vector<Missile *> miss=p->getListMiss();
         REQUIRE(miss.size()==0);
-        p->tir();
-        miss=p->getListMiss();
-        REQUIRE(miss.size()==1);
         //Suite des test dans "test_missile.cpp"
     }
 

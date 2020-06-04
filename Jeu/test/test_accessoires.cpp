@@ -14,7 +14,7 @@ TEST_CASE("Apparition et Récupration des accessoires"){
     SECTION("Appariton des accessoires"){
         REQUIRE(m->getAccs().size() == NB_ACCESSOIRES_INIT);
 
-        //Le test de l'appartion d'un accessoire été fait en test réél
+        //Le test de l'appartion d'un accessoire été fait en condition réelle
     }
 
     SECTION("Récupération des accessoires"){
