@@ -437,23 +437,18 @@ Player* Map::getP2(){
 const int& Map::getMinTailleX() const{
 	return min_taille_x;
 }
-
 const int& Map::getMaxTailleX() const{
 	return max_taille_x;
 }
-
 const int& Map::getMinTailleY() const{
 	return min_taille_y;
 }
-
 const int& Map::getMaxTailleY() const{
 	return max_taille_y;
 }
-
 const int& Map::getCptVague() const{
 	return cptVague;
 }
-
 const vector<Robot*> Map::getListeRobots() const{
 	return robs;
 }

@@ -61,7 +61,8 @@ class Player{
 		void moveDownRight(int x_fen,int y_fen);
 		void moveDownLeft(int x_fen,int y_fen);
 		void moveUpLeft(int x_fen,int y_fen);
-		
+		void setMarche();	//Gère l'animation de déplacement du joueur
+
 		void addBazooka();	//Ajoute une arme à la liste
 		void addGrenade();
 
@@ -69,13 +70,13 @@ class Player{
 		void tir();
 		void tourMissile(vector<Robot*>);
 
+		const int& getArmCur() const;	//Accesseur la valeur de ArmCur
 		const int& getPV() const;	//Accesseur PV
-		void setPV(const int p);	//Mutateur PV
 		const bool& getSex() const;	//Accesseur Sex
-		void setMarche();	//Gère l'animation de déplacement du joueur
-		
-		
 		const Position& getPos() const;	//Accesseur Position
+		const vector<Missile*>& getListMiss() const;
+		void setPV(const int p);	//Mutateur PV
+		
 		
 		~Player(){
 

@@ -4,7 +4,7 @@
 #include "catch.hpp"
 
 
-TEST_CASE("Actions des robots"){
+TEST_CASE("Actions des robots", "[robot]"){
 
     Map* m = new Map(true,true,0);
     m->addRobot(500,500);

@@ -295,6 +295,9 @@ void Player::tourMissile(vector<Robot*> rob){
 
 
 // PV ACC/MUT
+const int& Player::getArmCur() const{
+	return armCur;
+}
 const int& Player::getPV() const{
 	return pv;
 }		
@@ -303,9 +306,10 @@ void Player::setPV(const int p){
 }
 const bool& Player::getSex() const{
 	return sex;
-}		
-
-
+}
 const Position& Player::getPos() const{	//Accesseur Position
 	return pos;
+}
+const vector<Missile*>& Player::getListMiss() const{
+	return miss;
 }

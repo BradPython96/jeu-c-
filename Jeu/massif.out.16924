@@ -1,0 +1,1902 @@
+desc: (none)
+cmd: ./jeu
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=107583839
+mem_heap_B=3159065
+mem_heap_extra_B=66175
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=186081796
+mem_heap_B=10787336
+mem_heap_extra_B=88728
+mem_stacks_B=0
+heap_tree=detailed
+n12: 10787336 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4001000 0x4E527E7: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 4001000 0x4E53039: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 4001000 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 4001000 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 4001000 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 4001000 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n1: 4001000 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 4001000 0x10C1ED: Game::Game() (Game.hpp:34)
+         n0: 4001000 0x10BB99: main (main.cpp:9)
+ n2: 1980720 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n5: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 241920 0xB7B849F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                   n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                    n0: 120960 0x10BB99: main (main.cpp:9)
+               n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                   n0: 120960 0x10BB99: main (main.cpp:9)
+      n1: 241920 0xB7B84C3: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                   n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                    n0: 120960 0x10BB99: main (main.cpp:9)
+               n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                   n0: 120960 0x10BB99: main (main.cpp:9)
+      n1: 241920 0xB7B84EB: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                   n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                    n0: 120960 0x10BB99: main (main.cpp:9)
+               n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                   n0: 120960 0x10BB99: main (main.cpp:9)
+      n1: 241920 0xB7B850F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                   n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                    n0: 120960 0x10BB99: main (main.cpp:9)
+               n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                   n0: 120960 0x10BB99: main (main.cpp:9)
+      n1: 241920 0xB7B8537: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                   n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                    n0: 120960 0x10BB99: main (main.cpp:9)
+               n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                   n0: 120960 0x10BB99: main (main.cpp:9)
+   n4: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 241920 0xB7B86B8: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                 n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                  n0: 120960 0x10BB99: main (main.cpp:9)
+             n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                 n0: 120960 0x10BB99: main (main.cpp:9)
+    n1: 241920 0xB7B8819: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 241920 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 241920 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 241920 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 241920 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 241920 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 241920 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 241920 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n2: 241920 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 120960 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 120960 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+                 n1: 120960 0x10C02D: Game::Game() (Game.hpp:31)
+                  n0: 120960 0x10BB99: main (main.cpp:9)
+             n1: 120960 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 120960 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 120960 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 120960 0x10C144: Game::Game() (Game.hpp:32)
+                 n0: 120960 0x10BB99: main (main.cpp:9)
+    n1: 181440 0xB7B8876: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 181440 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 181440 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 181440 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 181440 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 181440 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 181440 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 181440 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 181440 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n0: 181440 in 2 places, all below massif's threshold (1.00%)
+    n0: 60480 in 3 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 30240 in 1 place, below massif's threshold (1.00%)
+ n0: 1107264 in 526 places, all below massif's threshold (1.00%)
+ n1: 1047120 0x4E52B0D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 1047120 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 1047120 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 1047120 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 1047120 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 1047120 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n1: 1047120 0x10C1ED: Game::Game() (Game.hpp:34)
+        n0: 1047120 0x10BB99: main (main.cpp:9)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n2: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n1: 459696 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 459696 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10C02D: Game::Game() (Game.hpp:31)
+                n0: 459696 0x10BB99: main (main.cpp:9)
+           n1: 459696 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 459696 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x10C144: Game::Game() (Game.hpp:32)
+               n0: 459696 0x10BB99: main (main.cpp:9)
+ n1: 892896 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 892896 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n3: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 545280 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 545280 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n5: 545280 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 109056 0xB7B849F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+            n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+               n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 109056 in 2 places, all below massif's threshold (1.00%)
+       n1: 109056 0xB7B84C3: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+            n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+               n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 109056 in 2 places, all below massif's threshold (1.00%)
+       n1: 109056 0xB7B84EB: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+            n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+               n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 109056 in 2 places, all below massif's threshold (1.00%)
+       n1: 109056 0xB7B850F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+            n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+               n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 109056 in 2 places, all below massif's threshold (1.00%)
+       n1: 109056 0xB7B8537: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+            n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+               n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 109056 in 2 places, all below massif's threshold (1.00%)
+    n3: 327168 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n0: 109056 in 4 places, all below massif's threshold (1.00%)
+     n1: 109056 0xB7B86B8: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n0: 109056 in 2 places, all below massif's threshold (1.00%)
+     n1: 109056 0xB7B8819: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 109056 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 109056 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 109056 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 109056 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 109056 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 109056 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 109056 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 109056 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n0: 109056 in 2 places, all below massif's threshold (1.00%)
+    n0: 6816 in 1 place, below massif's threshold (1.00%)
+   n0: 13632 in 1 place, below massif's threshold (1.00%)
+ n1: 178432 0xB794948: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n0: 178432 in 10 places, all below massif's threshold (1.00%)
+ n1: 148544 0xB429437: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 148544 0xB32C2BD: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 148544 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 148544 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 148544 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 148544 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 148544 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 148544 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+         n0: 148544 in 2 places, all below massif's threshold (1.00%)
+ n1: 131168 0xAF4D4A4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 131168 0xB421F0D: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 131168 0xB31F5A6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 131168 0xB4295BC: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 131168 0xB32C2BD: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 131168 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 131168 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 131168 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 131168 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 131168 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 131168 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n0: 131168 in 2 places, all below massif's threshold (1.00%)
+ n1: 131104 0xAF59110: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 131104 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 131104 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 131104 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 131104 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 131104 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 131104 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 131104 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 131104 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 131104 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 131104 in 2 places, all below massif's threshold (1.00%)
+ n1: 129600 0x90E3371: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n0: 129600 in 2 places, all below massif's threshold (1.00%)
+ n1: 120096 0xB8078C4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 120096 0xB787886: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 120096 0xAF4DF93: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 120096 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 120096 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 120096 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 120096 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 120096 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 120096 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 120096 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 120096 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=271391118
+mem_heap_B=16641210
+mem_heap_extra_B=108950
+mem_stacks_B=0
+heap_tree=detailed
+n12: 16641210 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4038144 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 4038144 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 4032000 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 4032000 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 4032000 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 4032000 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 4032000 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 4032000 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 4032000 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n1: 4032000 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n1: 4032000 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+   n0: 6144 in 1 place, below massif's threshold (1.00%)
+ n1: 4001000 0x4E527E7: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 4001000 0x4E53039: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 4001000 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 4001000 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 4001000 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 4001000 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 4001000 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 4001000 0x10E10D: Game::lancement() (Game.cpp:18)
+         n0: 4001000 0x10BBA9: main (main.cpp:10)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 2971080 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 2925720 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1814400 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1814400 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n5: 1814400 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 362880 0xB7B849F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n0: 241920 in 2 places, all below massif's threshold (1.00%)
+               n0: 120960 in 1 place, below massif's threshold (1.00%)
+      n1: 362880 0xB7B84C3: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n0: 241920 in 2 places, all below massif's threshold (1.00%)
+               n0: 120960 in 1 place, below massif's threshold (1.00%)
+      n1: 362880 0xB7B84EB: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n0: 241920 in 2 places, all below massif's threshold (1.00%)
+               n0: 120960 in 1 place, below massif's threshold (1.00%)
+      n1: 362880 0xB7B850F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n0: 241920 in 2 places, all below massif's threshold (1.00%)
+               n0: 120960 in 1 place, below massif's threshold (1.00%)
+      n1: 362880 0xB7B8537: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+          n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+           n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+             n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+              n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                 n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                  n0: 241920 in 2 places, all below massif's threshold (1.00%)
+               n0: 120960 in 1 place, below massif's threshold (1.00%)
+   n4: 1088640 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 362880 0xB7B86B8: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 241920 in 2 places, all below massif's threshold (1.00%)
+             n0: 120960 in 1 place, below massif's threshold (1.00%)
+    n1: 362880 0xB7B8819: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 362880 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 362880 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 362880 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 362880 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 362880 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 362880 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 362880 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n2: 362880 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 241920 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 241920 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 241920 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 241920 in 2 places, all below massif's threshold (1.00%)
+             n0: 120960 in 1 place, below massif's threshold (1.00%)
+    n1: 272160 0xB7B8876: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 272160 0xAF4DFF7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 272160 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 272160 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 272160 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 272160 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 272160 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 272160 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+            n2: 272160 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 181440 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 181440 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+               n1: 181440 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+                n0: 181440 in 2 places, all below massif's threshold (1.00%)
+             n0: 90720 in 1 place, below massif's threshold (1.00%)
+    n0: 90720 in 3 places, all below massif's threshold (1.00%)
+   n0: 22680 in 1 place, below massif's threshold (1.00%)
+  n0: 45360 in 1 place, below massif's threshold (1.00%)
+ n0: 1586758 in 576 places, all below massif's threshold (1.00%)
+ n1: 1379088 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 1379088 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1379088 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1379088 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1379088 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 1379088 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 1379088 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 1379088 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 1379088 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n2: 1379088 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n1: 919392 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 919392 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n2: 919392 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x10C144: Game::Game() (Game.hpp:32)
+               n0: 459696 0x10BB99: main (main.cpp:9)
+              n1: 459696 0x4E5B6DE: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10E021: Game::lancement() (Game.cpp:8)
+                n0: 459696 0x10BBA9: main (main.cpp:10)
+           n1: 459696 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 459696 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10C02D: Game::Game() (Game.hpp:31)
+                n0: 459696 0x10BB99: main (main.cpp:9)
+ n1: 1339344 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 1339344 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n3: 1318896 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 817920 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 817920 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 817920 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n0: 817920 in 5 places, all below massif's threshold (1.00%)
+    n1: 490752 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n0: 490752 in 6 places, all below massif's threshold (1.00%)
+    n0: 10224 in 1 place, below massif's threshold (1.00%)
+   n0: 20448 in 1 place, below massif's threshold (1.00%)
+ n1: 267648 0xB794948: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n0: 267648 in 10 places, all below massif's threshold (1.00%)
+ n1: 261780 0x4E52B0D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 261780 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 261780 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 261780 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 261780 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n2: 261780 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n1: 261780 0x10E10D: Game::lancement() (Game.cpp:18)
+        n0: 261780 0x10BBA9: main (main.cpp:10)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 222816 0xB429437: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 222816 0xB32C2BD: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 222816 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 222816 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 222816 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 222816 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 222816 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 222816 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+         n0: 222816 in 2 places, all below massif's threshold (1.00%)
+ n1: 196752 0xAF4D4A4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 196752 0xB421F0D: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 196752 0xB31F5A6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 196752 0xB4295BC: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 196752 0xB32C2BD: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 196752 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 196752 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 196752 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 196752 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 196752 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+           n1: 196752 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n0: 196752 in 2 places, all below massif's threshold (1.00%)
+ n1: 196656 0xAF59110: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 196656 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 196656 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 196656 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 196656 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 196656 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 196656 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 196656 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 196656 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 196656 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 196656 in 2 places, all below massif's threshold (1.00%)
+ n1: 180144 0xB8078C4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 180144 0xB787886: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 180144 0xAF4DF93: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 180144 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 180144 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 180144 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 180144 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 180144 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 180144 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 180144 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 180144 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=337560143
+mem_heap_B=16818792
+mem_heap_extra_B=138120
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=396010754
+mem_heap_B=17790923
+mem_heap_extra_B=161525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=491025850
+mem_heap_B=17101206
+mem_heap_extra_B=145858
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=556524346
+mem_heap_B=18303843
+mem_heap_extra_B=171733
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=611411967
+mem_heap_B=16818425
+mem_heap_extra_B=136039
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=668798461
+mem_heap_B=16818561
+mem_heap_extra_B=136055
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=741122890
+mem_heap_B=16829697
+mem_heap_extra_B=136687
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=850567739
+mem_heap_B=16829721
+mem_heap_extra_B=136703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=907935926
+mem_heap_B=16829721
+mem_heap_extra_B=136703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=980131740
+mem_heap_B=16829697
+mem_heap_extra_B=136687
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=1089576550
+mem_heap_B=16829721
+mem_heap_extra_B=136703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=1152230399
+mem_heap_B=16829697
+mem_heap_extra_B=136687
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=1204307107
+mem_heap_B=16829721
+mem_heap_extra_B=136703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=1261676289
+mem_heap_B=16829721
+mem_heap_extra_B=136703
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=1353204266
+mem_heap_B=36900683
+mem_heap_extra_B=140525
+mem_stacks_B=0
+heap_tree=detailed
+n6: 36900683 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 20001000 0x4E527E7: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 20001000 0x4E53039: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 20001000 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 20001000 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 20001000 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 20001000 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 20001000 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 20001000 0x10E311: Game::lancement() (Game.cpp:47)
+         n0: 20001000 0x10BBA9: main (main.cpp:10)
+        n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 8070144 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 8070144 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 8064000 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 8064000 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 8064000 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 8064000 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 8064000 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 8064000 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 8064000 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n1: 8064000 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n2: 8064000 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+   n0: 6144 in 1 place, below massif's threshold (1.00%)
+ n0: 3129059 in 1652 places, all below massif's threshold (1.00%)
+ n2: 2978640 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 2925720 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1814400 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1814400 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1814400 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1814400 in 5 places, all below massif's threshold (1.00%)
+   n1: 1088640 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 1088640 in 6 places, all below massif's threshold (1.00%)
+   n0: 22680 in 1 place, below massif's threshold (1.00%)
+  n0: 52920 in 2 places, all below massif's threshold (1.00%)
+ n1: 1379088 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 1379088 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1379088 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1379088 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1379088 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 1379088 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 1379088 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 1379088 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 1379088 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n2: 1379088 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n1: 919392 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 919392 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n2: 919392 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x10C144: Game::Game() (Game.hpp:32)
+               n0: 459696 0x10BB99: main (main.cpp:9)
+              n1: 459696 0x4E5B6DE: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10E021: Game::lancement() (Game.cpp:8)
+                n0: 459696 0x10BBA9: main (main.cpp:10)
+           n1: 459696 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 459696 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10C02D: Game::Game() (Game.hpp:31)
+                n0: 459696 0x10BB99: main (main.cpp:9)
+ n1: 1342752 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 1342752 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n3: 1318896 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 817920 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 817920 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 817920 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n0: 817920 in 5 places, all below massif's threshold (1.00%)
+    n1: 490752 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n0: 490752 in 6 places, all below massif's threshold (1.00%)
+    n0: 10224 in 1 place, below massif's threshold (1.00%)
+   n0: 23856 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=1473288602
+mem_heap_B=56769793
+mem_heap_extra_B=141223
+mem_stacks_B=0
+heap_tree=detailed
+n7: 56769793 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 20001000 0x4E527E7: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 20001000 0x4E53039: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 20001000 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 20001000 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 20001000 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 20001000 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 20001000 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 20001000 0x10E311: Game::lancement() (Game.cpp:47)
+         n0: 20001000 0x10BBA9: main (main.cpp:10)
+        n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 20000000 0x4E48992: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 20000000 0x4E539C4: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 20000000 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 20000000 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 20000000 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 20000000 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 20000000 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 20000000 0x10E311: Game::lancement() (Game.cpp:47)
+         n0: 20000000 0x10BBA9: main (main.cpp:10)
+        n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 8070144 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 8070144 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 8064000 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 8064000 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 8064000 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 8064000 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 8064000 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 8064000 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 8064000 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n1: 8064000 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n2: 8064000 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+   n0: 6144 in 1 place, below massif's threshold (1.00%)
+ n0: 2998169 in 1651 places, all below massif's threshold (1.00%)
+ n2: 2978640 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 2925720 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1814400 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1814400 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1814400 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1814400 in 5 places, all below massif's threshold (1.00%)
+   n1: 1088640 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 1088640 in 6 places, all below massif's threshold (1.00%)
+   n0: 22680 in 1 place, below massif's threshold (1.00%)
+  n0: 52920 in 2 places, all below massif's threshold (1.00%)
+ n1: 1379088 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 1379088 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1379088 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1379088 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1379088 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 1379088 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 1379088 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 1379088 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 1379088 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n2: 1379088 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n1: 919392 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 919392 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 919392 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n0: 919392 in 2 places, all below massif's threshold (1.00%)
+           n0: 459696 in 1 place, below massif's threshold (1.00%)
+ n1: 1342752 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 1342752 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n2: 1318896 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 817920 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 817920 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 817920 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n0: 817920 in 5 places, all below massif's threshold (1.00%)
+    n0: 500976 in 2 places, all below massif's threshold (1.00%)
+   n0: 23856 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=1536020423
+mem_heap_B=56797665
+mem_heap_extra_B=137487
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=1635509862
+mem_heap_B=38247956
+mem_heap_extra_B=109324
+mem_stacks_B=0
+heap_tree=detailed
+n6: 38247956 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 30876672 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 30876672 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 30872576 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 30872576 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 30872576 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 30872576 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 30872576 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 30872576 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 30872576 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n2: 30872576 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n5: 29506560 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 20032000 0x10E311: Game::lancement() (Game.cpp:47)
+             n0: 20032000 0x10BBA9: main (main.cpp:10)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+            n1: 1366016 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+             n1: 1366016 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 44544 in 1 place, below massif's threshold (1.00%)
+           n2: 1366016 0x4E62D25: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 1366016 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+             n1: 1366016 0x112BCD: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:34)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 4096 in 1 place, below massif's threshold (1.00%)
+ n0: 2243910 in 1664 places, all below massif's threshold (1.00%)
+ n2: 1980720 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1209600 in 5 places, all below massif's threshold (1.00%)
+   n1: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 725760 in 6 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 30240 in 2 places, all below massif's threshold (1.00%)
+ n1: 1334366 0x4E527E7: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 1334366 0x4E53039: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 1334366 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 1334366 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 1334366 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 1334366 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 1334366 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 1334366 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+         n2: 1334366 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+          n1: 1334366 0x118B00: Map::Map(bool, bool, int) (Map.cpp:46)
+           n1: 1334366 0x10E400: Game::lancement() (Game.cpp:55)
+            n0: 1334366 0x10BBA9: main (main.cpp:10)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 0 in 7 places, all below massif's threshold (1.00%)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n2: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n1: 459696 0x508C73E: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080D7D: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n1: 459696 0x5082BBC: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x4E5B63C: sf::RenderWindow::RenderWindow() (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+               n1: 459696 0x10C02D: Game::Game() (Game.hpp:31)
+                n0: 459696 0x10BB99: main (main.cpp:9)
+           n1: 459696 0x508C7F2: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+            n1: 459696 0x5080B59: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+             n2: 459696 0x50833D2: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+              n1: 459696 0x10C144: Game::Game() (Game.hpp:32)
+               n0: 459696 0x10BB99: main (main.cpp:9)
+              n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 892896 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 892896 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n2: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 545280 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 545280 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 545280 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n0: 545280 in 5 places, all below massif's threshold (1.00%)
+    n0: 333984 in 2 places, all below massif's threshold (1.00%)
+   n0: 13632 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=1695106470
+mem_heap_B=40790905
+mem_heap_extra_B=111775
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=1767387262
+mem_heap_B=42637817
+mem_heap_extra_B=111975
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=1834387586
+mem_heap_B=44484729
+mem_heap_extra_B=112183
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=1934887484
+mem_heap_B=47255105
+mem_heap_extra_B=112575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=2010770828
+mem_heap_B=48510200
+mem_heap_extra_B=135792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=2083997079
+mem_heap_B=49507661
+mem_heap_extra_B=157843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=2137362459
+mem_heap_B=49111166
+mem_heap_extra_B=153890
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=2220366886
+mem_heap_B=50080446
+mem_heap_extra_B=173474
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=2291643577
+mem_heap_B=51134903
+mem_heap_extra_B=130961
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=2353914307
+mem_heap_B=49515103
+mem_heap_extra_B=161577
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=2416726901
+mem_heap_B=48605012
+mem_heap_extra_B=131876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=2500849034
+mem_heap_B=49723745
+mem_heap_extra_B=163519
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=2542629291
+mem_heap_B=50209962
+mem_heap_extra_B=174870
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=2623446559
+mem_heap_B=50571591
+mem_heap_extra_B=132761
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=2690447169
+mem_heap_B=52419207
+mem_heap_extra_B=133033
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=2757446334
+mem_heap_B=54266103
+mem_heap_extra_B=133241
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=2824445500
+mem_heap_B=56112999
+mem_heap_extra_B=133417
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=2923848327
+mem_heap_B=62410519
+mem_heap_extra_B=133697
+mem_stacks_B=0
+heap_tree=detailed
+n8: 62410519 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 51937792 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 51937792 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 51933696 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 51933696 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 51933696 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 51933696 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 51933696 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 51933696 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 51933696 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n3: 51933696 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n6: 47639040 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 20032000 0x10E311: Game::lancement() (Game.cpp:47)
+             n0: 20032000 0x10BBA9: main (main.cpp:10)
+            n9: 16588800 0x11036E: Robot::Robot(int, int) (Robot.cpp:13)
+             n1: 1843200 0x119EB7: Map::addRobot(int, int) (Map.cpp:202)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119EF2: Map::addRobot(int, int) (Map.cpp:203)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F30: Map::addRobot(int, int) (Map.cpp:204)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F6D: Map::addRobot(int, int) (Map.cpp:206)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FA5: Map::addRobot(int, int) (Map.cpp:207)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FE2: Map::addRobot(int, int) (Map.cpp:208)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A020: Map::addRobot(int, int) (Map.cpp:210)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A05B: Map::addRobot(int, int) (Map.cpp:211)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A099: Map::addRobot(int, int) (Map.cpp:212)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+            n1: 2732032 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+             n2: 2732032 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x118B00: Map::Map(bool, bool, int) (Map.cpp:46)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 222208 in 2 places, all below massif's threshold (1.00%)
+           n2: 4098048 0x4E62D25: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n2: 2732032 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+             n2: 2732032 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x1194C2: Map::listeSprite(int, int, int, int) (Map.cpp:136)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+            n2: 1366016 0x1146B1: Arme::texture() const (Arme.hpp:37)
+             n2: 1366016 0x1134D6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n0: 0 in 1 place, below massif's threshold (1.00%)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+           n0: 196608 in 1 place, below massif's threshold (1.00%)
+   n0: 4096 in 1 place, below massif's threshold (1.00%)
+ n0: 2668431 in 1685 places, all below massif's threshold (1.00%)
+ n2: 1988280 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1209600 in 5 places, all below massif's threshold (1.00%)
+   n1: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 725760 in 6 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 37800 in 2 places, all below massif's threshold (1.00%)
+ n1: 1333440 0x4E46495: sf::Image::create(unsigned int, unsigned int, unsigned char const*) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 1333440 0x4E60CB1: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+      n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+       n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+        n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+         n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+          n0: 1333440 0x10BBA9: main (main.cpp:10)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1333440 0x4E60DA0: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+     n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+      n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+       n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+        n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+         n0: 1333440 0x10BBA9: main (main.cpp:10)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1333440 0x4E60DD6: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+     n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+      n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+       n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+        n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+         n0: 1333440 0x10BBA9: main (main.cpp:10)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 919392 in 2 places, all below massif's threshold (1.00%)
+ n1: 896304 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 896304 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 879264 in 3 places, all below massif's threshold (1.00%)
+   n0: 17040 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=3024105040
+mem_heap_B=57036751
+mem_heap_extra_B=133833
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=3087714852
+mem_heap_B=59827295
+mem_heap_extra_B=134025
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=3171684190
+mem_heap_B=59827327
+mem_heap_extra_B=134001
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=3256488485
+mem_heap_B=59831487
+mem_heap_extra_B=134177
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=3341101058
+mem_heap_B=59831487
+mem_heap_extra_B=134161
+mem_stacks_B=0
+heap_tree=detailed
+n6: 59831487 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 51951104 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 51951104 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 51947008 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 51947008 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 51947008 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 51947008 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 51947008 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 51947008 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 51947008 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n3: 51947008 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n6: 47652352 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 20032000 0x10E311: Game::lancement() (Game.cpp:47)
+             n0: 20032000 0x10BBA9: main (main.cpp:10)
+            n9: 16588800 0x11036E: Robot::Robot(int, int) (Robot.cpp:13)
+             n1: 1843200 0x119EB7: Map::addRobot(int, int) (Map.cpp:202)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119EF2: Map::addRobot(int, int) (Map.cpp:203)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F30: Map::addRobot(int, int) (Map.cpp:204)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F6D: Map::addRobot(int, int) (Map.cpp:206)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FA5: Map::addRobot(int, int) (Map.cpp:207)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FE2: Map::addRobot(int, int) (Map.cpp:208)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A020: Map::addRobot(int, int) (Map.cpp:210)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A05B: Map::addRobot(int, int) (Map.cpp:211)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A099: Map::addRobot(int, int) (Map.cpp:212)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+            n1: 2732032 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+             n2: 2732032 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x118B00: Map::Map(bool, bool, int) (Map.cpp:46)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 235520 in 2 places, all below massif's threshold (1.00%)
+           n2: 4098048 0x4E62D25: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n2: 2732032 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+             n2: 2732032 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x1194C2: Map::listeSprite(int, int, int, int) (Map.cpp:136)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+            n2: 1366016 0x1146B1: Arme::texture() const (Arme.hpp:37)
+             n2: 1366016 0x1134D6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n0: 0 in 1 place, below massif's threshold (1.00%)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+           n0: 196608 in 1 place, below massif's threshold (1.00%)
+   n0: 4096 in 1 place, below massif's threshold (1.00%)
+ n0: 2742967 in 1689 places, all below massif's threshold (1.00%)
+ n2: 1988280 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1209600 in 5 places, all below massif's threshold (1.00%)
+   n1: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 725760 in 6 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 37800 in 2 places, all below massif's threshold (1.00%)
+ n1: 1333440 0x4E60DD6: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x1146B1: Arme::texture() const (Arme.hpp:37)
+    n2: 1333440 0x1134D6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+     n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+      n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+       n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+        n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+         n0: 1333440 0x10BBA9: main (main.cpp:10)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 919392 in 2 places, all below massif's threshold (1.00%)
+ n1: 896304 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 896304 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 879264 in 3 places, all below massif's threshold (1.00%)
+   n0: 17040 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=3424737492
+mem_heap_B=59831487
+mem_heap_extra_B=134177
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=3528886654
+mem_heap_B=57055767
+mem_heap_extra_B=134089
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=3593108138
+mem_heap_B=59846631
+mem_heap_extra_B=134281
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=3676776111
+mem_heap_B=59846663
+mem_heap_extra_B=134289
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=3750419223
+mem_heap_B=58409592
+mem_heap_extra_B=134248
+mem_stacks_B=0
+heap_tree=detailed
+n6: 58409592 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 50598400 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 50598400 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 50594304 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 50594304 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 50594304 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 50594304 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 50594304 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 50594304 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 50594304 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n3: 50594304 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n6: 47665664 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 20032000 0x10E311: Game::lancement() (Game.cpp:47)
+             n0: 20032000 0x10BBA9: main (main.cpp:10)
+            n9: 16588800 0x11036E: Robot::Robot(int, int) (Robot.cpp:13)
+             n1: 1843200 0x119EB7: Map::addRobot(int, int) (Map.cpp:202)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119EF2: Map::addRobot(int, int) (Map.cpp:203)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F30: Map::addRobot(int, int) (Map.cpp:204)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F6D: Map::addRobot(int, int) (Map.cpp:206)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FA5: Map::addRobot(int, int) (Map.cpp:207)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FE2: Map::addRobot(int, int) (Map.cpp:208)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A020: Map::addRobot(int, int) (Map.cpp:210)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A05B: Map::addRobot(int, int) (Map.cpp:211)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A099: Map::addRobot(int, int) (Map.cpp:212)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+            n1: 2732032 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+             n2: 2732032 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x118B00: Map::Map(bool, bool, int) (Map.cpp:46)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 248832 in 2 places, all below massif's threshold (1.00%)
+           n2: 2732032 0x4E62D25: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n2: 2732032 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+             n2: 2732032 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x1194C2: Map::listeSprite(int, int, int, int) (Map.cpp:136)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+            n0: 0 in 1 place, below massif's threshold (1.00%)
+           n0: 196608 in 1 place, below massif's threshold (1.00%)
+   n0: 4096 in 1 place, below massif's threshold (1.00%)
+ n0: 2673776 in 1690 places, all below massif's threshold (1.00%)
+ n2: 1988280 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1209600 in 5 places, all below massif's threshold (1.00%)
+   n1: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 725760 in 6 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 37800 in 2 places, all below massif's threshold (1.00%)
+ n1: 1333440 0x4E48992: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 1333440 0x4E539C4: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n1: 1333440 0x4E53D98: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n1: 1333440 0x4E55F37: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n1: 1333440 0x4E55FCA: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+      n1: 1333440 0x4E598CE: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+       n2: 1333440 0x4E62AE7: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+        n1: 1333440 0x10D5B1: Grenade::Grenade(bool) (Grenade.cpp:24)
+         n1: 1333440 0x114144: Player::addGrenade() (Player.cpp:249)
+          n1: 1333440 0x1122A1: Accessoire::win(Player*) (Accessoire.cpp:51)
+           n1: 1333440 0x119D9A: Map::recuperationAcc() (Map.cpp:191)
+            n1: 1333440 0x10FCD1: Game::action(sf::Event) (Game.cpp:313)
+             n1: 1333440 0x10EE7C: Game::tour(sf::Event) (Game.cpp:158)
+              n1: 1333440 0x10ED48: Game::gestion() (Game.cpp:134)
+               n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+                n0: 1333440 0x10BBA9: main (main.cpp:10)
+        n0: 0 in 10 places, all below massif's threshold (1.00%)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 919392 in 2 places, all below massif's threshold (1.00%)
+ n1: 896304 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 896304 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 879264 in 3 places, all below massif's threshold (1.00%)
+   n0: 17040 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=3818403990
+mem_heap_B=61214231
+mem_heap_extra_B=134337
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=3822574999
+mem_heap_B=63815591
+mem_heap_extra_B=134369
+mem_stacks_B=0
+heap_tree=peak
+n8: 63815591 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 53330432 0xAF4D333: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 53330432 0xAF4D4EE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 53326336 0xB336B84: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 53326336 0xB323C45: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 53326336 0xB323F3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 53326336 0xB328ED4: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 53326336 0xB2E7395: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+        n1: 53326336 0xB2E901E: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+         n1: 53326336 0x4E62421: sf::Texture::create(unsigned int, unsigned int) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+          n3: 53326336 0x4E628FB: sf::Texture::loadFromImage(sf::Image const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+           n7: 49031680 0x4E62AFB: sf::Texture::loadFromFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, sf::Rect<int> const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n1: 20032000 0x10E311: Game::lancement() (Game.cpp:47)
+             n0: 20032000 0x10BBA9: main (main.cpp:10)
+            n9: 16588800 0x11036E: Robot::Robot(int, int) (Robot.cpp:13)
+             n1: 1843200 0x119EB7: Map::addRobot(int, int) (Map.cpp:202)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119EF2: Map::addRobot(int, int) (Map.cpp:203)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F30: Map::addRobot(int, int) (Map.cpp:204)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119F6D: Map::addRobot(int, int) (Map.cpp:206)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FA5: Map::addRobot(int, int) (Map.cpp:207)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x119FE2: Map::addRobot(int, int) (Map.cpp:208)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A020: Map::addRobot(int, int) (Map.cpp:210)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A05B: Map::addRobot(int, int) (Map.cpp:211)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+             n1: 1843200 0x11A099: Map::addRobot(int, int) (Map.cpp:212)
+              n1: 1843200 0x11A77F: Map::spawnRobot() (Map.cpp:272)
+               n1: 1843200 0x11AC30: Map::tourRobot() (Map.cpp:341)
+                n1: 1843200 0x10EDE6: Game::gestion() (Game.cpp:145)
+                 n1: 1843200 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1843200 0x10BBA9: main (main.cpp:10)
+            n1: 4032000 0x10C1ED: Game::Game() (Game.hpp:34)
+             n0: 4032000 0x10BB99: main (main.cpp:9)
+            n1: 4032000 0x10E10D: Game::lancement() (Game.cpp:18)
+             n0: 4032000 0x10BBA9: main (main.cpp:10)
+            n1: 2732032 0x112567: Laser::Laser(bool) (Laser.cpp:24)
+             n2: 2732032 0x112A17: Player::Player(int, int, bool, int, int, int, int) (Player.cpp:20)
+              n1: 1366016 0x118AAD: Map::Map(bool, bool, int) (Map.cpp:45)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x118B00: Map::Map(bool, bool, int) (Map.cpp:46)
+               n1: 1366016 0x10E400: Game::lancement() (Game.cpp:55)
+                n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n1: 1366016 0x10D5B1: Grenade::Grenade(bool) (Grenade.cpp:24)
+             n1: 1366016 0x114144: Player::addGrenade() (Player.cpp:249)
+              n1: 1366016 0x1122A1: Accessoire::win(Player*) (Accessoire.cpp:51)
+               n1: 1366016 0x119D9A: Map::recuperationAcc() (Map.cpp:191)
+                n1: 1366016 0x10FCD1: Game::action(sf::Event) (Game.cpp:313)
+                 n1: 1366016 0x10EE7C: Game::tour(sf::Event) (Game.cpp:158)
+                  n1: 1366016 0x10ED48: Game::gestion() (Game.cpp:134)
+                   n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                    n0: 1366016 0x10BBA9: main (main.cpp:10)
+            n0: 248832 in 2 places, all below massif's threshold (1.00%)
+           n2: 4098048 0x4E62D25: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+            n2: 2732032 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+             n2: 2732032 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n1: 1366016 0x1194C2: Map::listeSprite(int, int, int, int) (Map.cpp:136)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+            n2: 1366016 0x1146B1: Arme::texture() const (Arme.hpp:37)
+             n2: 1366016 0x1134D6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+              n1: 1366016 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+               n1: 1366016 0x10F366: Game::actualise() (Game.cpp:197)
+                n1: 1366016 0x10EE18: Game::gestion() (Game.cpp:148)
+                 n1: 1366016 0x10EA5A: Game::lancement() (Game.cpp:114)
+                  n0: 1366016 0x10BBA9: main (main.cpp:10)
+              n0: 0 in 1 place, below massif's threshold (1.00%)
+             n0: 0 in 1 place, below massif's threshold (1.00%)
+           n0: 196608 in 1 place, below massif's threshold (1.00%)
+   n0: 4096 in 1 place, below massif's threshold (1.00%)
+ n0: 2680863 in 1688 places, all below massif's threshold (1.00%)
+ n2: 1988280 0xAF629A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n3: 1950480 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 1209600 0xAF00646: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 1209600 0xAF00AEE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 1209600 0xB7B711A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n0: 1209600 in 5 places, all below massif's threshold (1.00%)
+   n1: 725760 0xAF00BC0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 725760 in 6 places, all below massif's threshold (1.00%)
+   n0: 15120 in 1 place, below massif's threshold (1.00%)
+  n0: 37800 in 2 places, all below massif's threshold (1.00%)
+ n1: 1333440 0x4E46495: sf::Image::create(unsigned int, unsigned int, unsigned char const*) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n1: 1333440 0x4E60CB1: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+     n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+      n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+       n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+        n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+         n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+          n0: 1333440 0x10BBA9: main (main.cpp:10)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1333440 0x4E60DA0: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+     n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+      n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+       n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+        n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+         n0: 1333440 0x10BBA9: main (main.cpp:10)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1333440 0x4E60DD6: sf::Texture::copyToImage() const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+  n2: 1333440 0x4E62D17: sf::Texture::Texture(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+   n2: 1333440 0x4E62D82: sf::Texture::operator=(sf::Texture const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.4.2)
+    n2: 1333440 0x1134F6: Player::affiche(int, int, int, int, int, int) (Player.cpp:93)
+     n1: 1333440 0x119454: Map::listeSprite(int, int, int, int) (Map.cpp:134)
+      n1: 1333440 0x10F366: Game::actualise() (Game.cpp:197)
+       n1: 1333440 0x10EE18: Game::gestion() (Game.cpp:148)
+        n1: 1333440 0x10EA5A: Game::lancement() (Game.cpp:114)
+         n0: 1333440 0x10BBA9: main (main.cpp:10)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 919392 0xAF590F6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n1: 919392 0xAF5C4D6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 919392 0xAF4DFAE: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n1: 919392 0xB32C26F: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+     n1: 919392 0xAEA8FF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+      n1: 919392 0xAEA398A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+       n1: 919392 0x90E4736: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+        n1: 919392 0x90D2E67: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+         n1: 919392 0x90EC336: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+          n1: 919392 0x508C226: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4.2)
+           n0: 919392 in 2 places, all below massif's threshold (1.00%)
+ n1: 896304 0xB788AB5: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+  n2: 896304 0xAF62A0A: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+   n1: 879264 0xAF31BC6: ??? (in /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+    n0: 879264 in 3 places, all below massif's threshold (1.00%)
+   n0: 17040 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=3901868987
+mem_heap_B=61216903
+mem_heap_extra_B=134425
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=3984966165
+mem_heap_B=61216903
+mem_heap_extra_B=134425
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=4069207345
+mem_heap_B=61232047
+mem_heap_extra_B=134561
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=4153348193
+mem_heap_B=61232079
+mem_heap_extra_B=134617
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=4236354095
+mem_heap_B=61232079
+mem_heap_extra_B=134585
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=4278254574
+mem_heap_B=59715901
+mem_heap_extra_B=98571
+mem_stacks_B=0
+heap_tree=empty
