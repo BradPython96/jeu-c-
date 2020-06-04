@@ -33,13 +33,13 @@ TEST_CASE("Apparition et Récupration des accessoires"){
 
         //cas où le joueur est à côté de l'accessoire
             acc = listeAcc[NB_ACCESSOIRES_INIT-1];
-            m->getP1()->setPos(acc->getPos().getX()+11, acc->getPos().getY());
-            m->getP2()->setPos(acc->getPos().getX(), acc->getPos().getY()+11);
+            m->getP1()->setPos(acc->getPos().getX()+51, acc->getPos().getY());
+            m->getP2()->setPos(acc->getPos().getX(), acc->getPos().getY()+51);
             m->recuperationAcc();
             REQUIRE(m->getAccs().size() == 1);
 
         //Cas où le joueur est à la limite de l'accessoire
-            m->getP2()->setPos(acc->getPos().getX()+10, acc->getPos().getY());
+            m->getP2()->setPos(acc->getPos().getX()+50, acc->getPos().getY());
             m->recuperationAcc();
             REQUIRE(m->getAccs().size() == 0);
     }

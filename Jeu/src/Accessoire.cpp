@@ -32,7 +32,7 @@ string Accessoire::toString(){
 
 sf::Sprite Accessoire::affiche(int x, int y){
 		
-	sprite_acc.setPosition(pos.getX()-x+TAILLE_ACCESSOIRE/8, pos.getY()-y+TAILLE_ACCESSOIRE/4);
+	sprite_acc.setPosition(pos.getX()-x-TAILLE_ACCESSOIRE/2, pos.getY()-y+TAILLE_ACCESSOIRE/4);
 	
 	return sprite_acc;
 }
