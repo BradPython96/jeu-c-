@@ -76,7 +76,11 @@ class Player{
 		const Position& getPos() const;	//Accesseur Position
 		const vector<Missile*>& getListMiss() const;
 		void setPV(const int p);	//Mutateur PV
-		
+		//Fonction pour test
+		void setPos(int x, int y){
+			pos.setX(x);
+			pos.setY(y);
+		}
 		
 		~Player(){
 

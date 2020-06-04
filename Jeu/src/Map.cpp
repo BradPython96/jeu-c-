@@ -311,18 +311,20 @@ void Map::deplacementRobot(Robot *r, Player *p){
 	
 	if(!moved){	//si il n'a pas bougé on essaie de le faire aller dans une autre direction
 		if(newY == r->getPos().getY()){	//si il voulait aller à droite ou a gauche
-			if(emplacementLibre(r, Position(newX, newY-TAILLE_ROBOT, 0))){	//on vérifie si il peut aller en bas
+		newX = r->getPos().getX();
+			if(emplacementLibre(r, Position(newX, newY-VIT_ROBOT, 0))){	//on vérifie si il peut aller en bas
 				r->moveUp();
 				moved=true;
-			} else if (emplacementLibre(r, Position(newX, newY+TAILLE_ROBOT, 0))){	//ou en haut
+			} else if (emplacementLibre(r, Position(newX, newY+VIT_ROBOT, 0))){	//ou en haut
 				r->moveDown();
 				moved=true;
 			}
 		} else {	//si il voulait aller en haut ou en bas
-			if(emplacementLibre(r, Position(newX-TAILLE_ROBOT, newY, 0))){	//on vérifie si il peut aller a gauche
+		newY = r->getPos().getY(); 
+			if(emplacementLibre(r, Position(newX-VIT_ROBOT, newY, 0))){	//on vérifie si il peut aller a gauche
 				r->moveLeft();
 				moved=true;
-			} else if (emplacementLibre(r, Position(newX+TAILLE_ROBOT, newY, 0))){	//ou a droite
+			} else if (emplacementLibre(r, Position(newX+VIT_ROBOT, newY, 0))){	//ou a droite
 				r->moveRight();
 				moved=true;
 			}
@@ -451,4 +453,10 @@ const int& Map::getCptVague() const{
 }
 const vector<Robot*> Map::getListeRobots() const{
 	return robs;
+}
+
+//Fonctions pour test
+void Map::addRobotTest (int i, int j){
+	Robot* r = new Robot(i,j);
+	robs.push_back(r);
 }

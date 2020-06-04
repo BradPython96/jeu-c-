@@ -95,6 +95,11 @@ class Map {
 		const int& getMaxTailleY() const;
 		const int& getCptVague() const;
 		const vector<Robot*> getListeRobots() const;
+
+		//Methode pour tests
+
+		void addRobotTest (int i, int j);
+		
         
 };
 #endif
