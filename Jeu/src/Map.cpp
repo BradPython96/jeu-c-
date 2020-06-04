@@ -184,10 +184,10 @@ void Map::recuperationAcc(){
 	sf::Text text;
 	int const tailleA(accs.size());
 	for (i=0; i<tailleA; i++){
-		if(sqrt(p1->getPos().getX() - accs[i]->getPos().getX()) + sqrt(p1->getPos().getY() - accs[i]->getPos().getY()) <= 10){
+		if(p1->getPos().distance(accs[i]->getPos()) <= 10){
 			accs[i]->win(p1);
 			accs.erase(accs.begin()+i);
-		} else if (sqrt(p2->getPos().getX() - accs[i]->getPos().getX()) + sqrt(p2->getPos().getY() - accs[i]->getPos().getY()) <= 10){
+		} else if (p2->getPos().distance(accs[i]->getPos()) <= 10){
 			accs[i]->win(p2);
 			accs.erase(accs.begin()+i);
 		}
