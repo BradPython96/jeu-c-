@@ -464,3 +464,11 @@ void Map::addRobotTest (int i, int j){
 const vector<Position *> Map::getSpawns() const{
 	return spawn;
 }
+
+const vector<Accessoire *> Map::getAccs() const{
+	return accs;
+}
+
+void Map::setClockAcc(int s){
+	apparAcc = s;
+}

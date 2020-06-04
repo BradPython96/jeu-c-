@@ -96,10 +96,12 @@ class Map {
 		const int& getCptVague() const;
 		const vector<Robot*> getListeRobots() const;
 
-		//Methode pour tests
+		//Methodes pour tests
 
 		void addRobotTest (int i, int j);
 		const vector<Position *> getSpawns() const;
+		const vector<Accessoire *> getAccs() const;
+		void setClockAcc(int s);
 		
         
 };
