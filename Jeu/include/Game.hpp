@@ -29,23 +29,27 @@ class Game{
 	public :
 	
 		Game(){			//CONSTRUCTEUR
+			//Création de la fenetre
 			window.create(sf::VideoMode(TAILLE,TAILLE), "ROBS VS ROBOTS");
 			window.setPosition(sf::Vector2i(10, 50));
+
+			//Gestion du Game Over
 			if (!gameOver.loadFromFile("Game_Over.png", sf::IntRect(0,0,TAILLE,TAILLE))){
 				cout<<"Erreur de chargement du game over"<<endl;
 			}
 			gameOver.setSmooth(true);
 			sprite_gameOver.setTexture(gameOver);
 			
-
+			//Text -> Affichage du numéro de la vague
 			if(!font_3.loadFromFile("Robot_Font_2.otf")){
 				cout<<"Erreur chargement de la font"<<endl;
-			}
-			
+			}			
 			txtVag.setFont(font_3);
 			//txtVag.setString("Essai 2");
 			txtVag.setCharacterSize(25);
 			txtVag.setFillColor(sf::Color::Magenta);
+
+			m=nullptr;
 		}	
 
 		~Game(){
