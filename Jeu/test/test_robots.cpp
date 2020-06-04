@@ -5,7 +5,7 @@
 
 
 
-TEST_CASE("Actions des robots"){
+TEST_CASE("Apparition et Actions des robots"){
 
 
     Map* m = new Map(true,true,0);
@@ -142,10 +142,4 @@ TEST_CASE("Actions des robots"){
         REQUIRE(m->getP1()->getPV() == PV_MAX_JOUEUR-DMG_ROBOT);
 
     }
-
-
-
-    
-
-
 }

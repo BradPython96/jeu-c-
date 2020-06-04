@@ -465,3 +465,7 @@ void Map::addRobotTest (int i, int j){
 	Robot* r = new Robot(i,j);
 	robs.push_back(r);
 }
+
+const vector<Position *> Map::getSpawns() const{
+	return spawn;
+}

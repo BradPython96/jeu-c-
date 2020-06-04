@@ -99,6 +99,7 @@ class Map {
 		//Methode pour tests
 
 		void addRobotTest (int i, int j);
+		const vector<Position *> getSpawns() const;
 		
         
 };
