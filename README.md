@@ -1,5 +1,8 @@
 # ROBs VS Robots
 
+## Rêgles du jeu
+
+Deux amis se retrouve soudainement attaqué par des ordes de robots. Lorsqu'ils commencent ils n'ont pour se défendre qu'un simple pistolet laser. Par chance la carte dans laquelle ils se déplacent est jonchée de cadeau surprise cela peut leur permettre de récupérer de la vie ou encore ramasser des grenades ou des bazookas chargés. Les vagues s'enchainent sans fin avec a chaque tour de plus en plus de robot à vaincre. Jusqu'où serez-vous capable d'aller ?
 
 ## Installation
 
@@ -45,6 +48,26 @@ La map n°2 est une ébauche, pour profiter pleinement du jeu il est conseillé 
 
 - ``M`` : switcher d'arme
 - ``L`` : tirer
+
+### Ramasser un accessoire
+
+Pour ramasser un cadeau au sol il suffit de se diriger vers celui-ci et il sera ramassé automatiquement.
+
+## Fonctionnement du programme
+
+### Comprendre le code en bref
+
+La classe ``Game`` gère tout ce qui est relié à l'affichage : la gestion des fenêtres, l'actualisation de l'affichage à chaque tour, ainsi que la récupération des informations émisent par le clavier. 
+
+Un attribut ``Map`` est inclue dans la classe ``Game``, c'est dans cette autre classe que vont être géré toutes les intéractions entre les éléments du jeu. En effet, cette classe ``Map`` contient deux ``Player`` ainsi qu'une liste de ``Robot`` et une d'``Accessoire``.
+
+Les ``Player`` possèdent chacun une table statique d'``Arme`` et de ``Missile``. Individuellement ils s'occupe des missiles qu'ils ont tiré et des armes qu'ils possèdent.
+
+### Les détails travaillés avec précision
+
+Vous pourez constater que les classes ``Missile`` sont particulièrement travaillé. En effet, suivant l'arme utilisé l'impact est différent par exemple un simple pistolet laser ne va retirer des PVs qu'au premier robot touché par le laser. Au contraire, le Bazooka va avoir un effet destructeur plus important car il va infliger des dégats à tous les robots se trouvant dans la zone d'impact. Mais encore, la grenade va avoir un effet différent car elle va exploser a un endroit définit par sa portée et retirer des PVs à tous les robots se trouvant dans sa zone de dommage. De plus, l'affichage des explosions est particulièrement travaillé pour un meilleur gameplay.
+
+Les déplacements des robots sont travaillés dans la classe ``Map``. Ils sont construit de sorte que les robots ne se superposent pas et que dans le cas ou ils se retrouveraient bloqués par l'un des leurs ils essayeront de détourner le problème pour se rapprocher toujours plus des ``Player``.
 
 ## Test
 
