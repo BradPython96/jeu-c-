@@ -174,7 +174,7 @@ sf::Text Player::info(int xa, int ya, int tailleX, int tailleY){
 void Player::moveLeft(int x_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Left;
-	if(pos.getX()>min_taille_x && pos.getX() > x_fen){
+	if(pos.getX()-vit>min_taille_x && pos.getX()-vit > x_fen){
 		pos.setX(pos.getX()-vit);
 	}
 	pos.setAngle(180);
@@ -183,7 +183,7 @@ void Player::moveLeft(int x_fen){
 void Player::moveDown(int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Down;
-	if(pos.getY()<max_taille_y && pos.getY() < y_fen + TAILLE){
+	if(pos.getY()+vit<max_taille_y && pos.getY()+vit < y_fen + TAILLE){
 		pos.setY(pos.getY()+vit);
 	}
 	pos.setAngle(270);
@@ -192,8 +192,10 @@ void Player::moveDown(int y_fen){
 void Player::moveRight(int x_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Right;
-	if(pos.getX()<max_taille_x && pos.getX() < x_fen + TAILLE){
+	if(pos.getX()+vit<max_taille_x && pos.getX()+vit < x_fen + TAILLE){
 		pos.setX(pos.getX()+vit);
+	} else {
+
 	}
 	pos.setAngle(0);
 }
@@ -201,12 +203,12 @@ void Player::moveRight(int x_fen){
 void Player::moveUp(int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	anim.y=Up;
-
-	if(pos.getY()>min_taille_y && pos.getY()>y_fen){
+	if(pos.getY()-vit>min_taille_y && pos.getY()-vit>y_fen){
 		pos.setY(pos.getY()-vit);
 	}
 	pos.setAngle(90);
 }
+
 void Player::moveUpRight(int x_fen,int y_fen){
 	enum Dir{Down, Right, Left, Up, UpRight, DownRight, DownLeft, UpLeft};
 	this->moveUp(y_fen);

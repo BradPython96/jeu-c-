@@ -15,6 +15,10 @@ class MissileGrenade : public Missile {
     public :
         MissileGrenade(Position p);   //CONSTRUCTEUR
 
+        const int& getCptG() const{
+            return cptG;
+        }
+        
         void move(int, int, int, int);  //Déplacement du missile
         sf::Sprite affiche(int, int);
         void explose(vector<Robot*>);

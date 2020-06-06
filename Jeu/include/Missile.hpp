@@ -29,6 +29,10 @@ class Missile{
         const int& getCpt() const{    //Accesseur boom
             return cpt;
         }
+        const Position& getPos() const{
+            return pos;
+        }
+
 
         virtual void explose(vector<Robot*>)=0;
         virtual sf::Sprite affiche(int, int)=0;

@@ -1,11 +1,12 @@
 #include <vector>
 #include "Player.hpp"
+#include "Map.hpp"
 #include "catch.hpp"
 
 
 TEST_CASE("Actions des joueurs", "[joueur]"){
 
-    Player* p = new Player(500,500,true, 0, 1000, 0, 1000);
+    Player* p = new Player(500,500,true, 0, 1500, 0, 1500);
     
     SECTION("Initialisation"){
         REQUIRE(p->getSex()==true);
@@ -28,33 +29,33 @@ TEST_CASE("Actions des joueurs", "[joueur]"){
         REQUIRE(p->getPos().getX()==500);
         REQUIRE(p->getPos().getX()==500);
         p->moveLeft(250);
-        REQUIRE(p->getPos().getX()==500+VIT_JOUEUR);
+        REQUIRE(p->getPos().getX()==500-VIT_JOUEUR);
         REQUIRE(p->getPos().getY()==500);
         p->moveRight(250+VIT_JOUEUR);
         REQUIRE(p->getPos().getX()==500);
         REQUIRE(p->getPos().getX()==500);
 
         p->moveDownRight(250, 250);
-        REQUIRE(p->getPos().getX()==500-VIT_JOUEUR);
+        REQUIRE(p->getPos().getX()==500+VIT_JOUEUR);
         REQUIRE(p->getPos().getY()==500+VIT_JOUEUR);
         p->moveUpLeft(250-VIT_JOUEUR, 250+VIT_JOUEUR);
         REQUIRE(p->getPos().getX()==500);
-        REQUIRE(p->getPos().getX()==500);
+        REQUIRE(p->getPos().getY()==500);
         p->moveDownLeft(250, 250);
-        REQUIRE(p->getPos().getX()==500+VIT_JOUEUR);
+        REQUIRE(p->getPos().getX()==500-VIT_JOUEUR);
         REQUIRE(p->getPos().getY()==500+VIT_JOUEUR);
         p->moveUpRight(250+VIT_JOUEUR, 250+VIT_JOUEUR);
         REQUIRE(p->getPos().getX()==500);
-        REQUIRE(p->getPos().getX()==500);
+        REQUIRE(p->getPos().getY()==500);
         REQUIRE(p->getPos().getAngle()==45);
 
         //Test dans le cas ou le joueur veux sortir de la fenetre
         int i;
-        for(i=0; i<255; i++){
+        for(i=0; i<550; i++){
             p->moveDown(250);
         }
         REQUIRE(p->getPos().getX()==500);
-        REQUIRE(p->getPos().getX()==750);
+        REQUIRE(p->getPos().getY()<1250);
         
     }
 
@@ -80,8 +81,7 @@ TEST_CASE("Actions des joueurs", "[joueur]"){
 
 
     SECTION("Tir"){
-        vector<Missile *> miss=p->getListMiss();
-        REQUIRE(miss.size()==0);
+        //En raison de la clock les test on dut etre réalisé en temps réelle
         //Suite des test dans "test_missile.cpp"
     }
 
