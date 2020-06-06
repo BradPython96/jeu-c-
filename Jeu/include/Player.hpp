@@ -45,9 +45,7 @@ class Player{
 	public :
 	
 		Player(int i, int j, bool s, int min_taille_x_,int max_taille_x_,int min_taille_y_, int max_taille_y_); //CONSTRUCTEUR Avec Coordonnées
-		
-		bool vivant() const; //Renvoie true si le joueur est en vie et false sinon
-		
+				
 		string toString();	// Affichage de la composition du joueur
 		vector<sf::Sprite> affiche(int xa, int ya, int tailleX, int tailleY, int xi, int yi);	// Affichage SFML du joueur
 		sf::Text info(int xa, int ya, int tailleX, int tailleY);
@@ -70,6 +68,8 @@ class Player{
 		void tir();
 		void tourMissile(vector<Robot*>);
 
+		
+		bool vivant() const; //Renvoie true si le joueur est en vie et false sinon
 		const int& getArmCur() const;	//Accesseur la valeur de ArmCur
 		const int& getPV() const;	//Accesseur PV
 		const bool& getSex() const;	//Accesseur Sex

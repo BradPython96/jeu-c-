@@ -24,7 +24,7 @@ class Game{
 		int y_fen;
 
 		sf::Text txtVag;
-		sf::Font font_3;
+		sf::Font font;
 		
 	public :
 	
@@ -41,11 +41,10 @@ class Game{
 			sprite_gameOver.setTexture(gameOver);
 			
 			//Text -> Affichage du numéro de la vague
-			if(!font_3.loadFromFile("Robot_Font_2.otf")){
+			if(!font.loadFromFile("Robot_Font_2.otf")){
 				cout<<"Erreur chargement de la font"<<endl;
 			}			
-			txtVag.setFont(font_3);
-			//txtVag.setString("Essai 2");
+			txtVag.setFont(font);
 			txtVag.setCharacterSize(25);
 			txtVag.setFillColor(sf::Color::Magenta);
 

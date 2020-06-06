@@ -30,10 +30,10 @@ Map::Map(bool sexP1, bool sexP2, int map){
 			max_taille_y = MAX_MAP_ARENE_Y;
 			moy_x = (min_taille_x + max_taille_x)/2;
 			moy_y = (min_taille_y + max_taille_y)/2;
-			sp1 = new Position(min_taille_x,moy_y,0);
-			sp2 = new Position(max_taille_x,moy_y,0);
-			sp3 = new Position(moy_x,min_taille_y,0);
-			sp4 = new Position(moy_x,max_taille_y,0);
+			sp1 = new Position(min_taille_x-300,moy_y,0);
+			sp2 = new Position(max_taille_x+300,moy_y,0);
+			sp3 = new Position(moy_x,min_taille_y-300,0);
+			sp4 = new Position(moy_x,max_taille_y+300,0);
 			spawn.push_back(sp1);
 			spawn.push_back(sp2);
 			spawn.push_back(sp3);
@@ -467,8 +467,4 @@ const vector<Position *> Map::getSpawns() const{
 
 const vector<Accessoire *> Map::getAccs() const{
 	return accs;
-}
-
-void Map::setClockAcc(int s){
-	apparAcc = s;
 }

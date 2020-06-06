@@ -55,7 +55,7 @@ void Game::lancement(){
 					m = new Map(p1,p2,0);
 					
 				} else if (event.key.code==sf::Keyboard::Num2 && m1 && m2){
-					if (!fond.loadFromFile("fond_caillou.jpg")){
+					if (!fond.loadFromFile("Map_arene.png")){
 						cout<<"Erreur de chargement de la map arene"<<endl;
 					}
 					fond.setSmooth(true);

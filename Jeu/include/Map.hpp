@@ -101,7 +101,6 @@ class Map {
 		void addRobotTest (int i, int j);
 		const vector<Position *> getSpawns() const;
 		const vector<Accessoire *> getAccs() const;
-		void setClockAcc(int s);
 		
         
 };
