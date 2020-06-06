@@ -11,7 +11,7 @@ Pour pouvoir joueur au jeu ROBs VS Robots il est nécessaire de posséder :
 
 Pour lancer le jeu il faut d'abord entrer la commande ``make`` dans le terminal pour compiler les fichiers, puis la commande ``./jeu`` pour executer le programme. Une nouvelle fenêtre va s'ouvrir, à partir de ce moment il vous faut suivre les étapes suivantes pour franchir les différents menus :
 
-- Cliquez sur entrée pour démarer le jeu
+- Cliquez sur ``entrée`` pour démarer le jeu
 - Le Joueur 1 choisit si il est une fille (tapez ``1``) ou un garçon (tapez ``2``)
 - Le Joueur 2 choisit si il est une fille (tapez ``1``) ou un garçon (tapez ``2``)
 - Selectionnez la map sur laquelle vous souhaitez jouer (tapez ``1`` ou ``2``)
