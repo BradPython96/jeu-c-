@@ -75,6 +75,6 @@ Différentes classes de tests ont été réalisé. Pour compiler ses tests entr�
 
 ## Auteurs
 
-# Simon Ferrier
-# Déborah Malexieux
-# ROB4
+#### Simon Ferrier
+#### Déborah Malexieux
+#### ROB4
