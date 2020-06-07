@@ -7,7 +7,7 @@ Deux amis se retrouvent soudainement attaqués par des hordes de robots. Lorsqu'
 ## Installation
 
 Pour pouvoir joueur au jeu ROBs VS Robots il est nécessaire de posséder :
-
+- Les fichiers sur le git : https://github.com/BradPython96/jeu-c-.git
 - SFML 2.5 : https://www.sfml-dev.org/download-fr.php
 
 ## Lancement du jeu
